@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribunus · open source AI inference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#0a0a0a;color:#d0d0d0;
+  font-family:'Inter','system-ui','-apple-system',sans-serif;
+  font-weight:400;line-height:1.65;
+  -webkit-font-smoothing:antialiased
+}
+
+/* ── palette ── */
+:root{
+  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#6b7280;
+  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.07);
+  --border:rgba(0,255,65,.18);--card-bg:#111;--card-hover:#161616;
+  --accent:#00ff41;
+}
+
+/* ── typography ── */
+h1,h2,h3{font-weight:700;line-height:1.2;color:#fff}
+h1{font-size:clamp(2rem,5vw,3.8rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,2.5vw,1.8rem);letter-spacing:-.01em}
+h3{font-size:1.3rem}
+code,.mono,.prompt{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
+
+a{color:var(--green);text-decoration:none;transition:color .15s}
+a:hover{color:var(--green-dim)}
+.link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
+.link-arrow::after{content:'\2192';transition:transform .15s}
+.link-arrow:hover::after{transform:translateX(3px)}
+
+/* ── buttons ── */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;
+  padding:12px 28px;border-radius:6px;border:1px solid var(--green);
+  cursor:pointer;transition:all .15s;text-decoration:none
+}
+.btn-primary{background:var(--green);color:#0a0a0a}
+.btn-primary:hover{background:var(--green-dim);border-color:var(--green-dim);color:#0a0a0a}
+.btn-ghost{background:transparent;color:var(--green)}
+.btn-ghost:hover{background:var(--green-bg)}
+
+/* ── nav ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(24px,calc(50vw - 600px));height:56px
+}
+.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
+.nav-links{display:flex;gap:8px;list-style:none}
+.nav-links a{
+  padding:6px 12px;border-radius:4px;font-size:.88rem;font-weight:500;
+  color:var(--dim);transition:color .15s,background .15s
+}
+.nav-links a:hover{color:var(--green);background:var(--green-bg)}
+
+/* ── sections ── */
+section{padding:80px max(24px,calc(50vw - 600px))}
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  padding-top:56px /* nav height */
+}
+.hero p{max-width:600px;font-size:1.15rem;color:var(--dim);margin:20px 0 36px}
+.hero .btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+
+/* ── L2 product split ── */
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:800px){.product-grid{grid-template-columns:1fr}}
+
+.card{
+  background:var(--card-bg);border:1px solid var(--border);border-radius:10px;
+  padding:36px 32px;transition:background .2s,border-color .2s;
+  display:flex;flex-direction:column
+}
+.card:hover{background:var(--card-hover);border-color:rgba(0,255,65,.35)}
+.card h2{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.card .badge{
+  display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;
+  background:var(--green-bg);color:var(--green);border:1px solid var(--border);
+  border-radius:4px;padding:2px 10px;margin-left:6px
+}
+.card p{color:var(--dim);margin-bottom:20px;font-size:.95rem}
+.card ul{list-style:none;margin-bottom:24px}
+.card li{position:relative;padding:5px 0 5px 20px;font-size:.9rem;color:#bbb}
+.card li::before{content:'\25b8';position:absolute;left:0;color:var(--green)}
+.card .link-arrow{margin-top:auto}
+
+/* ── L3 expandable sections ── */
+.adr-list{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.adr-item{border-bottom:1px solid var(--border)}
+.adr-item:first-child{border-top:1px solid var(--border)}
+
+.prompt{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 18px;cursor:pointer;user-select:none;
+  font-size:.9rem;color:var(--green);transition:background .15s
+}
+.prompt:hover{background:var(--green-bg)}
+.prompt .arrow{display:inline-block;width:1em;transition:transform .2s;color:var(--dim)}
+.prompt.open .arrow{transform:rotate(90deg)}
+.prompt .sigil{color:var(--green);font-weight:700}
+.prompt .label{color:#fff;font-weight:500}
+.prompt .status{display:inline-flex;align-items:center;gap:4px;margin-left:auto;font-size:.75rem;color:var(--dim)}
+.prompt .status .check{color:var(--green)}
+
+.adr-body{overflow:hidden;max-height:0;transition:max-height .35s ease,padding .35s ease;padding:0 18px}
+.adr-body.open{max-height:500px;padding:0 18px 18px}
+.adr-body p{font-size:.88rem;color:#aaa;margin-bottom:12px;line-height:1.6}
+.adr-body .links{display:flex;gap:16px;font-size:.82rem}
+.adr-body .links a{display:inline-flex;align-items:center;gap:4px}
+
+/* ── footer ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:40px max(24px,calc(50vw - 600px));
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:16px;font-size:.85rem;color:var(--dim)
+}
+footer .tagline{font-style:italic;color:var(--green)}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--green)}
+
+/* ── misc ── */
+.section-title{font-size:1.1rem;font-weight:600;margin-bottom:24px;color:#fff;letter-spacing:-.01em}
+.section-sub{color:var(--dim);font-size:.9rem;margin-bottom:28px;max-width:520px}
+
+/* ── verified badge ── */
+.verified{display:inline-flex;align-items:center;justify-content:center;
+  width:16px;height:16px;border-radius:50%;background:var(--green);
+  color:#0a0a0a;font-size:10px;font-weight:700;margin-left:4px;flex-shrink:0;
+  line-height:1
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ nav ═══ -->
+<nav>
+  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <ul class="nav-links">
+    <li><a href="//compute.tribunus.dev">Compute</a></li>
+    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
+    <li><a href="//docs.tribunus.dev">Docs</a></li>
+    <li><a href="//tribunus.dev/blog">Blog</a></li>
+    <li><a href="https://github.com/tribunus">GitHub</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ L1 hero ═══ -->
+<section class="hero" id="top">
+  <h1>Your coding agent.<br>Its own inference engine.<br>Open source, verifiable.</h1>
+  <p>Built for Tribunus Desktop — the AI coding agent. Powered by Tribunus Compute — the portable inference engine with compile-time architecture.</p>
+  <div class="btns">
+    <a href="//desktop.tribunus.dev" class="btn btn-primary">Download Desktop</a>
+    <a href="//compute.tribunus.dev" class="btn btn-ghost">Explore Compute</a>
+  </div>
+</section>
+
+<!-- ═══ L2 product split ═══ -->
+<section id="products">
+  <div class="product-grid">
+
+    <!-- Desktop -->
+    <div class="card">
+      <h2>
+        <span>Tribunus Desktop</span>
+        <span class="badge">agent</span>
+      </h2>
+      <p>Your AI coding agent. Runs locally. Plugin system. Multi-agent. Any model, any backend. Electron desktop app for macOS, Linux, Windows.</p>
+      <ul>
+        <li>Agent system with tool execution</li>
+        <li>Project-aware sessions</li>
+        <li>Any LLM backend (local or remote)</li>
+        <li>Plugin system for custom tools</li>
+      </ul>
+      <a href="//desktop.tribunus.dev" class="link-arrow">Learn More</a>
+    </div>
+
+    <!-- Compute -->
+    <div class="card">
+      <h2>
+        <span>Tribunus Compute</span>
+        <span class="badge">engine</span>
+      </h2>
+      <p>The inference engine inside Tribunus Desktop. Compile-time architecture — every decision frozen before runtime. Numerical oracle validates every kernel. Multi-backend from day one.</p>
+      <ul>
+        <li>No guessing: compile-time candidate generation + 6-check admission</li>
+        <li>Numerical oracle: Apple Silicon FP32 as reference</li>
+        <li>Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN</li>
+        <li>6 runtime pipelines: token intake &rarr; prefill &rarr; decode &rarr; KV &rarr; speculation &rarr; output</li>
+      </ul>
+      <a href="//compute.tribunus.dev" class="link-arrow">Learn More</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ L3 expandable ADRs ═══ -->
+<section id="engineers">
+  <h2 class="section-title">For Engineers</h2>
+  <p class="section-sub">Architecture decision records that define the Tribunus Compute engine — each one generated, verified, and source-backed.</p>
+  <div class="adr-list">
+
+    <!-- ADR 0037 -->
+    <div class="adr-item">
+      <div class="prompt mono" onclick="toggleADR(this)">
+        <span class="arrow">&#x25B6;</span>
+        <span class="sigil">$</span>
+        <span class="label">ADR 0037: Backend Realization Contract</span>
+        <span class="status"><span class="check">&#x2713;</span> verified</span>
+      </div>
+      <div class="adr-body">
+        <p>Defines the formal contract each hardware backend must satisfy to be admitted into the Tribunus Compute runtime. Covers kernel registration, memory layout, stream synchronization, and the 6-check admission pipeline that gates every backend at compile time.</p>
+        <div class="links">
+          <a href="//compute.tribunus.dev/docs/adr/0037" class="link-arrow">Full ADR</a>
+          <a href="https://github.com/tribunus/compute/tree/main/packages/runtime" class="link-arrow">Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADR 0038 -->
+    <div class="adr-item">
+      <div class="prompt mono" onclick="toggleADR(this)">
+        <span class="arrow">&#x25B6;</span>
+        <span class="sigil">$</span>
+        <span class="label">ADR 0038: Numerical Governance + Autotuning</span>
+        <span class="status"><span class="check">&#x2713;</span> verified</span>
+      </div>
+      <div class="adr-body">
+        <p>Establishes the numerical oracle — Apple Silicon FP32 as the golden reference — and the autotuning framework that validates every kernel against it. No kernel ships without passing the oracle's accuracy and performance gates.</p>
+        <div class="links">
+          <a href="//compute.tribunus.dev/docs/adr/0038" class="link-arrow">Full ADR</a>
+          <a href="https://github.com/tribunus/compute/tree/main/packages/runtime" class="link-arrow">Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADR 0039 -->
+    <div class="adr-item">
+      <div class="prompt mono" onclick="toggleADR(this)">
+        <span class="arrow">&#x25B6;</span>
+        <span class="sigil">$</span>
+        <span class="label">ADR 0039: Datacenter Control Plane</span>
+        <span class="status"><span class="check">&#x2713;</span> verified</span>
+      </div>
+      <div class="adr-body">
+        <p>Specifies the control plane architecture for multi-node inference deployments: node discovery, health monitoring, load distribution, and the contract between the control plane and the per-node Compute runtime. Enables scale-out without sacrificing compile-time guarantees.</p>
+        <div class="links">
+          <a href="//compute.tribunus.dev/docs/adr/0039" class="link-arrow">Full ADR</a>
+          <a href="https://github.com/tribunus/compute/tree/main/packages/runtime" class="link-arrow">Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADR 0040 -->
+    <div class="adr-item">
+      <div class="prompt mono" onclick="toggleADR(this)">
+        <span class="arrow">&#x25B6;</span>
+        <span class="sigil">$</span>
+        <span class="label">ADR 0040: Runtime Inference Pipelines</span>
+        <span class="status"><span class="check">&#x2713;</span> verified</span>
+      </div>
+      <div class="adr-body">
+        <p>Defines the six runtime pipelines — token intake, prefill, decode, KV cache management, speculative decoding, and output streaming — their scheduling guarantees, memory budgets, and the handoff contracts between adjacent stages. Each pipeline is a separate phase in the compile-time planner.</p>
+        <div class="links">
+          <a href="//compute.tribunus.dev/docs/adr/0040" class="link-arrow">Full ADR</a>
+          <a href="https://github.com/tribunus/compute/tree/main/packages/runtime" class="link-arrow">Source</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADR 0041 -->
+    <div class="adr-item">
+      <div class="prompt mono" onclick="toggleADR(this)">
+        <span class="arrow">&#x25B6;</span>
+        <span class="sigil">$</span>
+        <span class="label">ADR 0041: Server UX Strategy</span>
+        <span class="status"><span class="check">&#x2713;</span> verified</span>
+      </div>
+      <div class="adr-body">
+        <p>Defines the user-facing inference server interface: REST API surface, streaming protocol (SSE + server-sent events), health and metrics endpoints, configuration model, and the development-server mode that mirrors production behavior without requiring a full cluster.</p>
+        <div class="links">
+          <a href="//compute.tribunus.dev/docs/adr/0041" class="link-arrow">Full ADR</a>
+          <a href="https://github.com/tribunus/compute/tree/main/packages/runtime" class="link-arrow">Source</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ footer ═══ -->
+<footer>
+  <div>&copy; 2026 Tribunus &middot; MIT / Apache 2.0</div>
+  <div>
+    <a href="https://github.com/tribunus">GitHub</a>
+    &nbsp;&middot;&nbsp;
+    <a href="#">IRC</a>
+    &nbsp;&middot;&nbsp;
+    <a href="#">Discord</a>
+  </div>
+  <div class="tagline">Built with compile-time honesty.</div>
+</footer>
+
+<script>
+function toggleADR(el){
+  el.classList.toggle('open');
+  var body = el.nextElementSibling;
+  if(body) body.classList.toggle('open');
+}
+</script>
+</body>
+</html>
