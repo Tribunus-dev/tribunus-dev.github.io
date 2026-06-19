@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise — Tribunus for Engineering Organizations</title>
+<meta name="description" content="Governed AI agents for engineering organizations. Local-first agent control plane with capability boundaries, approval gates, execution receipts, and auditable inference paths.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+:root{--bg:#0a0a0a;--fg:#d0d0d0;--dim:#6b7280;--green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.07);--border:rgba(0,255,65,.18);--card-bg:#111;--card-hover:#161616;--accent:#00ff41}
+h1,h2,h3{font-weight:700;line-height:1.2;color:#fff}
+h1{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,2.5vw,1.8rem);letter-spacing:-.01em;margin-bottom:20px}
+h3{font-size:1.1rem;margin-bottom:8px}
+a{color:var(--green);text-decoration:none}
+a:hover{color:var(--green-dim)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;padding:12px 28px;border-radius:6px;border:1px solid var(--green);cursor:pointer;transition:all .15s;text-decoration:none}
+.btn-primary{background:var(--green);color:#0a0a0a}
+.btn-primary:hover{background:var(--green-dim);border-color:var(--green-dim);color:#0a0a0a}
+.btn-ghost{background:transparent;color:var(--green)}
+.btn-ghost:hover{background:var(--green-bg)}
+.section{max-width:900px;margin:0 auto 48px;padding:0 24px}
+.section p{color:#bbb;line-height:1.7;margin-bottom:12px}
+.section ul{list-style:none}
+.section li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.9rem;color:#bbb;line-height:1.6}
+.section li:last-child{border-bottom:none}
+.section li strong{color:var(--green)}
+.enterprise-hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:80px}
+.enterprise-hero p{max-width:650px;font-size:1.05rem;color:var(--dim);margin-top:16px}
+.cta-group{margin-top:32px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.mode-card{border-left:3px solid var(--green);padding:20px 24px;margin-bottom:16px;background:var(--card-bg);border-radius:0 8px 8px 0}
+.mode-card h3{color:#fff;margin-bottom:6px}
+.mode-card p{color:#bbb;font-size:.9rem;line-height:1.6}
+.status-label{display:inline-block;font-size:.75rem;color:var(--green);background:var(--green-bg);padding:2px 10px;border-radius:4px;margin-top:6px}
+.status-table{width:100%;border-collapse:collapse;margin-top:12px}
+.status-table th,.status-table td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:.9rem;color:#bbb}
+.status-table th{color:var(--dim);font-weight:600;border-bottom:2px solid var(--border)}
+.status-table td:last-child{color:var(--green);font-weight:500}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px}
+@media(max-width:600px){.fit-grid{grid-template-columns:1fr}}
+.fit-card{border-radius:10px;padding:24px 28px}
+.fit-card.good{border:1px solid var(--green);background:var(--green-bg)}
+.fit-card.poor{border:1px solid #333;background:var(--card-bg)}
+.fit-card h3{color:#fff;margin-bottom:12px}
+.fit-card li{font-size:.88rem}
+.contact-box{text-align:center;padding:48px 0 0;border-top:1px solid var(--border);margin:0 auto;max-width:600px}
+.contact-box h2{margin-bottom:12px}
+.contact-box .btn{margin-top:20px}
+section{padding:60px 0}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc(50vw - 600px));height:56px}
+.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
+.nav-links{display:flex;gap:8px;list-style:none}
+.nav-links a{padding:6px 12px;border-radius:4px;font-size:.88rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--green);background:var(--green-bg)}
+footer{border-top:1px solid var(--border);padding:40px max(24px,calc(50vw - 600px));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:.85rem;color:var(--dim)}
+footer .tagline{font-style:italic;color:var(--green)}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--green)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <ul class="nav-links">
+    <li><a href="//compute.tribunus.dev">Compute</a></li>
+    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
+    <li><a href="//research.tribunus.dev">Research</a></li>
+    <li><a href="//docs.tribunus.dev">Docs</a></li>
+    <li><a href="https://github.com/tribunus">GitHub</a></li>
+  </ul>
+</nav>
+<section class="enterprise-hero">
+  <h1>Governed AI agents for engineering organizations</h1>
+  <p>Tribunus gives teams a local-first agent control plane with capability boundaries, approval gates, execution receipts, and auditable inference paths.</p>
+  <div class="cta-group">
+    <a href="mailto:enterprise@tribunus.dev?subject=Technical Briefing Request" class="btn btn-primary">Request technical briefing</a>
+    <a href="#trust-model" class="btn btn-ghost">Read the trust model</a>
+  </div>
+</section>
+<section><div class="section">
+  <h2>The enterprise problem</h2>
+  <p>AI coding agents are being introduced into production environments before teams have a serious model for authority, auditability, data movement, plugin trust, or recovery. Most agent platforms optimize for speed. Tribunus optimizes for <strong>control</strong>.</p>
+</div></section>
+<section><div class="section">
+  <h2>Control plane, not chat wrapper</h2>
+  <p>Tribunus is built around sessions, tools, approvals, state, receipts, and runtime boundaries.</p>
+  <ul>
+    <li><strong>Session state machine</strong> — typed transitions, recovery states, event-sourced history</li>
+    <li><strong>Tool runtime</strong> — ~200 built-in tools with capability scoping and approval gates</li>
+    <li><strong>Project awareness</strong> — agents understand workspace structure and dependencies</li>
+    <li><strong>Execution receipts</strong> — every agent action produces a verifiable receipt</li>
+    <li><strong>Multi-agent orchestration</strong> — ACP protocol with isolation boundaries</li>
+  </ul>
+</div></section>
+<section><div class="section" id="trust-model">
+  <h2>Security model</h2>
+  <p>Five explicit boundaries govern every execution path:</p>
+  <ul>
+    <li><strong>Local execution boundary</strong> — agent runtime runs on developer hardware; no cloud dependency for core operations</li>
+    <li><strong>Model/provider boundary</strong> — each provider connection configurable with explicit endpoint and capability scope</li>
+    <li><strong>Plugin capability boundary</strong> — plugins declare required capabilities; runtime enforces the grant</li>
+    <li><strong>Project workspace boundary</strong> — agents operate within scoped directories with configurable allow/deny lists</li>
+    <li><strong>Approval levels</strong> — mutating operations require per-action or per-session approval</li>
+  </ul>
+  <p style="margin-top:16px;color:var(--dim);font-size:.85rem;font-style:italic">Status: local execution and workspace boundaries implemented. Plugin enforcement experimental. Provider enforcement in progress.</p>
+</div></section>
+<section><div class="section">
+  <h2>Deployment modes</h2>
+  <div class="mode-card"><h3>Individual developer preview</h3><p>Single-user local installation. Full control plane with local models or remote provider connections.</p></div>
+  <div class="mode-card"><h3>Team-managed local deployment</h3><p>Centrally defined configuration, approved provider list, workspace templates.</p><span class="status-label">Near-term roadmap</span></div>
+  <div class="mode-card"><h3>Private model gateway</h3><p>Remote models routed through a company-controlled gateway with audit logging.</p><span class="status-label">Design phase</span></div>
+  <div class="mode-card"><h3>Self-hosted / federated</h3><p>Tribunus cells coordinating across machines with distributed state and federated inference.</p><span class="status-label">Research phase</span></div>
+</div></section>
+<section><div class="section">
+  <h2>Data handling</h2>
+  <p>Tribunus is designed so local workflows can keep project data local. Remote-provider usage depends on the configured boundary.</p>
+  <ul>
+    <li>Project source code processed locally by default</li>
+    <li>Remote API calls go only to configured providers with user-controlled endpoints</li>
+    <li>Execution receipts contain operation metadata, not project content</li>
+    <li>Telemetry is opt-in, limited to aggregate usage statistics</li>
+    <li>Plugins run in-process with declared capability scopes</li>
+  </ul>
+</div></section>
+<section><div class="section">
+  <h2>Audit and evidence</h2>
+  <p>Every agent action, backend decision, and failure state produces a structured receipt.</p>
+  <ul>
+    <li>Receipts capture tool calls, model responses, approval decisions, and error states</li>
+    <li>Session history is event-sourced and replayable</li>
+    <li>Evidence corpus on Hugging Face provides independent verifiability</li>
+  </ul>
+</div></section>
+<section><div class="section">
+  <h2>Maturity and roadmap</h2>
+  <table class="status-table"><tr><th>Capability</th><th>Status</th></tr>
+  <tr><td>Desktop app (macOS, Linux)</td><td>Developer preview</td></tr>
+  <tr><td>Plugin SDK</td><td>Experimental</td></tr>
+  <tr><td>Compute Image pipeline</td><td>In CI</td></tr>
+  <tr><td>Apple Silicon backend</td><td>In progress</td></tr>
+  <tr><td>NVIDIA CUDA backend</td><td>In progress</td></tr>
+  <tr><td>AMD / Intel / Tenstorrent</td><td>Planned</td></tr>
+  <tr><td>Team-managed deployment</td><td>Designed</td></tr>
+  <tr><td>Federated inference</td><td>Research</td></tr>
+  </table>
+</div></section>
+<section><div class="section">
+  <h2>Who this is for</h2>
+  <div class="fit-grid">
+    <div class="fit-card good"><h3>Good fit</h3><ul><li>Engineering orgs evaluating AI coding agents</li><li>Platform teams building internal AI tools</li><li>Regulated software teams needing auditability</li><li>AI labs needing local reproducibility</li></ul></div>
+    <div class="fit-card poor"><h3>Not ready for</h3><ul><li>Fully managed SaaS agent platform today</li><li>Polished enterprise procurement immediately</li><li>Expecting all backends production-ready</li></ul></div>
+  </div>
+</div></section>
+<section style="padding-bottom:80px"><div class="contact-box">
+  <h2>Request a technical briefing</h2>
+  <p>Interested in deploying Tribunus in your organization? We offer briefings for engineering teams and security organizations.</p>
+  <a href="mailto:enterprise@tribunus.dev?subject=Technical Briefing Request" class="btn btn-primary">Contact enterprise@tribunus.dev</a>
+</div></section>
+<footer>
+  <div>&copy; 2026 Tribunus</div>
+  <div><a href="https://github.com/tribunus-dev/tribunus">GitHub</a> &middot; <a href="//docs.tribunus.dev">Docs</a></div>
+  <div class="tagline">Built with compile-time honesty.</div>
+</footer>
+</body>
+</html>

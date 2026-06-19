@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Tribunus Compute Evidence</title>
+<meta name="description" content="Tribunus research on verifiable execution substrates for agentic AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+:root{--bg:#0a0a0a;--fg:#d0d0d0;--dim:#6b7280;--green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.07);--border:rgba(0,255,65,.18);--card-bg:#111;--card-hover:#161616;--accent:#00ff41}
+h1,h2,h3{font-weight:700;line-height:1.2;color:#fff}
+h1{font-size:clamp(2rem,5vw,3.8rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.3rem,2.5vw,1.8rem);letter-spacing:-.01em;margin-bottom:24px}
+h3{font-size:1.3rem}
+a{color:var(--green);text-decoration:none;transition:color .15s}
+a:hover{color:var(--green-dim)}
+.text-block{max-width:900px;margin:0 auto 60px;padding:0 24px}
+.text-block p,.text-block li{color:#bbb;line-height:1.7;margin-bottom:12px}
+.section-title{font-size:1.1rem;font-weight:600;margin-bottom:24px;color:#fff;letter-spacing:-.01em;max-width:900px;margin-left:auto;margin-right:auto;padding:0 24px}
+.research-hero{min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:80px}
+.research-hero p{max-width:650px;font-size:1.1rem;color:var(--dim);margin-top:20px}
+.program-card{border-left:3px solid var(--green);padding:20px 24px;margin-bottom:20px;background:var(--card-bg);border-radius:0 8px 8px 0;max-width:900px;margin-left:auto;margin-right:auto}
+.program-card h3{color:#fff;margin-bottom:8px}
+.program-card p{color:#bbb;line-height:1.7;font-size:.93rem}
+.evidence-link{margin-top:10px;font-size:.9rem}
+.result-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin:0 auto 20px;max-width:600px}
+.result-card h3{color:#fff;margin-bottom:16px}
+.result-card td{padding:8px 0;border-bottom:1px solid var(--border);font-size:.9rem;color:#bbb}
+.result-card td:first-child{color:var(--dim);width:40%}
+.result-card td:last-child{color:#fff}
+.collab-section{text-align:center;max-width:600px;margin:60px auto;padding:0 24px}
+.collab-section h2{margin-bottom:16px}
+.collab-section p{color:#bbb;margin-bottom:12px;line-height:1.7}
+section{padding:60px 0}
+.hero-list{list-style:none;max-width:900px;margin:0 auto;padding:0 24px}
+.hero-list li{padding:8px 0;border-bottom:1px solid var(--border);font-size:.9rem;color:#bbb}
+.hero-list li:last-child{border-bottom:none}
+.hero-list li::before{content:'\25b8 ';color:var(--green)}
+.problem-list{list-style:none;max-width:900px;margin:0 auto;padding:0 24px}
+.problem-list li{padding:12px 0 12px 24px;border-bottom:1px solid var(--border);font-size:.93rem;color:#bbb;position:relative}
+.problem-list li::before{content:'?';position:absolute;left:0;color:var(--green);font-weight:700}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc(50vw - 600px));height:56px}
+.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
+.nav-links{display:flex;gap:8px;list-style:none}
+.nav-links a{padding:6px 12px;border-radius:4px;font-size:.88rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--green);background:var(--green-bg)}
+footer{border-top:1px solid var(--border);padding:40px max(24px,calc(50vw - 600px));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:.85rem;color:var(--dim)}
+footer .tagline{font-style:italic;color:var(--green)}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--green)}
+@media(max-width:600px){.research-hero h1{font-size:1.6rem}.program-card,.text-block{padding:16px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <ul class="nav-links">
+    <li><a href="//compute.tribunus.dev">Compute</a></li>
+    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
+    <li><a href="//docs.tribunus.dev">Docs</a></li>
+    <li><a href="https://github.com/tribunus">GitHub</a></li>
+  </ul>
+</nav>
+<section class="research-hero">
+  <h1>Researching verifiable execution for agentic AI</h1>
+  <p>Tribunus studies how AI agents, inference engines, tools, and distributed runtimes can produce evidence instead of requiring blind trust.</p>
+</section>
+<section>
+  <h2 class="section-title">Research thesis</h2>
+  <div class="text-block">
+    <p>Modern AI safety often focuses on model behavior, model evaluations, and deployment policy. Tribunus focuses on the <strong>execution layer</strong> beneath agentic systems. The question is not only "what did the model say?" but "what was the agent allowed to do, what state did it mutate, which model and backend produced the result, what evidence was emitted, and can the execution be replayed or audited?"</p>
+  </div>
+</section>
+<section>
+  <h2 class="section-title">Research programs</h2>
+  <div class="program-card"><h3>1. Verifiable Inference</h3><p>PhaseIR compile-time architecture, compute images, oracle validation across backends, deterministic runtime replay, numerical tolerance matrices, and structured failure evidence.</p><p class="evidence-link"><a href="//compute.tribunus.dev">Architecture overview &rarr;</a></p></div>
+  <div class="program-card"><h3>2. Governed Agents</h3><p>Capability-scoped tool execution, approval gates, state-machine orchestration, plugin permission boundaries, and execution receipts.</p><p class="evidence-link"><a href="//docs.tribunus.dev">Documentation &rarr;</a></p></div>
+  <div class="program-card"><h3>3. Local-First AI Systems</h3><p>Agent control planes entirely on developer hardware, privacy-preserving execution, offline-capable workflows, user-controlled provider boundaries.</p></div>
+  <div class="program-card"><h3>4. Federated Mutual-Aid Inference (Dharma)</h3><p>Semi-trusted peer networks for distributed inference, quorum-verified execution receipts, DHT-based capability advertisements.</p><p class="evidence-link"><span style="font-size:.8rem;color:var(--dim);font-style:italic">Designed &mdash; research in progress</span></p></div>
+</section>
+<section>
+  <h2 class="section-title">Evidence registry</h2>
+  <ul class="hero-list">
+    <li><a href="//compute.tribunus.dev">Compute image architecture and ADRs</a> — compile-time candidate generation, 6-check admission, oracle validation</li>
+    <li><a href="https://huggingface.co/datasets/Tribunus-dev/compute-kernel-evidence">Compute Kernel Evidence Corpus</a> — machine-readable benchmark dataset</li>
+    <li><a href="https://huggingface.co/datasets/Tribunus-dev/tribunus-benchmarks">Tribunus Benchmarks</a> — curated leaderboard</li>
+    <li><a href="https://github.com/tribunus-dev/tribunus/tree/dev/docs/adr">Architecture Decision Records</a> — ADR 0034-0041</li>
+  </ul>
+</section>
+<section>
+  <h2 class="section-title">Current results</h2>
+  <div class="result-card">
+    <h3>Qwen2.5 0.5B ComputeImage</h3>
+    <table><tr><td>Model</td><td>Qwen2.5 0.5B</td></tr><tr><td>Layers</td><td>24</td></tr><tr><td>Tensors</td><td>556</td></tr><tr><td>Quantization</td><td>NF4</td></tr><tr><td>Primary backend</td><td>MLX Metal GPU</td></tr><tr><td>Fallback backend</td><td>Accelerate CPU</td></tr><tr><td>Verification</td><td>Passing &mdash; oracle validated</td></tr></table>
+  </div>
+</section>
+<section>
+  <h2 class="section-title">Open problems</h2>
+  <ul class="problem-list">
+    <li>How to validate quantized kernels across heterogeneous backends without overfitting tolerance thresholds?</li>
+    <li>How to make agent receipts useful for audit without exposing sensitive project data?</li>
+    <li>How to verify federated inference across semi-trusted peers with minimal overhead?</li>
+    <li>How to admit dynamic-shape workloads into a compile-time inference engine?</li>
+    <li>How to handle nondeterminism in GPU drivers across different architectures?</li>
+    <li>How to prove plugin authority boundaries in a desktop runtime at the OS level?</li>
+  </ul>
+</section>
+<section style="text-align:center;padding-bottom:80px">
+  <h2 class="section-title" style="text-align:center">Collaborate</h2>
+  <div class="text-block">
+    <p>Hardware vendors, ML systems researchers, safety researchers, and contributors welcome.</p>
+    <p style="margin-top:20px"><a href="https://github.com/tribunus-dev/tribunus">GitHub &rarr;</a> &middot; <a href="//docs.tribunus.dev">Docs &rarr;</a> &middot; <a href="mailto:research@tribunus.dev">research@tribunus.dev</a></p>
+  </div>
+</section>
+<footer>
+  <div>&copy; 2026 Tribunus</div>
+  <div><a href="https://github.com/tribunus-dev/tribunus">GitHub</a> &middot; <a href="//docs.tribunus.dev">Docs</a></div>
+  <div class="tagline">Built with compile-time honesty.</div>
+</footer>
+</body>
+</html>
