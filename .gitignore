@@ -1,0 +1,36 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+*.iml
+settings.json
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Temp
+*.tmp
+*.bak
+*.orig
+
+# Build artifacts
+dist/
+build/
+out/
+*.tsbuildinfo
+node_modules/
+.bun/
+_site/
+.sass-cache/
+*.gem
