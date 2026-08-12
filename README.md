@@ -2,7 +2,7 @@
 
 This repository powers [tribunus.dev](https://tribunus.dev), the public website for **Tribunus** — an independent, founder-led software company. The company is one founder, one product, one bet. The website is exclusively about the company, the founder, and what the founder is looking for.
 
-**Founded October 2024 by Julian Torres in San Francisco, California. 2026 Founders, Inc. applicant.**
+**Founded October 2024 by Julian Torres in San Francisco, California. Founder applying to startup accelerators in 2026.**
 
 ## The product lives elsewhere
 
@@ -20,8 +20,8 @@ Tessera Studio, the only product Tribunus ships in 2026, lives at **[tessera.tri
 | --- | --- |
 | `/` | Company & founder landing — hero, the one product, the five collaboration shapes, honest status map, press |
 | `/company` | About Tribunus as a company — mission, four pillars, the product in flight, license, founder callout, contact |
-| `/founder` | Julian Torres — bio, TL;DR, timeline, intellectual lineage, Founders Inc. callout, press |
-| `/looking-for` | The five concrete asks for 2026: beta users, co-engineers, quantization researchers, advisors, investors & Founders Inc. |
+| `/founder` | Julian Torres — bio, TL;DR, timeline, intellectual lineage, accelerator-application callout, press |
+| `/looking-for` | The five concrete asks for 2026: beta users, co-engineers, quantization researchers, advisors, investors & accelerators |
 | `/tessera` | Brief on Tessera Studio with a clear link out to tessera.tribunus.dev |
 | `/linkedin` | Canonical copy-paste copy for the Tribunus LinkedIn presence (personal + company page) |
 | `/blog` | Index of blog posts (rendered by a separate workflow) |
