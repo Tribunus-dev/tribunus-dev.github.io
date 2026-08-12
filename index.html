@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tribunus · The local-first control plane for agentic engineering</title>
-<meta name="description" content="Tribunus is the local-first control plane for agentic engineering. Open-source AI agent (Desktop), inference engine (Compute), durable authority (Cell), and federated fabric. Founded October 2024 by Julian Torres in San Francisco. AGPLv3.">
+<title>Tribunus · Julian Torres, founder</title>
+<meta name="description" content="Tribunus is an independent software company founded by Julian Torres in San Francisco. Currently building Tessera Studio for Mac and Linux. Founder applying to Founders, Inc. 2026.">
 <meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="Tribunus · The local-first control plane for agentic engineering">
-<meta property="og:description" content="Open-source AI agent, inference engine, durable authority, and federated fabric. Founded October 2024 by Julian Torres in San Francisco. AGPLv3.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Tribunus · Julian Torres, founder">
+<meta property="og:description" content="Independent software company. San Francisco. One product in flight: Tessera Studio. Founder applying to Founders, Inc. 2026.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://tribunus.dev">
 <meta property="og:image" content="https://tribunus.dev/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tribunus · The local-first control plane for agentic engineering">
-<meta name="twitter:description" content="Open-source AI agent, inference engine, durable authority, and federated fabric. Founded October 2024 by Julian Torres in San Francisco. AGPLv3.">
+<meta name="twitter:title" content="Tribunus · Julian Torres, founder">
+<meta name="twitter:description" content="Independent software company. San Francisco. One product in flight: Tessera Studio. Founder applying to Founders, Inc. 2026.">
 <link rel="canonical" href="https://tribunus.dev">
-<link rel="alternate" type="application/rss+xml" title="Tribunus Blog" href="https://tribunus.dev/rss.xml">
+<link rel="alternate" type="application/rss+xml" title="Tribunus" href="https://tribunus.dev/rss.xml">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Cpath d='M9 8v16M9 16h6M19 8v16h6' stroke='%2300ff41' stroke-width='2.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,10 @@ body{
 :root{
   --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
   --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
+  --green-soft:rgba(0,255,65,.12);
   --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;
   --rule:#1a1a1a;--accent:#00ff41;
+  --warn:#ffb000;
 }
 
 /* ── typography ── */
@@ -44,7 +46,7 @@ h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
 h1{font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-.03em}
 h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
 h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
-code,.mono,.prompt{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
+code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
 
 a{color:var(--green);text-decoration:none;transition:color .15s}
 a:hover{color:var(--green-dim)}
@@ -63,7 +65,6 @@ a:hover{color:var(--green-dim)}
 .btn-primary:hover{background:var(--green-dim);border-color:var(--green-dim);color:#0a0a0a}
 .btn-ghost{background:transparent;color:var(--green)}
 .btn-ghost:hover{background:var(--green-bg)}
-.btn-sm{padding:8px 18px;font-size:.85rem}
 
 /* ── nav ── */
 nav{
@@ -93,94 +94,96 @@ section{padding:80px max(24px,calc(50vw - 600px))}
 .hero{
   min-height:88vh;display:flex;flex-direction:column;
   justify-content:center;align-items:flex-start;text-align:left;
-  padding-top:64px;padding-bottom:80px;
-  max-width:none;
+  padding-top:64px;padding-bottom:64px;
   padding-left:max(24px,calc(50vw - 600px));
   padding-right:max(24px,calc(50vw - 600px));
 }
 .hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .hero .eyebrow .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
-.hero h1{margin-bottom:24px;max-width:18ch}
+.hero h1{margin-bottom:24px;max-width:22ch}
 .hero h1 .accent{color:var(--green)}
-.hero .lede{font-size:1.15rem;color:var(--dim);max-width:60ch;line-height:1.6;margin-bottom:32px}
-.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.hero .lede{font-size:1.15rem;color:var(--dim);max-width:62ch;line-height:1.6;margin-bottom:32px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px}
 .hero .founded{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--dim-2);letter-spacing:.03em}
 .hero .founded a{color:var(--dim);font-weight:500}
 .hero .founded a:hover{color:var(--green)}
 .hero .founded .sep{color:var(--dim-2);opacity:.5}
 
-/* ── L2 product split ── */
-.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media(max-width:820px){.product-grid{grid-template-columns:1fr}}
-
-.card{
+/* ── only-product card ── */
+.product-card{
   background:var(--card-bg);border:1px solid var(--border);border-radius:10px;
-  padding:32px 30px;transition:background .2s,border-color .2s;
-  display:flex;flex-direction:column
+  padding:32px 32px 30px;display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:center
 }
-.card:hover{background:var(--card-hover);border-color:rgba(0,255,65,.35)}
-.card h3{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.card h3 .badge{
+@media(max-width:760px){.product-card{grid-template-columns:1fr;gap:18px}}
+.product-card .left .badge-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.product-card .name{color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:-.02em;margin-bottom:6px}
+.product-card .tagline{color:#bbb;font-size:1rem;line-height:1.55;margin-bottom:16px;max-width:50ch}
+.product-card ul{list-style:none;margin-bottom:20px}
+.product-card li{position:relative;padding:5px 0 5px 20px;font-size:.9rem;color:#bbb;line-height:1.5}
+.product-card li::before{content:'\25b8';position:absolute;left:0;top:5px;color:var(--green)}
+.product-card .meta{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2);letter-spacing:.04em;margin-top:6px}
+.product-card .right{padding-left:24px;border-left:1px solid var(--rule);text-align:left}
+@media(max-width:760px){.product-card .right{padding-left:0;border-left:none;border-top:1px solid var(--rule);padding-top:18px}}
+.product-card .right .label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.product-card .right .big{font-size:1.1rem;color:#fff;font-weight:600;line-height:1.4;margin-bottom:6px}
+.product-card .right .small{color:var(--dim);font-size:.85rem;line-height:1.55}
+.product-card .right .stack{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.product-card .right .stack span{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:#bbb;background:#161616;border:1px solid var(--rule);border-radius:3px;padding:3px 8px}
+.product-card .right .stack span.live{color:var(--green);border-color:var(--border);background:var(--green-bg)}
+
+.badge{
   display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.04em;
   text-transform:uppercase;
   background:var(--green-bg);color:var(--green);border:1px solid var(--border);
   border-radius:4px;padding:2px 8px
 }
-.card .tagline{color:#bbb;font-size:.92rem;line-height:1.55;margin-bottom:18px}
-.card ul{list-style:none;margin-bottom:24px}
-.card li{position:relative;padding:5px 0 5px 20px;font-size:.88rem;color:#bbb;line-height:1.5}
-.card li::before{content:'\25b8';position:absolute;left:0;top:5px;color:var(--green)}
-.card .link-arrow{margin-top:auto;align-self:flex-start;font-size:.88rem}
+.badge.warn{background:rgba(255,176,0,.08);color:var(--warn);border-color:rgba(255,176,0,.3)}
 
-/* ── pillars strip ── */
-.pillars-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg);margin-top:32px}
-@media(max-width:900px){.pillars-row{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.pillars-row{grid-template-columns:1fr}}
-.pillar{padding:24px 24px 26px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.pillar:last-child{border-right:none}
-@media(max-width:900px){.pillar:nth-child(2n){border-right:none}}
-@media(max-width:900px){.pillar:nth-last-child(-n+2){border-bottom:none}}
-@media(max-width:560px){.pillar{border-right:none;border-bottom:1px solid var(--rule)}.pillar:last-child{border-bottom:none}}
-.pillar .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--green);letter-spacing:.08em;margin-bottom:10px}
-.pillar h4{font-size:1rem;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
-.pillar p{color:#a8a8a8;font-size:.85rem;line-height:1.55}
+/* ── looking-for 5-up grid ── */
+.shapes{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+@media(max-width:1080px){.shapes{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.shapes{grid-template-columns:1fr}}
+.shape{padding:26px 24px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.shape:last-child{border-right:none}
+.shape:nth-child(5n){border-right:none}
+.shape:nth-last-child(-n+5){border-bottom:none}
+@media(max-width:1080px){.shape{}.shape:nth-child(2n){border-right:none}.shape:nth-last-child(-n+5){border-bottom:1px solid var(--rule)}.shape:nth-last-child(-n+2){border-bottom:none}}
+@media(max-width:560px){.shape{border-right:none;border-bottom:1px solid var(--rule)}.shape:last-child{border-bottom:none}}
+.shape .num{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--green);letter-spacing:.08em;margin-bottom:10px}
+.shape h4{font-size:1rem;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.shape p{color:#a8a8a8;font-size:.85rem;line-height:1.55}
+.shape p strong{color:#fff}
+.shape .ask{margin-top:14px;padding-top:14px;border-top:1px dashed var(--rule);font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim);line-height:1.55}
 
-/* ── L3 ADRs (terminal style, kept from original) ── */
-.adr-list{display:flex;flex-direction:column;gap:0;margin-top:8px}
-.adr-item{border-bottom:1px solid var(--rule)}
-.adr-item:first-child{border-top:1px solid var(--rule)}
+/* ── status table (honest capability map) ── */
+.status-table{margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+.status-row{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:16px;padding:16px 22px;border-bottom:1px solid var(--rule);align-items:start;font-size:.88rem}
+.status-row:last-child{border-bottom:none}
+.status-row.head{background:#0a0a0a;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.status-row .what{color:#fff;font-weight:600}
+.status-row .state{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.04em}
+.status-row .state.live{color:var(--green)}
+.status-row .state.dev{color:var(--warn)}
+.status-row .state.plan{color:var(--dim)}
+.status-row .where{color:#bbb;font-family:'JetBrains Mono',monospace;font-size:.78rem}
+.status-row .note{color:var(--dim);font-size:.85rem;line-height:1.55}
+@media(max-width:860px){.status-row{grid-template-columns:1fr;gap:6px}.status-row.head{display:none}}
 
-.prompt{
-  display:flex;align-items:center;gap:10px;
-  padding:14px 18px;cursor:pointer;user-select:none;
-  font-size:.9rem;color:var(--green);transition:background .15s
-}
-.prompt:hover{background:var(--green-bg)}
-.prompt .arrow{display:inline-block;width:1em;transition:transform .2s;color:var(--dim)}
-.prompt.open .arrow{transform:rotate(90deg)}
-.prompt .sigil{color:var(--green);font-weight:700}
-.prompt .label{color:#fff;font-weight:500}
-.prompt .status{display:inline-flex;align-items:center;gap:4px;margin-left:auto;font-size:.75rem;color:var(--dim)}
-.prompt .status .check{color:var(--green)}
+/* ── thesis quote ── */
+.thesis{margin-top:48px;padding:24px 28px;border-left:3px solid var(--green);background:var(--card-bg);border-radius:0 10px 10px 0}
+.thesis p{color:#e0e0e0;font-size:1.05rem;line-height:1.7}
+.thesis p strong{color:#fff}
+.thesis cite{display:block;margin-top:12px;font-style:normal;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--dim);letter-spacing:.04em}
 
-.adr-body{overflow:hidden;max-height:0;transition:max-height .35s ease,padding .35s ease;padding:0 18px}
-.adr-body.open{max-height:500px;padding:0 18px 18px}
-.adr-body p{font-size:.88rem;color:#aaa;margin-bottom:12px;line-height:1.6}
-.adr-body .links{display:flex;gap:16px;font-size:.82rem;flex-wrap:wrap}
-.adr-body .links a{display:inline-flex;align-items:center;gap:4px}
-
-/* ── social / press strip ── */
+/* ── press / contact ── */
 .press-strip{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg)}
 @media(max-width:760px){.press-strip{grid-template-columns:1fr}}
 .press-strip .text{color:#bbb;font-size:.95rem;line-height:1.6}
 .press-strip .text strong{color:#fff}
-.press-strip .links{display:flex;flex-wrap:wrap;gap:14px;font-family:'JetBrains Mono',monospace;font-size:.85rem}
-.press-strip .links a{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border);border-radius:6px;color:var(--green);transition:background .15s}
+.press-strip .links{display:flex;flex-wrap:wrap;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.82rem}
+.press-strip .links a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--border);border-radius:6px;color:var(--green);transition:background .15s}
 .press-strip .links a:hover{background:var(--green-bg)}
-
-/* ── verified badge ── */
-.verified{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:var(--green);color:#0a0a0a;font-size:10px;font-weight:700;margin-left:4px;flex-shrink:0;line-height:1}
 
 /* ── footer ── */
 footer{
@@ -206,10 +209,9 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
   <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
   <ul class="nav-links">
     <li><a href="//tribunus.dev/company">Company</a></li>
-    <li><a href="//compute.tribunus.dev">Compute</a></li>
-    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
-    <li><a href="//docs.tribunus.dev">Docs</a></li>
-    <li><a href="//tribunus.dev/blog">Blog</a></li>
+    <li><a href="//tribunus.dev/founder">Founder</a></li>
+    <li><a href="//tribunus.dev/looking-for">Looking for</a></li>
+    <li><a href="//tribunus.dev/tessera">Tessera</a></li>
     <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
@@ -217,232 +219,186 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
 
 <!-- ═══ L1 hero ═══ -->
 <section class="hero" id="top">
-  <div class="eyebrow"><span class="dot"></span>v0 · now in active development</div>
-  <h1>The local-first <span class="accent">control plane</span> for agentic engineering.</h1>
-  <p class="lede">Tribunus is the open-source stack that lets engineers run AI agents and inference on their own hardware — with explicit authority, compile-time guarantees, and receipts instead of logs.</p>
+  <div class="eyebrow"><span class="dot"></span>Tribunus · founded October 2024</div>
+  <h1>I build <span class="accent">Tribunus</span>.<br>One product in flight. One founder.</h1>
+  <p class="lede">I'm Julian Torres. Tribunus is my independent software company. I am currently shipping one product — <strong>Tessera Studio</strong> for Mac and Linux — and I am looking for the people, advisors, and capital that will let me ship it well.</p>
   <div class="btns">
-    <a href="//tribunus.dev/company" class="btn btn-primary">Read the company story</a>
-    <a href="//github.com/Tribunus-dev" class="btn btn-ghost">View on GitHub</a>
+    <a href="//tribunus.dev/looking-for" class="btn btn-primary">What I'm looking for</a>
+    <a href="//tribunus.dev/founder" class="btn btn-ghost">Read the founder story</a>
   </div>
   <div class="founded">
-    <span>Founded October 2024</span>
+    <span>Julian Torres, founder</span>
     <span class="sep">·</span>
     <span>San Francisco, California</span>
     <span class="sep">·</span>
-    <span><a href="//tribunus.dev/founder">Julian Torres, founder</a></span>
+    <span>Since October 2024</span>
     <span class="sep">·</span>
-    <span>AGPLv3</span>
+    <span>AGPL-3.0</span>
+    <span class="sep">·</span>
+    <span>2026 Founders Inc. applicant</span>
   </div>
 </section>
 
-<!-- ═══ L2 product split ═══ -->
-<section id="products">
-  <div class="sec-head">product family</div>
-  <h2 class="sec-title">Four products, one compiled stack.</h2>
-  <p class="sec-sub">Each product is a layer in the same control plane. They are designed to be deployed together, but each is independently useful.</p>
-  <div class="product-grid">
+<!-- ═══ the one product ═══ -->
+<section id="product">
+  <div class="sec-head">the product in flight</div>
+  <h2 class="sec-title">Tessera Studio.</h2>
+  <p class="sec-sub">A desktop app for running large language models locally with calibrated, audited quantization. macOS today, Linux in progress. It is the only product I am focused on shipping in 2026.</p>
 
-    <!-- Desktop -->
-    <div class="card">
-      <h3>
-        <span>Tribunus Desktop</span>
-        <span class="badge">agent</span>
-      </h3>
-      <p class="tagline">The AI coding agent. Local, project-aware, multi-agent, capability-scoped plugins. Electron app for macOS, Linux, and Windows.</p>
+  <div class="product-card">
+    <div class="left">
+      <div class="badge-row">
+        <h3 class="name">Tessera Studio</h3>
+        <span class="badge warn">developer preview · macOS</span>
+      </div>
+      <p class="tagline">A Swift desktop app for running LLMs locally. Calibrated per-tensor quantization, native speculative decoding, Apple Neural Engine prefill on M-series Macs, first-class skills system.</p>
       <ul>
-        <li>Agent system with tool execution</li>
-        <li>Project-aware sessions</li>
-        <li>Any LLM backend (local or remote)</li>
-        <li>Capability-scoped plugin system</li>
+        <li>Built on <code class="mono">Tessera</code> — a fork of llama.cpp with per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and ANE prefill via Core ML</li>
+        <li>Swift app core with a real agent loop, manifest-based skills (<code class="mono">SKILL.md</code>), and a local-first file system</li>
+        <li>Designed for the engineering workflow — quantized models, receipts, and audit trails you can replay</li>
       </ul>
-      <a href="//desktop.tribunus.dev" class="link-arrow">Open Desktop</a>
+      <a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer" class="link-arrow">Open tessera.tribunus.dev</a>
+      <div class="meta">Ships from <a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer">github.com/Tribunus-dev/tessera</a> · Apache 2.0 / LICENSE-TESSERA noncommercial</div>
     </div>
-
-    <!-- Compute -->
-    <div class="card">
-      <h3>
-        <span>Tribunus Compute</span>
-        <span class="badge">engine</span>
-      </h3>
-      <p class="tagline">The portable inference engine. Compile-time candidate generation, 6-check backend admission, numerical oracle. Multi-backend from day one.</p>
-      <ul>
-        <li>No guessing: compile-time candidate generation + 6-check admission</li>
-        <li>Numerical oracle: Apple Silicon FP32 as the golden reference</li>
-        <li>Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN</li>
-        <li>6 runtime pipelines: intake → prefill → decode → KV → speculation → output</li>
-      </ul>
-      <a href="//compute.tribunus.dev" class="link-arrow">Open Compute</a>
+    <div class="right">
+      <div class="label">// at a glance</div>
+      <div class="big">macOS today, Linux in progress</div>
+      <div class="small">Swift on macOS, CMake on the C++ side. Linux build is in CI; no public installer yet.</div>
+      <div class="label" style="margin-top:20px">// stack</div>
+      <div class="stack">
+        <span class="live">Swift</span>
+        <span class="live">SwiftUI</span>
+        <span class="live">C++ (tessera fork)</span>
+        <span class="live">Core ML</span>
+        <span class="live">ANE</span>
+        <span>CMake</span>
+        <span>Linux · planned</span>
+      </div>
+      <div class="label" style="margin-top:20px">// learn more</div>
+      <div class="small"><a href="//tribunus.dev/tessera">Tessera on tribunus.dev</a> · <a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer">Source</a></div>
     </div>
-
-    <!-- Cell -->
-    <div class="card">
-      <h3>
-        <span>Tribunus Cell</span>
-        <span class="badge">runtime</span>
-      </h3>
-      <p class="tagline">The local-first durable authority. PGlite for durable state, Valkey for ephemeral coordination, capability-scoped tool runtime, receipted mutations.</p>
-      <ul>
-        <li>Durable authority in PGlite (Postgres-compatible)</li>
-        <li>Ephemeral coordination in Valkey</li>
-        <li>Capability-scoped tool runtime</li>
-        <li>Every mutation produces a cryptographically bound receipt</li>
-      </ul>
-      <a href="//docs.tribunus.dev" class="link-arrow">Read the docs</a>
-    </div>
-
-    <!-- Federation -->
-    <div class="card">
-      <h3>
-        <span>Tribunus Federation</span>
-        <span class="badge">fabric</span>
-      </h3>
-      <p class="tagline">Federated inference across cells. Capability discovery, peer routing, distributed control plane, mutual-aid compute fabric. Federation is the escape valve, never the default.</p>
-      <ul>
-        <li>Node enrollment + capability advertisement</li>
-        <li>Capability-aware peer routing</li>
-        <li>Valkey Streams for durable delivery</li>
-        <li>Scale-out without losing compile-time guarantees</li>
-      </ul>
-      <a href="//docs.tribunus.dev" class="link-arrow">Read the docs</a>
-    </div>
-
   </div>
 </section>
 
-<!-- ═══ pillars strip ═══ -->
-<section>
-  <div class="sec-head">what we are, in four lines</div>
-  <h2 class="sec-title">The four pillars.</h2>
-  <p class="sec-sub">We are not in the business of releasing AI products. We are in the business of compiling them.</p>
-  <div class="pillars-row">
-    <div class="pillar">
+<!-- ═══ looking for — 5 shapes ═══ -->
+<section id="looking-for">
+  <div class="sec-head">what I am looking for, in five shapes</div>
+  <h2 class="sec-title">The collaboration surface is named.</h2>
+  <p class="sec-sub">Founders, Inc. taught me to name the asks. These are the five concrete things I am looking for in 2026. If one of these is you, the contact is at the bottom of the page.</p>
+
+  <div class="shapes">
+    <div class="shape">
       <div class="num">01</div>
-      <h4>Compile-time, not runtime</h4>
-      <p>Decisions are frozen before execution. The plan is the receipt. We do not improvise correctness under load.</p>
+      <h4>Beta users on Mac &amp; Linux</h4>
+      <p>Run <strong>Tessera Studio</strong> on a real model, on a real machine, with a real workload. File honest issues. I ship to early users first, not to marketing.</p>
+      <div class="ask">→ install · real model · honest issues</div>
     </div>
-    <div class="pillar">
+    <div class="shape">
       <div class="num">02</div>
-      <h4>Local-first, federated when needed</h4>
-      <p>Your hardware, your data, your model. Federation is the escape valve — never the default, always available.</p>
+      <h4>Co-engineers</h4>
+      <p><strong>Swift / SwiftUI</strong> on the app side. <strong>C++ / quantization</strong> on the inference side. <strong>UX / macOS HIG</strong> where it matters. Small, focused PRs. I review personally.</p>
+      <div class="ask">→ open PR · small · focused</div>
     </div>
-    <div class="pillar">
+    <div class="shape">
       <div class="num">03</div>
-      <h4>Authority, not ambient access</h4>
-      <p>Every plugin, tool, and agent receives explicit capability grants. Nothing has ambient authority over your state.</p>
+      <h4>Quantization researchers</h4>
+      <p>People who have read the <strong>T640 / DFlash / DSpark</strong> papers and want to push them. Tessera is a fork of llama.cpp that takes calibration seriously. The receipt trail is the contribution surface.</p>
+      <div class="ask">→ per-tensor policy · receipts</div>
     </div>
-    <div class="pillar">
+    <div class="shape">
       <div class="num">04</div>
-      <h4>Receipts, not logs</h4>
-      <p>Every mutation is cryptographically bound. Logs are what you write when nothing happened; receipts are what happened.</p>
+      <h4>Advisors</h4>
+      <p>People who have <strong>shipped a Mac desktop product</strong> or a <strong>fork of llama.cpp</strong> and are willing to spend an hour a week. I pay in equity, attention, and prompt replies.</p>
+      <div class="ask">→ shipped before · 1 hr/week</div>
+    </div>
+    <div class="shape">
+      <div class="num">05</div>
+      <h4>Investors &amp; Founders, Inc.</h4>
+      <p>I am a <strong>2026 Founders, Inc. applicant</strong> with Tribunus. I am pre-seed. I do not raise on hype; I raise on <strong>evidence</strong>. If you back technical founders with shipped artifacts, the right email is below.</p>
+      <div class="ask">→ pre-seed · evidence-led</div>
+    </div>
+  </div>
+
+  <div class="thesis">
+    <p><strong>The thesis.</strong> The local-first control plane for AI inference is underbuilt. The market is full of chat wrappers and runtime improvisation. I am building the alternative: a desktop app for running models locally with the same compile-time discipline the inference engine itself deserves. I am one founder, doing one product, and I am not going to ship it badly.</p>
+    <cite>— Julian Torres, founder of Tribunus</cite>
+  </div>
+
+  <a href="//tribunus.dev/looking-for" class="link-arrow" style="margin-top:24px;display:inline-flex;font-size:.92rem">Read the full looking-for page</a>
+</section>
+
+<!-- ═══ honest status — what's real vs planned ═══ -->
+<section id="status">
+  <div class="sec-head">the honest status map</div>
+  <h2 class="sec-title">What is real, what is in flight, what is planned.</h2>
+  <p class="sec-sub">No row claims measurement the evidence does not support. <span class="badge live" style="font-size:.65rem">Live</span> is in users' hands. <span class="badge warn" style="font-size:.65rem">In dev</span> is in the repo. <span class="badge" style="font-size:.65rem;background:transparent;color:var(--dim);border-color:var(--rule)">Planned</span> is a direction, not a date.</p>
+
+  <div class="status-table">
+    <div class="status-row head">
+      <div>What</div><div>State</div><div>Where</div><div>Note</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Tessera Studio · macOS (Apple Silicon)</div>
+      <div class="state live">Live · developer preview</div>
+      <div class="where">github.com/Tribunus-dev/tessera</div>
+      <div class="note">Swift app, Core ML prefill, ANE on M-series. AGPL-3.0 (LICENSE-TESSERA noncommercial).</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Tessera Studio · Linux</div>
+      <div class="state dev">In development</div>
+      <div class="where">github.com/Tribunus-dev/tessera</div>
+      <div class="note">C++ side builds for Linux. Swift app + SwiftUI shim is the missing piece. No public installer yet.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Tessera · C++ fork of llama.cpp</div>
+      <div class="state live">Live</div>
+      <div class="where">github.com/Tribunus-dev/tessera</div>
+      <div class="note">T640 per-tensor calibration, DFlash/DSpark drafters, ANE prefill. Upstream-compatible where it can be.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Per-tensor evolutionary calibration (T640)</div>
+      <div class="state live">Live</div>
+      <div class="where">tessera/tools/tessera</div>
+      <div class="note">Small GA per tensor over (threshold, outlier fraction, AWQ alpha, AWQ clip). Schema-versioned receipts.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Spec-decoding telemetry (DFlash / DSpark)</div>
+      <div class="state live">Live</div>
+      <div class="where">tessera/examples + CLI</div>
+      <div class="note"><code class="mono">llama.tessera.spec.v1</code> JSONL with verifier + drafter top-k for distillation / rejection sampling.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Prism Engine (R&amp;D, future)</div>
+      <div class="state dev">R&amp;D</div>
+      <div class="where">github.com/Tribunus-dev/prism-engine</div>
+      <div class="note">Inspectable heterogeneous AI deployment. Constitutional ECS, compute-image compiler. Not in the shipping path for Tessera.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Tribunus Compute (earlier brand)</div>
+      <div class="state plan">Superseded by Tessera</div>
+      <div class="where">—</div>
+      <div class="note">Earlier "Tribunus Compute" branding is folded into the Tessera fork. See <a href="//tribunus.dev/company">/company</a> for the history.</div>
+    </div>
+    <div class="status-row">
+      <div class="what">Tribunus Desktop (earlier brand)</div>
+      <div class="state plan">Superseded by Tessera</div>
+      <div class="where">—</div>
+      <div class="note">The earlier "Desktop" agent is on the shelf. Tessera Studio is the live surface.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══ L3 ADR / For Engineers ═══ -->
-<section id="engineers">
-  <div class="sec-head">for engineers</div>
-  <h2 class="sec-title">Architecture decision records.</h2>
-  <p class="sec-sub">The decisions that define Tribunus Compute — each one generated, verified, and source-backed.</p>
-  <div class="adr-list">
-
-    <!-- ADR 0037 -->
-    <div class="adr-item">
-      <div class="prompt mono" onclick="toggleADR(this)">
-        <span class="arrow">&#x25B6;</span>
-        <span class="sigil">$</span>
-        <span class="label">ADR 0037: Backend Realization Contract</span>
-        <span class="status"><span class="check">&#x2713;</span> verified</span>
-      </div>
-      <div class="adr-body">
-        <p>Defines the formal contract each hardware backend must satisfy to be admitted into the Tribunus Compute runtime. Covers kernel registration, memory layout, stream synchronization, and the 6-check admission pipeline that gates every backend at compile time.</p>
-        <div class="links">
-          <a href="//compute.tribunus.dev/docs/adr/0037" class="link-arrow">Full ADR</a>
-          <a href="https://github.com/Tribunus-dev/Tribunus-Compute" class="link-arrow" target="_blank" rel="noopener noreferrer">Source</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ADR 0038 -->
-    <div class="adr-item">
-      <div class="prompt mono" onclick="toggleADR(this)">
-        <span class="arrow">&#x25B6;</span>
-        <span class="sigil">$</span>
-        <span class="label">ADR 0038: Numerical Governance + Autotuning</span>
-        <span class="status"><span class="check">&#x2713;</span> verified</span>
-      </div>
-      <div class="adr-body">
-        <p>Establishes the numerical oracle — Apple Silicon FP32 as the golden reference — and the autotuning framework that validates every kernel against it. No kernel ships without passing the oracle's accuracy and performance gates.</p>
-        <div class="links">
-          <a href="//compute.tribunus.dev/docs/adr/0038" class="link-arrow">Full ADR</a>
-          <a href="https://github.com/Tribunus-dev/Tribunus-Compute" class="link-arrow" target="_blank" rel="noopener noreferrer">Source</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ADR 0039 -->
-    <div class="adr-item">
-      <div class="prompt mono" onclick="toggleADR(this)">
-        <span class="arrow">&#x25B6;</span>
-        <span class="sigil">$</span>
-        <span class="label">ADR 0039: Datacenter Control Plane</span>
-        <span class="status"><span class="check">&#x2713;</span> verified</span>
-      </div>
-      <div class="adr-body">
-        <p>Specifies the control plane architecture for multi-node inference deployments: node discovery, health monitoring, load distribution, and the contract between the control plane and the per-node Compute runtime. Enables scale-out without sacrificing compile-time guarantees.</p>
-        <div class="links">
-          <a href="//compute.tribunus.dev/docs/adr/0039" class="link-arrow">Full ADR</a>
-          <a href="https://github.com/Tribunus-dev/Tribunus-Compute" class="link-arrow" target="_blank" rel="noopener noreferrer">Source</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ADR 0040 -->
-    <div class="adr-item">
-      <div class="prompt mono" onclick="toggleADR(this)">
-        <span class="arrow">&#x25B6;</span>
-        <span class="sigil">$</span>
-        <span class="label">ADR 0040: Runtime Inference Pipelines</span>
-        <span class="status"><span class="check">&#x2713;</span> verified</span>
-      </div>
-      <div class="adr-body">
-        <p>Defines the six runtime pipelines — token intake, prefill, decode, KV cache management, speculative decoding, and output streaming — their scheduling guarantees, memory budgets, and the handoff contracts between adjacent stages. Each pipeline is a separate phase in the compile-time planner.</p>
-        <div class="links">
-          <a href="//compute.tribunus.dev/docs/adr/0040" class="link-arrow">Full ADR</a>
-          <a href="https://github.com/Tribunus-dev/Tribunus-Compute" class="link-arrow" target="_blank" rel="noopener noreferrer">Source</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ADR 0041 -->
-    <div class="adr-item">
-      <div class="prompt mono" onclick="toggleADR(this)">
-        <span class="arrow">&#x25B6;</span>
-        <span class="sigil">$</span>
-        <span class="label">ADR 0041: Server UX Strategy</span>
-        <span class="status"><span class="check">&#x2713;</span> verified</span>
-      </div>
-      <div class="adr-body">
-        <p>Defines the user-facing inference server interface: REST API surface, streaming protocol (SSE + server-sent events), health and metrics endpoints, configuration model, and the development-server mode that mirrors production behavior without requiring a full cluster.</p>
-        <div class="links">
-          <a href="//compute.tribunus.dev/docs/adr/0041" class="link-arrow">Full ADR</a>
-          <a href="https://github.com/Tribunus-dev/Tribunus-Compute" class="link-arrow" target="_blank" rel="noopener noreferrer">Source</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- press / social strip -->
+<!-- ═══ press / contact ═══ -->
+<section class="tight" id="contact">
   <div class="press-strip">
     <div class="text">
-      <strong>For press, partnerships, and commercial licensing.</strong><br>
-      Tribunus is a founder-led, self-funded, independent software company. We are happy to talk to anyone working on inference, agent runtimes, or the trust model for AI in production.
+      <strong>For beta access, collaboration, press, or investment.</strong><br>
+      I read every email. If you are reaching out about one of the five shapes above, mention which one.
     </div>
     <div class="links">
       <a href="mailto:hello@tribunus.dev">hello@tribunus.dev</a>
-      <a href="mailto:enterprise@tribunus.dev">enterprise@tribunus.dev</a>
-      <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn (founder)</a>
-      <a href="//tribunus.dev/linkedin">LinkedIn copy</a>
+      <a href="mailto:julian@tribunus.dev">julian@tribunus.dev</a>
+      <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
   </div>
@@ -456,22 +412,19 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
   <div class="mid">
     <a href="//tribunus.dev/company">Company</a>
     &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/founder">Founder</a>
+    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/looking-for">Looking for</a>
+    &nbsp;&middot;&nbsp;
     <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
     &nbsp;&middot;&nbsp;
     <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
   <div class="right">
-    <span class="license">AGPL-3.0 · commercial licensing available</span>
+    <span class="license">AGPL-3.0</span>
     <span class="tagline">Built with compile-time honesty.</span>
   </div>
 </footer>
 
-<script>
-function toggleADR(el){
-  el.classList.toggle('open');
-  var body = el.nextElementSibling;
-  if(body) body.classList.toggle('open');
-}
-</script>
 </body>
 </html>

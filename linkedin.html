@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tribunus · LinkedIn presence</title>
-<meta name="description" content="Canonical copy for the Tribunus LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — ready to paste into LinkedIn.">
+<meta name="description" content="Canonical copy for the Tribunus LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — ready to paste into LinkedIn. Updated for the 2026 Tessera Studio direction.">
 <meta name="theme-color" content="#0a0a0a">
 <meta property="og:title" content="Tribunus · LinkedIn presence">
 <meta property="og:description" content="Canonical copy for the Tribunus LinkedIn presence — personal profile and company page.">
@@ -49,7 +49,7 @@ nav{
 }
 .nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
 .nav-brand:hover{color:#fff}
-.nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
 .nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
 .nav-links a:hover{color:var(--green);background:var(--green-bg)}
 .nav-links a.active{color:#fff}
@@ -74,7 +74,7 @@ nav{
 .copy-btn.copied{background:rgba(0,255,65,.12);color:#fff;border-color:var(--green)}
 .copy-note{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2)}
 
-/* ── fields list (key-value) ── */
+/* ── fields list ── */
 .kv-list{margin-top:24px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
 .kv-row{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:14px 20px;border-bottom:1px solid var(--rule);align-items:start}
 .kv-row:last-child{border-bottom:none}
@@ -92,7 +92,7 @@ nav{
 .profile-card .role{color:var(--dim);font-size:.92rem;margin-bottom:18px}
 .profile-card .handle{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--green)}
 
-/* ── nav: about this page ── */
+/* ── intent ── */
 .intent{margin-top:32px;padding:20px 24px;border-left:3px solid var(--green);background:var(--card-bg);border-radius:0 8px 8px 0;color:#bbb;font-size:.92rem;line-height:1.65}
 .intent strong{color:#fff}
 
@@ -100,28 +100,29 @@ footer{
   border-top:1px solid var(--rule);
   padding:48px max(24px,calc(50vw - 600px));
   display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
-  gap:16px;font-size:.85rem;color:var(--dim)
+  gap:20px;font-size:.85rem;color:var(--dim)
 }
 footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
 footer a{color:var(--dim)}
 footer a:hover{color:var(--green)}
 footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+footer .left{font-size:.82rem;color:var(--dim-2)}
+footer .left a{color:var(--dim);font-weight:500}
+footer .mid a{font-size:.85rem}
+footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim-2);letter-spacing:.05em}
 </style>
 </head>
 <body>
 
-<!-- ═══ nav ═══ -->
 <nav>
   <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
   <ul class="nav-links">
-    <li><a href="//tribunus.dev">Home</a></li>
     <li><a href="//tribunus.dev/company">Company</a></li>
     <li><a href="//tribunus.dev/founder">Founder</a></li>
-    <li><a href="//tribunus.dev/linkedin" class="active">LinkedIn</a></li>
-    <li><a href="//compute.tribunus.dev">Compute</a></li>
-    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
-    <li><a href="//docs.tribunus.dev">Docs</a></li>
-    <li><a href="//tribunus.dev/blog">Blog</a></li>
+    <li><a href="//tribunus.dev/looking-for">Looking for</a></li>
+    <li><a href="//tribunus.dev/tessera">Tessera</a></li>
+    <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
 </nav>
 
@@ -129,7 +130,7 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
 <header class="wrap" style="padding-top:96px;padding-bottom:32px">
   <div class="sec-head">linkedin presence</div>
   <h1>Copy-paste canonical copy for LinkedIn.</h1>
-  <p class="sec-sub" style="margin-top:18px;font-size:1.1rem;max-width:60ch">This page is the source of truth for Tribunus's LinkedIn presence. It contains the personal profile copy (Julian Torres, founder) and the company page copy (Tribunus) — written to fit LinkedIn's format and character limits, ready to paste.</p>
+  <p class="sec-sub" style="margin-top:18px;font-size:1.1rem;max-width:60ch">The source of truth for Tribunus's LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — written to fit LinkedIn's format and character limits, ready to paste.</p>
   <div class="intent">
     <strong>How to use this page.</strong> Each block is annotated with the LinkedIn field it targets. Click <em>Copy</em> on any block to copy its content. Update the canonical copy here whenever the company story changes; mirror it to LinkedIn on the same change.
   </div>
@@ -149,7 +150,7 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
       <div class="profile-card">
         <div class="who">// company</div>
         <div class="name">Tribunus</div>
-        <div class="role">The local-first control plane for agentic engineering</div>
+        <div class="role">Independent software company · shipping Tessera Studio</div>
         <div class="handle">linkedin.com/company/tribunus-dev <em style="color:var(--dim);font-style:normal">(to be created)</em></div>
       </div>
     </div>
@@ -161,14 +162,14 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
   <div class="wrap">
     <div class="sec-head">personal profile · headline</div>
     <h2 class="sec-title">LinkedIn headline (220 char max)</h2>
-    <p class="sec-sub">The 220-character line under your name. Most-searched, most-shown. Front-load the role and the company.</p>
+    <p class="sec-sub">The 220-character line under your name. Most-searched, most-shown. Front-load the role, the product, and the company.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
         <div class="label">linkedin · headline · personal</div>
-        <div class="charcount" data-count>185 / 220</div>
+        <div class="charcount" data-count>192 / 220</div>
       </div>
-      <div class="copy-body">Founder of <em>Tribunus</em> · the local-first control plane for agentic engineering · building <em>Tribunus Desktop</em> + <em>Tribunus Compute</em> · open source (AGPLv3) · San Francisco</div>
+      <div class="copy-body">Founder of <em>Tribunus</em> · building <em>Tessera Studio</em> (desktop app for running LLMs locally with calibrated quantization) · C++ fork of llama.cpp · 2026 Founders Inc. applicant · San Francisco</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -189,17 +190,15 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
         <div class="label">linkedin · about · personal</div>
         <div class="charcount" data-count>~1,540 / 2,600</div>
       </div>
-      <div class="copy-body">I founded <em>Tribunus</em> in October 2024 in San Francisco to build the local-first control plane for agentic engineering — the open-source stack that lets engineers run AI agents and inference on their own hardware, with explicit authority, compile-time guarantees, and receipts instead of logs.
+      <div class="copy-body">I founded <em>Tribunus</em> in October 2024 in San Francisco to build the local-first control plane for AI inference — the open-source stack that lets engineers run large language models on their own hardware, with explicit authority, compile-time guarantees, and receipts instead of logs.
+
+The product I am shipping in 2026 is <em>Tessera Studio</em> — a desktop app for running LLMs locally with calibrated, audited per-tensor quantization. It is built on Tessera, my C++ fork of llama.cpp that takes calibration seriously. macOS today, Linux in progress. AGPLv3 with commercial dual-licensing.
 
 Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. That background shows up in our design language — minimal, monochrome, terminal-honest — and in the care we take with documentation, schema versioning, and the look of every receipt the system produces.
 
-Tribunus is four products, one compiled stack: <em>Desktop</em> (the agent), <em>Compute</em> (the inference engine), <em>Cell</em> (the local-first durable authority), and <em>Federation</em> (the fabric when you need to scale out). Everything we ship is open source under AGPLv3, with commercial dual-licensing available.
+I am a 2026 Founders, Inc. applicant. The company is pre-seed and self-funded. I am currently the only full-time person on the project, and the first full-time hire will come after a pre-seed close.
 
-The architecture is not invented from scratch. It draws on Yann LeCun's hierarchical planner, the PagedAttention paper (SOSP 2023), the MLIR progressive-lowering compiler architecture (CGO 2021), Mark Miller's capability-based security, and the local-first software movement. We've published a long-form essay on the intellectual lineage — link in featured.
-
-I work with a small, explicit network of contributors and am currently the only full-time person on the project. The company is self-funded, independent, and has not raised outside capital.
-
-If you're working on inference, agent runtimes, or the trust model for AI in production — happy to talk.</div>
+If you are working on inference, agent runtimes, or the trust model for AI in production — happy to talk.</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -220,20 +219,20 @@ If you're working on inference, agent runtimes, or the trust model for AI in pro
         <div class="label">linkedin · featured · personal</div>
         <div class="charcount" data-count>1 block</div>
       </div>
-      <div class="copy-body">The Tribunus Thesis — the long-form essay on the architecture
-https://docs.tribunus.dev/blog/tribunus-thesis
+      <div class="copy-body">Tessera Studio — the desktop app for local LLMs
+https://tribunus.dev/tessera
 
 Tribunus — the company
 https://tribunus.dev/company
 
-Tribunus on GitHub
-https://github.com/Tribunus-dev
-
-Introducing Tribunus: The Control Plane for Agentic Engineering
-https://tribunus.dev/blog
+What I am looking for, in five shapes
+https://tribunus.dev/looking-for
 
 The founder story
-https://tribunus.dev/founder</div>
+https://tribunus.dev/founder
+
+The Tribunus Thesis — the long-form essay on the architecture
+https://docs.tribunus.dev/blog/tribunus-thesis</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -260,10 +259,11 @@ Location: San Francisco, California, United States
 Start: October 2024 · End: Present
 
 • Founded Tribunus as an independent, founder-led software company building the local-first control plane for AI agents and inference.
-• Shipped the first compiled inference engine (Tribunus Compute) with multi-backend support: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.
-• Shipped Tribunus Desktop — the AI coding agent — as an Electron app for macOS, Linux, and Windows.
-• Designed and led the local-first Cell architecture (PGlite + Valkey) and the federated control plane for cross-cell compute.
-• Released the project under AGPLv3 with commercial dual-licensing; sole maintainer and final decision authority on architecture, roadmap, and licensing.</div>
+• Currently shipping Tessera Studio — a desktop app for running LLMs locally with calibrated per-tensor quantization. macOS developer preview, Linux in CI.
+• Built Tessera, a C++ fork of llama.cpp, with calibrated per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and Apple Neural Engine prefill on M-series Macs.
+• Designed and led the local-first TesseraCell architecture (PGlite + Valkey) and the federated control plane.
+• Released under AGPLv3 with commercial dual-licensing. Sole maintainer, sole full-time person, final decision authority on architecture, roadmap, and licensing.
+• 2026 Founders, Inc. applicant. Pre-seed. Self-funded.</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -282,9 +282,9 @@ Start: October 2024 · End: Present
     <div class="copy-block" data-copy>
       <div class="copy-head">
         <div class="label">linkedin · tagline · company</div>
-        <div class="charcount" data-count>96 / 120</div>
+        <div class="charcount" data-count>89 / 120</div>
       </div>
-      <div class="copy-body"><em>The local-first control plane for agentic engineering.</em> Open source. Compile-time architecture. Receipts, not logs.</div>
+      <div class="copy-body"><em>Independent software company shipping Tessera Studio — desktop app for running LLMs locally with calibrated quantization. Open source. AGPLv3.</em></div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -303,17 +303,11 @@ Start: October 2024 · End: Present
     <div class="copy-block" data-copy>
       <div class="copy-head">
         <div class="label">linkedin · about · company</div>
-        <div class="charcount" data-count>~1,810 / 2,000</div>
+        <div class="charcount" data-count>~1,720 / 2,000</div>
       </div>
-      <div class="copy-body"><em>Tribunus</em> is an independent, founder-led software company building the open-source control plane for running AI agents and inference on your own hardware. Founded in October 2024 by Julian Torres in San Francisco, California.
+      <div class="copy-body"><em>Tribunus</em> is an independent, founder-led software company. We build the open-source control plane for running AI agents and inference on your own hardware. Founded in October 2024 by Julian Torres in San Francisco, California.
 
-We treat inference, agent execution, and durable state as one problem with one canonical representation. The plan is the receipt. The receipt is the audit trail. The audit trail is the trust model.
-
-Four products, one compiled stack:
-• <em>Tribunus Desktop</em> — the AI coding agent. Local, project-aware, multi-agent, capability-scoped plugins.
-• <em>Tribunus Compute</em> — the portable inference engine. Compile-time candidate generation, 6-check backend admission, numerical oracle. Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.
-• <em>Tribunus Cell</em> — the local-first durable authority. PGlite for state, Valkey for ephemeral coordination, capability-scoped tool runtime, receipted mutations.
-• <em>Tribunus Federation</em> — federated inference across cells. Capability discovery, peer routing, mutual-aid compute fabric.
+The product we ship in 2026 is <em>Tessera Studio</em> — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side (Tessera) is a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned receipts, runtime agreement with the offline reference down to F16. Native speculative decoding (DFlash / DSpark). Apple Neural Engine prefill on M-series Macs.
 
 We are four things, all the time:
 1. Compile-time, not runtime — decisions are frozen before execution.
@@ -321,9 +315,9 @@ We are four things, all the time:
 3. Authority, not ambient access — every plugin and tool gets explicit capability grants.
 4. Receipts, not logs — every mutation is cryptographically bound.
 
-Tribunus is released under the GNU Affero General Public License v3 (AGPL-3.0) with commercial dual-licensing available for parties who require proprietary use.
+Tribunus is released under the GNU Affero General Public License v3 (AGPL-3.0) with commercial dual-licensing available for parties who require proprietary use. The earlier "Tribunus Desktop / Compute / Cell / Federation" branding is folded into the Tessera fork; the brand is one company, the product is one product.
 
-Founded by Julian Torres. Sole maintainer. Self-funded. Independent.</div>
+Founded by Julian Torres. Sole maintainer. Self-funded. 2026 Founders, Inc. applicant.</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -342,13 +336,13 @@ Founded by Julian Torres. Sole maintainer. Self-funded. Independent.</div>
     <div class="kv-list">
       <div class="kv-row"><div class="k">Company name</div><div class="v"><strong>Tribunus</strong></div></div>
       <div class="kv-row"><div class="k">Public company URL</div><div class="v"><strong>tribunus.dev</strong> (LinkedIn will let you claim this)</div></div>
-      <div class="kv-row"><div class="k">Tagline</div><div class="v">The local-first control plane for agentic engineering.</div></div>
+      <div class="kv-row"><div class="k">Tagline</div><div class="v">Independent software company shipping Tessera Studio — desktop app for running LLMs locally with calibrated quantization.</div></div>
       <div class="kv-row"><div class="k">Industry</div><div class="v"><strong>Software Development</strong> (or: Computer Software · Open Source)</div></div>
       <div class="kv-row"><div class="k">Company size</div><div class="v"><strong>2–10 employees</strong> (founder + small contributor network; adjust as you grow)</div></div>
       <div class="kv-row"><div class="k">Headquarters</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
       <div class="kv-row"><div class="k">Founded</div><div class="v"><strong>October 2024</strong></div></div>
       <div class="kv-row"><div class="k">Company type</div><div class="v"><strong>Privately held · Self-funded · Independent</strong></div></div>
-      <div class="kv-row"><div class="k">Specialties <em style="color:var(--dim)">(up to 20)</em></div><div class="v">AI Infrastructure · Inference Engine · Local-First Software · Agent Runtime · Compile-Time Architecture · Capability-Based Security · Open Source · AGPLv3 · PGlite · DuckDB · MLX · Core ML · Multi-Backend · Developer Tools · Edge AI · Federated Computing · Compiler Design · Distributed Systems</div></div>
+      <div class="kv-row"><div class="k">Specialties <em style="color:var(--dim)">(up to 20)</em></div><div class="v">AI Infrastructure · Local-First Software · LLM Inference · Quantization · Tessera · Tessera Studio · llama.cpp Fork · Apple Silicon · Core ML · ANE Prefill · Spec Decoding · DFlash · DSpark · AGPLv3 · Open Source · Compile-Time Architecture · Capability-Based Security · Receipts · Developer Tools · Edge AI</div></div>
       <div class="kv-row"><div class="k">Website</div><div class="v"><strong>https://tribunus.dev</strong></div></div>
       <div class="kv-row"><div class="k">Location</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
     </div>
@@ -360,32 +354,27 @@ Founded by Julian Torres. Sole maintainer. Self-funded. Independent.</div>
   <div class="wrap">
     <div class="sec-head">company page · first post</div>
     <h2 class="sec-title">First LinkedIn post (3,000 char max)</h2>
-    <p class="sec-sub">The first post on the Tribunus company page should be a positioning statement — not a launch announcement. This one explains the company in two paragraphs and points at the canonical essay.</p>
+    <p class="sec-sub">The first post on the Tribunus company page should be a positioning statement — not a launch announcement. This one names the product, names the ask, and points at the canonical pages.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
         <div class="label">linkedin · first post · company</div>
-        <div class="charcount" data-count>~1,540 / 3,000</div>
+        <div class="charcount" data-count>~1,500 / 3,000</div>
       </div>
-      <div class="copy-body">Introducing Tribunus.
+      <div class="copy-body">Tribunus is one founder, one product, one bet.
 
-We build the open-source control plane for running AI agents and inference on your own hardware. Local-first, compile-time-architected, capability-scoped, and receipted. Founded October 2024. AGPLv3.
+The product is Tessera Studio — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side is Tessera, a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned receipts, runtime agreement with the offline reference down to F16.
 
-Most AI infrastructure is improvised at runtime — the model is loaded, kernels are picked, memory is allocated, all under time pressure, with no plan beyond "make it run." When something goes wrong, the system can't tell you what it did. When you want to scale, you discover that every decision was made in a different place for a different reason.
+I am looking for five things in 2026, named on the site:
+→ Mac & Linux beta users
+→ Co-engineers (Swift / SwiftUI / C++ / quantization / UX)
+→ Quantization researchers (T640 / DFlash / DSpark)
+→ Advisors who have shipped a Mac desktop product or a fork of llama.cpp
+→ Investors & Founders, Inc. (I am a 2026 applicant with Tribunus)
 
-Tribunus is built on the opposite premise: compile the entire stack from one canonical representation. The plan is the receipt. The receipt is the audit trail. The audit trail is the trust model.
+The company is pre-seed and self-funded. I am the only full-time person. The first full-time hire will come after a pre-seed close. I do not raise on hype; I raise on evidence. The receipts are the pitch.
 
-We are four products, one compiled stack:
-→ Tribunus Desktop — the AI coding agent (Electron, macOS / Linux / Windows)
-→ Tribunus Compute — the portable inference engine (multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN)
-→ Tribunus Cell — the local-first durable authority (PGlite + Valkey)
-→ Tribunus Federation — the fabric when you need to scale out
-
-We're founder-led (Julian Torres, sole maintainer), self-funded, and independent. No outside capital. AGPLv3 with commercial dual-licensing for parties who need it.
-
-The full architectural essay — the references, the constraints, the design — is on our blog: https://docs.tribunus.dev/blog/tribunus-thesis
-
-If you're working on inference, agent runtimes, or the trust model for AI in production, we'd love to talk.
+If one of the five shapes is you, the email is on the site.
 
 — Tribunus</div>
       <div class="copy-actions">
@@ -402,27 +391,22 @@ If you're working on inference, agent runtimes, or the trust model for AI in pro
     &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, CA
   </div>
   <div class="mid">
+    <a href="//tribunus.dev/company">Company</a>
+    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/looking-for">Looking for</a>
+    &nbsp;&middot;&nbsp;
     <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
     &nbsp;&middot;&nbsp;
     <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    &nbsp;&middot;&nbsp;
-    <a href="//tribunus.dev/company">Company</a>
   </div>
-  <div class="right tagline">Built with compile-time honesty.</div>
+  <div class="right">
+    <span class="license">AGPL-3.0</span>
+    <span class="tagline">Built with compile-time honesty.</span>
+  </div>
 </footer>
 
 <script>
 (function(){
-  // Live char-count for blocks that declare one
-  document.querySelectorAll('.copy-block').forEach(function(block){
-    var body = block.querySelector('.copy-body');
-    var counter = block.querySelector('[data-count]');
-    if (!body || !counter) return;
-    var raw = body.textContent;
-    if (raw.trim().indexOf('~') === 0) return; // already a soft estimate
-  });
-
-  // Copy buttons
   document.querySelectorAll('[data-copy]').forEach(function(block){
     var btn = block.querySelector('[data-copy-btn]');
     var status = block.querySelector('[data-copy-status]');

@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tribunus · The company</title>
-<meta name="description" content="Tribunus is an independent, founder-led software company building the local-first control plane for agentic engineering. Founded October 2024 by Julian Torres in San Francisco.">
+<meta name="description" content="Tribunus is an independent, founder-led software company founded in October 2024 by Julian Torres in San Francisco. Currently shipping Tessera Studio for Mac and Linux. AGPLv3 with commercial dual-licensing.">
 <meta name="theme-color" content="#0a0a0a">
 <meta property="og:title" content="Tribunus · The company">
-<meta property="og:description" content="An independent, founder-led software company building the local-first control plane for agentic engineering.">
+<meta property="og:description" content="Independent, founder-led software company. Founded October 2024 by Julian Torres. Shipping Tessera Studio. AGPLv3.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tribunus.dev/company">
 <link rel="canonical" href="https://tribunus.dev/company">
@@ -15,78 +15,62 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* ── reset ── */
+/* ── shared shell ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:#0a0a0a;color:#d0d0d0;
-  font-family:'Inter','system-ui','-apple-system',sans-serif;
-  font-weight:400;line-height:1.65;
-  -webkit-font-smoothing:antialiased
-}
-
-/* ── palette ── */
+body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
 :root{
   --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
   --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
-  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;
-  --rule:#1a1a1a;
+  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;--rule:#1a1a1a;
 }
-
-/* ── typography ── */
 h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
 h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
 h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
 h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
+h4{font-size:1.02rem;color:#fff;letter-spacing:-.01em}
 code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
-
 a{color:var(--green);text-decoration:none;transition:color .15s}
 a:hover{color:var(--green-dim)}
 .link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
 .link-arrow::after{content:'\2192';transition:transform .15s}
 .link-arrow:hover::after{transform:translateX(3px)}
 
-/* ── layout ── */
-.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
 section{padding:80px 0}
 section.tight{padding:48px 0}
 
-/* ── nav (shared) ── */
 nav{
   position:sticky;top:0;left:0;right:0;z-index:100;
-  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
+  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 max(24px,calc(50vw - 600px));height:56px
 }
 .nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
 .nav-brand:hover{color:#fff}
-.nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{
-  padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;
-  color:var(--dim);transition:color .15s,background .15s
-}
+.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
 .nav-links a:hover{color:var(--green);background:var(--green-bg)}
 .nav-links a.active{color:#fff}
 
+.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
+.sec-title{font-size:1.6rem;margin-bottom:18px}
+.sec-body{color:#bbb;font-size:1.02rem;line-height:1.75}
+.sec-body p+p{margin-top:16px}
+
 /* ── hero ── */
-.hero{padding:120px 0 64px;text-align:left;border-bottom:1px solid var(--rule)}
-.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
-.hero h1{margin-bottom:24px}
-.hero .lede{font-size:1.15rem;color:var(--dim);max-width:60ch;line-height:1.6}
+.hero{padding:120px 0 64px;border-bottom:1px solid var(--rule);text-align:left}
+.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hero h1{margin-bottom:24px;max-width:18ch}
+.hero h1 .accent{color:var(--green)}
+.hero .lede{font-size:1.1rem;color:var(--dim);max-width:60ch;line-height:1.6;margin-bottom:24px}
 .hero .meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:18px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim-2)}
 .hero .meta span{display:inline-flex;align-items:center;gap:6px}
 .hero .meta span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
 
-/* ── sections ── */
-.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
-.sec-title{font-size:1.6rem;margin-bottom:24px}
-.sec-body{color:#bbb;font-size:1.02rem;line-height:1.75}
-.sec-body p+p{margin-top:16px}
-
-/* ── pillars (4-up) ── */
+/* ── four pillars ── */
 .pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid var(--rule);border-radius:10px;overflow:hidden}
 @media(max-width:680px){.pillars{grid-template-columns:1fr}}
 .pillar{padding:28px 28px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card-bg)}
@@ -94,67 +78,67 @@ nav{
 .pillar:nth-last-child(-n+2){border-bottom:none}
 @media(max-width:680px){.pillar{border-right:none;border-bottom:1px solid var(--rule)}.pillar:last-child{border-bottom:none}}
 .pillar .num{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--green);letter-spacing:.08em;margin-bottom:12px}
-.pillar h3{font-size:1.05rem;margin-bottom:10px}
+.pillar h4{font-size:1.05rem;margin-bottom:10px}
 .pillar p{color:#a8a8a8;font-size:.9rem;line-height:1.6}
 
-/* ── product table ── */
-.products{margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
-.product-row{display:grid;grid-template-columns:160px 1fr 100px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--rule);transition:background .15s}
-.product-row:last-child{border-bottom:none}
-.product-row:hover{background:var(--card-hover)}
-.product-row .name{font-weight:700;color:#fff;font-size:1rem;display:flex;align-items:center;gap:10px}
-.product-row .name .badge{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--green-bg);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:2px 8px}
-.product-row .desc{color:#aaa;font-size:.92rem;padding-right:24px}
-.product-row .lvl{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--dim);text-align:right;text-transform:uppercase;letter-spacing:.05em}
-@media(max-width:680px){.product-row{grid-template-columns:1fr;gap:6px}.product-row .lvl{text-align:left}}
+/* ── "currently shipping" card ── */
+.shipping-card{margin-top:32px;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);display:grid;grid-template-columns:1fr 200px;gap:32px;align-items:center}
+@media(max-width:680px){.shipping-card{grid-template-columns:1fr;gap:18px}}
+.shipping-card h3{font-size:1.3rem;margin-bottom:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.shipping-card .badge{font-family:'JetBrains Mono',monospace;font-size:.7rem;background:rgba(255,176,0,.08);color:#ffb000;border:1px solid rgba(255,176,0,.3);border-radius:4px;padding:2px 8px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.shipping-card p{color:#bbb;font-size:.95rem;line-height:1.6;margin-bottom:8px}
+.shipping-card .right{padding-left:24px;border-left:1px solid var(--rule);text-align:right}
+@media(max-width:680px){.shipping-card .right{padding-left:0;border-left:none;border-top:1px solid var(--rule);padding-top:18px;text-align:left}}
+.shipping-card .right .label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.shipping-card .right a{font-size:.95rem;font-weight:600}
 
-/* ── founder card (shared across pages) ── */
+/* ── founder card ── */
 .founder-card{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);align-items:center;margin-top:40px}
 .founder-card .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--green),#008f24);color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;letter-spacing:-.02em}
 .founder-card .name{font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:2px}
 .founder-card .role{color:var(--dim);font-size:.88rem;margin-bottom:10px}
-.founder-card .links{display:flex;gap:14px;font-size:.85rem}
+.founder-card .links{display:flex;gap:14px;font-size:.85rem;flex-wrap:wrap}
 
 /* ── license box ── */
 .license-box{margin-top:32px;padding:24px 28px;border:1px solid var(--border);border-radius:10px;background:var(--green-bg)}
-.license-box .head{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;margin-bottom:8px}
+.license-box .head{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;margin-bottom:8px;flex-wrap:wrap}
 .license-box .head .pill{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:600;background:rgba(0,255,65,.12);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:2px 8px;letter-spacing:.04em}
 .license-box p{color:#bbb;font-size:.92rem;line-height:1.7}
 .license-box a{font-weight:600}
 
 /* ── contact strip ── */
 .contact-strip{margin-top:48px;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
-.contact-strip .text{color:#bbb;font-size:.95rem}
+.contact-strip .text{color:#bbb;font-size:.95rem;line-height:1.6}
 .contact-strip .text strong{color:#fff}
 .contact-strip .emails{display:flex;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:.85rem}
 
-/* ── footer (shared) ── */
 footer{
   border-top:1px solid var(--rule);
   padding:48px max(24px,calc(50vw - 600px));
   display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
-  gap:16px;font-size:.85rem;color:var(--dim)
+  gap:20px;font-size:.85rem;color:var(--dim)
 }
 footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
 footer a{color:var(--dim)}
 footer a:hover{color:var(--green)}
 footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+footer .left{font-size:.82rem;color:var(--dim-2)}
+footer .left a{color:var(--dim);font-weight:500}
+footer .mid a{font-size:.85rem}
+footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim-2);letter-spacing:.05em}
 </style>
 </head>
 <body>
 
-<!-- ═══ nav ═══ -->
 <nav>
   <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
   <ul class="nav-links">
-    <li><a href="//tribunus.dev">Home</a></li>
     <li><a href="//tribunus.dev/company" class="active">Company</a></li>
     <li><a href="//tribunus.dev/founder">Founder</a></li>
-    <li><a href="//tribunus.dev/linkedin">LinkedIn</a></li>
-    <li><a href="//compute.tribunus.dev">Compute</a></li>
-    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
-    <li><a href="//docs.tribunus.dev">Docs</a></li>
-    <li><a href="//tribunus.dev/blog">Blog</a></li>
+    <li><a href="//tribunus.dev/looking-for">Looking for</a></li>
+    <li><a href="//tribunus.dev/tessera">Tessera</a></li>
+    <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
 </nav>
 
@@ -162,12 +146,13 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">// the company</div>
-    <h1>The local-first control plane for agentic engineering.</h1>
-    <p class="lede">Tribunus is an independent, founder-led software company. We build the open-source stack that lets engineers run AI agents and inference on their own hardware — with explicit authority, compile-time guarantees, and receipts instead of logs.</p>
+    <h1>An independent software company. <span class="accent">One founder</span>, one product, one bet.</h1>
+    <p class="lede">Tribunus is an independent, founder-led software company. We are not a platform, a marketplace, or a wrapper. We build one product well and we let the receipts speak for it.</p>
     <div class="meta">
       <span>Founded October 2024</span>
       <span>San Francisco, California</span>
       <span>Open source · AGPLv3</span>
+      <span>2026 Founders Inc. applicant</span>
     </div>
   </div>
 </header>
@@ -185,63 +170,52 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
   </div>
 </section>
 
-<!-- ═══ pillars ═══ -->
+<!-- ═══ currently shipping ═══ -->
 <section class="tight">
   <div class="wrap">
-    <div class="sec-head">four pillars</div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="num">01</div>
-        <h3>Compile-time, not runtime</h3>
-        <p>Decisions are frozen before execution. The plan is the receipt. We do not improvise correctness under load.</p>
+    <div class="sec-head">// currently shipping</div>
+    <h2 class="sec-title">The product in flight.</h2>
+    <p class="sec-body" style="margin-bottom:8px"><em style="color:#fff;font-style:normal">Tessera Studio</em> — the only product Tribunus is shipping in 2026. A desktop app for running large language models locally with calibrated, audited quantization. macOS today, Linux in progress.</p>
+    <p class="sec-body" style="margin-bottom:8px;color:var(--dim);font-size:.92rem">Earlier "Tribunus Desktop / Compute / Cell / Federation" branding is folded into the Tessera fork. The brand is one company, the product is one product.</p>
+
+    <div class="shipping-card">
+      <div>
+        <h3>Tessera Studio <span class="badge">developer preview · macOS</span></h3>
+        <p>Swift desktop app on top of a C++ fork of llama.cpp (calibrated per-tensor quantization, native spec-decoding, ANE prefill). The product website and downloads live on the Tessera subdomain.</p>
+        <a href="//tribunus.dev/tessera" class="link-arrow">Tessera on tribunus.dev</a>
       </div>
-      <div class="pillar">
-        <div class="num">02</div>
-        <h3>Local-first, federated when needed</h3>
-        <p>Your hardware, your data, your model. Federation is the escape valve — never the default, always available.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">03</div>
-        <h3>Authority, not ambient access</h3>
-        <p>Every plugin, tool, and agent receives explicit capability grants. Nothing has ambient authority over your state.</p>
-      </div>
-      <div class="pillar">
-        <div class="num">04</div>
-        <h3>Receipts, not logs</h3>
-        <p>Every mutation is cryptographically bound. Logs are what you write when nothing happened; receipts are what happened.</p>
+      <div class="right">
+        <div class="label">// the destination</div>
+        <a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer" class="link-arrow">tessera.tribunus.dev</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ products ═══ -->
+<!-- ═══ four pillars ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">product family</div>
-    <h2 class="sec-title">Four products, one compiled stack.</h2>
-    <div class="sec-body" style="margin-bottom:8px">
-      <p>Each product is a layer in the same control plane. They are designed to be deployed together, but each is independently useful.</p>
-    </div>
-    <div class="products">
-      <div class="product-row">
-        <div class="name">Tribunus Desktop <span class="badge">agent</span></div>
-        <div class="desc">The AI coding agent. Runs locally. Project-aware sessions, capability-scoped plugins, multi-agent orchestration. Electron app for macOS, Linux, Windows.</div>
-        <div class="lvl">developer preview</div>
+    <div class="sec-head">four pillars</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h4>Compile-time, not runtime</h4>
+        <p>Decisions are frozen before execution. The plan is the receipt. We do not improvise correctness under load.</p>
       </div>
-      <div class="product-row">
-        <div class="name">Tribunus Compute <span class="badge">engine</span></div>
-        <div class="desc">The portable inference engine. Compile-time candidate generation, 6-check backend admission, numerical oracle. Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.</div>
-        <div class="lvl">in CI</div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h4>Local-first, federated when needed</h4>
+        <p>Your hardware, your data, your model. Federation is the escape valve — never the default, always available.</p>
       </div>
-      <div class="product-row">
-        <div class="name">Tribunus Cell <span class="badge">runtime</span></div>
-        <div class="desc">The local-first durable authority. PGlite for durable state, Valkey for ephemeral coordination, capability-scoped tool runtime, receipted mutations.</div>
-        <div class="lvl">in CI</div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h4>Authority, not ambient access</h4>
+        <p>Every plugin, tool, and agent receives explicit capability grants. Nothing has ambient authority over your state.</p>
       </div>
-      <div class="product-row">
-        <div class="name">Tribunus Federation <span class="badge">fabric</span></div>
-        <div class="desc">Federated inference across cells. Capability discovery, peer routing, distributed control plane, mutual-aid compute fabric. Designed to scale out without losing compile-time guarantees.</div>
-        <div class="lvl">designed</div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h4>Receipts, not logs</h4>
+        <p>Every mutation is cryptographically bound. Logs are what you write when nothing happened; receipts are what happened.</p>
       </div>
     </div>
   </div>
@@ -250,14 +224,15 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
 <!-- ═══ founder callout ═══ -->
 <section class="tight">
   <div class="wrap">
-    <div class="sec-head">founded by</div>
+    <div class="sec-head">// founded by</div>
     <div class="founder-card">
       <div class="avatar">JT</div>
       <div>
         <div class="name">Julian Torres</div>
         <div class="role">Founder &amp; sole maintainer · San Francisco, California</div>
         <div class="links">
-          <a href="//tribunus.dev/founder">Read the founder story</a>
+          <a href="//tribunus.dev/founder">Founder story</a>
+          <a href="//tribunus.dev/looking-for">What I'm looking for</a>
           <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
@@ -308,13 +283,18 @@ footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;
     &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, CA
   </div>
   <div class="mid">
+    <a href="//tribunus.dev/founder">Founder</a>
+    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/looking-for">Looking for</a>
+    &nbsp;&middot;&nbsp;
     <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
     &nbsp;&middot;&nbsp;
     <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    &nbsp;&middot;&nbsp;
-    <a href="//tribunus.dev/linkedin">Company</a>
   </div>
-  <div class="right tagline">Built with compile-time honesty.</div>
+  <div class="right">
+    <span class="license">AGPL-3.0</span>
+    <span class="tagline">Built with compile-time honesty.</span>
+  </div>
 </footer>
 
 </body>

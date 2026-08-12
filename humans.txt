@@ -5,7 +5,9 @@ LinkedIn: https://www.linkedin.com/in/juliantorr-es
 Email: hello@tribunus.dev
 
 /* THANKS */
-Built on the work of the opencode contributors (SST Inc., MIT) and the broader open-source inference, agent, and compiler communities. Original attribution preserved in NOTICE.md.
+Built on the work of the opencode contributors (SST Inc., MIT) and the broader open-source inference, quantization, and compiler communities. Original attribution preserved in NOTICE.md.
+
+The Tessera product page (https://tessera.tribunus.dev) and the Prism Engine observatory (https://prism-engine.tribunus.dev) are sister projects under the Tribunus identity.
 
 /* SITE */
 Last update: 2026/08/11

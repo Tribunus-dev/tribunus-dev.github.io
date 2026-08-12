@@ -2,7 +2,7 @@
 # See https://tribunus.dev/.well-known/security.txt
 
 Contact: mailto:security@tribunus.dev
-Contact: https://github.com/Tribunus-dev/Tribunus/security/advisories/new
+Contact: https://github.com/Tribunus-dev/tessera/security/advisories/new
 Expires: 2027-12-31T23:59:59Z
 Preferred-Languages: en
 Canonical: https://tribunus.dev/.well-known/security.txt
@@ -13,4 +13,4 @@ Canonical: https://tribunus.dev/.well-known/security.txt
 # security researchers are credited in release notes.
 Encryption: PGP available on request to security@tribunus.dev.
 
-Acknowledgments: https://github.com/Tribunus-dev/Tribunus/blob/main/SECURITY.md
+Acknowledgments: https://github.com/Tribunus-dev/tessera/blob/main/SECURITY.md
