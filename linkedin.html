@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribunus · LinkedIn presence</title>
+<meta name="description" content="Canonical copy for the Tribunus LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — ready to paste into LinkedIn.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Tribunus · LinkedIn presence">
+<meta property="og:description" content="Canonical copy for the Tribunus LinkedIn presence — personal profile and company page.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tribunus.dev/linkedin">
+<link rel="canonical" href="https://tribunus.dev/linkedin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── shared shell ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
+  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
+  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;--rule:#1a1a1a;
+  --copy-bg:#0a0a0a;--copy-fg:#e6e6e6;
+}
+h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
+h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
+h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
+code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
+a{color:var(--green);text-decoration:none;transition:color .15s}
+a:hover{color:var(--green-dim)}
+.link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
+.link-arrow::after{content:'\2192';transition:transform .15s}
+.link-arrow:hover::after{transform:translateX(3px)}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+section.tight{padding:48px 0}
+
+nav{
+  position:sticky;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(24px,calc(50vw - 600px));height:56px
+}
+.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
+.nav-brand:hover{color:#fff}
+.nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
+.nav-links a:hover{color:var(--green);background:var(--green-bg)}
+.nav-links a.active{color:#fff}
+
+.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
+.sec-title{font-size:1.6rem;margin-bottom:12px}
+.sec-sub{color:var(--dim);font-size:.98rem;max-width:60ch;margin-bottom:32px;line-height:1.65}
+
+/* ── copy blocks ── */
+.copy-block{margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+.copy-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--rule);background:#0a0a0a}
+.copy-head .label{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.copy-head .label .tag{background:var(--green-bg);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:1px 8px;font-size:.7rem}
+.copy-head .charcount{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2)}
+.copy-body{padding:24px 28px;color:var(--copy-fg);font-size:.96rem;line-height:1.7;white-space:pre-wrap;word-wrap:break-word}
+.copy-body em{color:#fff;font-style:normal;font-weight:600}
+.copy-body code{background:rgba(0,255,65,.06);color:var(--green);padding:2px 6px;border-radius:3px;font-size:.88em}
+.copy-actions{display:flex;justify-content:flex-end;gap:10px;padding:12px 20px;border-top:1px solid var(--rule);background:#0a0a0a}
+.copy-btn{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:transparent;color:var(--green);border:1px solid var(--border);border-radius:4px;padding:6px 12px;cursor:pointer;transition:all .15s}
+.copy-btn:hover{background:var(--green-bg)}
+.copy-btn.copied{background:rgba(0,255,65,.12);color:#fff;border-color:var(--green)}
+.copy-note{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2)}
+
+/* ── fields list (key-value) ── */
+.kv-list{margin-top:24px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+.kv-row{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:14px 20px;border-bottom:1px solid var(--rule);align-items:start}
+.kv-row:last-child{border-bottom:none}
+.kv-row .k{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+.kv-row .v{color:#bbb;font-size:.92rem;line-height:1.55}
+.kv-row .v strong{color:#fff}
+@media(max-width:560px){.kv-row{grid-template-columns:1fr;gap:4px}}
+
+/* ── profile sections ── */
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+@media(max-width:760px){.profile-grid{grid-template-columns:1fr}}
+.profile-card{border:1px solid var(--rule);border-radius:10px;background:var(--card-bg);padding:24px 28px}
+.profile-card .who{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.profile-card .name{color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:4px}
+.profile-card .role{color:var(--dim);font-size:.92rem;margin-bottom:18px}
+.profile-card .handle{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--green)}
+
+/* ── nav: about this page ── */
+.intent{margin-top:32px;padding:20px 24px;border-left:3px solid var(--green);background:var(--card-bg);border-radius:0 8px 8px 0;color:#bbb;font-size:.92rem;line-height:1.65}
+.intent strong{color:#fff}
+
+footer{
+  border-top:1px solid var(--rule);
+  padding:48px max(24px,calc(50vw - 600px));
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:16px;font-size:.85rem;color:var(--dim)
+}
+footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--green)}
+footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ═══ nav ═══ -->
+<nav>
+  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <ul class="nav-links">
+    <li><a href="//tribunus.dev">Home</a></li>
+    <li><a href="//tribunus.dev/company">Company</a></li>
+    <li><a href="//tribunus.dev/founder">Founder</a></li>
+    <li><a href="//tribunus.dev/linkedin" class="active">LinkedIn</a></li>
+    <li><a href="//compute.tribunus.dev">Compute</a></li>
+    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
+    <li><a href="//docs.tribunus.dev">Docs</a></li>
+    <li><a href="//tribunus.dev/blog">Blog</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ hero ═══ -->
+<header class="wrap" style="padding-top:96px;padding-bottom:32px">
+  <div class="sec-head">linkedin presence</div>
+  <h1>Copy-paste canonical copy for LinkedIn.</h1>
+  <p class="sec-sub" style="margin-top:18px;font-size:1.1rem;max-width:60ch">This page is the source of truth for Tribunus's LinkedIn presence. It contains the personal profile copy (Julian Torres, founder) and the company page copy (Tribunus) — written to fit LinkedIn's format and character limits, ready to paste.</p>
+  <div class="intent">
+    <strong>How to use this page.</strong> Each block is annotated with the LinkedIn field it targets. Click <em>Copy</em> on any block to copy its content. Update the canonical copy here whenever the company story changes; mirror it to LinkedIn on the same change.
+  </div>
+</header>
+
+<!-- ═══ profile targets ═══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">linkedin targets</div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="who">// personal</div>
+        <div class="name">Julian Torres</div>
+        <div class="role">Founder, Tribunus</div>
+        <div class="handle">linkedin.com/in/juliantorr-es</div>
+      </div>
+      <div class="profile-card">
+        <div class="who">// company</div>
+        <div class="name">Tribunus</div>
+        <div class="role">The local-first control plane for agentic engineering</div>
+        <div class="handle">linkedin.com/company/tribunus-dev <em style="color:var(--dim);font-style:normal">(to be created)</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ personal — headline ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">personal profile · headline</div>
+    <h2 class="sec-title">LinkedIn headline (220 char max)</h2>
+    <p class="sec-sub">The 220-character line under your name. Most-searched, most-shown. Front-load the role and the company.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · headline · personal</div>
+        <div class="charcount" data-count>185 / 220</div>
+      </div>
+      <div class="copy-body">Founder of <em>Tribunus</em> · the local-first control plane for agentic engineering · building <em>Tribunus Desktop</em> + <em>Tribunus Compute</em> · open source (AGPLv3) · San Francisco</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ personal — about ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">personal profile · about</div>
+    <h2 class="sec-title">LinkedIn About section (2,600 char max)</h2>
+    <p class="sec-sub">First three lines are visible before the "see more" cut. Lead with the most important sentence.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · about · personal</div>
+        <div class="charcount" data-count>~1,540 / 2,600</div>
+      </div>
+      <div class="copy-body">I founded <em>Tribunus</em> in October 2024 in San Francisco to build the local-first control plane for agentic engineering — the open-source stack that lets engineers run AI agents and inference on their own hardware, with explicit authority, compile-time guarantees, and receipts instead of logs.
+
+Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. That background shows up in our design language — minimal, monochrome, terminal-honest — and in the care we take with documentation, schema versioning, and the look of every receipt the system produces.
+
+Tribunus is four products, one compiled stack: <em>Desktop</em> (the agent), <em>Compute</em> (the inference engine), <em>Cell</em> (the local-first durable authority), and <em>Federation</em> (the fabric when you need to scale out). Everything we ship is open source under AGPLv3, with commercial dual-licensing available.
+
+The architecture is not invented from scratch. It draws on Yann LeCun's hierarchical planner, the PagedAttention paper (SOSP 2023), the MLIR progressive-lowering compiler architecture (CGO 2021), Mark Miller's capability-based security, and the local-first software movement. We've published a long-form essay on the intellectual lineage — link in featured.
+
+I work with a small, explicit network of contributors and am currently the only full-time person on the project. The company is self-funded, independent, and has not raised outside capital.
+
+If you're working on inference, agent runtimes, or the trust model for AI in production — happy to talk.</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ personal — featured ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">personal profile · featured links</div>
+    <h2 class="sec-title">Featured link titles (use as-is)</h2>
+    <p class="sec-sub">LinkedIn lets you pin 5 featured items. Use these titles when pinning the canonical Tribunus links.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · featured · personal</div>
+        <div class="charcount" data-count>1 block</div>
+      </div>
+      <div class="copy-body">The Tribunus Thesis — the long-form essay on the architecture
+https://docs.tribunus.dev/blog/tribunus-thesis
+
+Tribunus — the company
+https://tribunus.dev/company
+
+Tribunus on GitHub
+https://github.com/Tribunus-dev
+
+Introducing Tribunus: The Control Plane for Agentic Engineering
+https://tribunus.dev/blog
+
+The founder story
+https://tribunus.dev/founder</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ personal — experience entry ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">personal profile · experience</div>
+    <h2 class="sec-title">Experience entry: Tribunus (Oct 2024 — Present)</h2>
+    <p class="sec-sub">Use as the experience card body. Keep the bullets tight; LinkedIn renders them as a tappable list.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · experience · tribunus</div>
+        <div class="charcount" data-count>1 block</div>
+      </div>
+      <div class="copy-body">Title: Founder
+Company: Tribunus
+Location: San Francisco, California, United States
+Start: October 2024 · End: Present
+
+• Founded Tribunus as an independent, founder-led software company building the local-first control plane for AI agents and inference.
+• Shipped the first compiled inference engine (Tribunus Compute) with multi-backend support: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.
+• Shipped Tribunus Desktop — the AI coding agent — as an Electron app for macOS, Linux, and Windows.
+• Designed and led the local-first Cell architecture (PGlite + Valkey) and the federated control plane for cross-cell compute.
+• Released the project under AGPLv3 with commercial dual-licensing; sole maintainer and final decision authority on architecture, roadmap, and licensing.</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ company — tagline ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">company page · tagline</div>
+    <h2 class="sec-title">Company tagline (120 char max)</h2>
+    <p class="sec-sub">LinkedIn renders the tagline as the company's "headline" on the company page. Front-load the verb.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · tagline · company</div>
+        <div class="charcount" data-count>96 / 120</div>
+      </div>
+      <div class="copy-body"><em>The local-first control plane for agentic engineering.</em> Open source. Compile-time architecture. Receipts, not logs.</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ company — about ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">company page · about</div>
+    <h2 class="sec-title">LinkedIn About section (2,000 char max)</h2>
+    <p class="sec-sub">The company-page About. Lead with the one-line pitch, then a paragraph of substance.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · about · company</div>
+        <div class="charcount" data-count>~1,810 / 2,000</div>
+      </div>
+      <div class="copy-body"><em>Tribunus</em> is an independent, founder-led software company building the open-source control plane for running AI agents and inference on your own hardware. Founded in October 2024 by Julian Torres in San Francisco, California.
+
+We treat inference, agent execution, and durable state as one problem with one canonical representation. The plan is the receipt. The receipt is the audit trail. The audit trail is the trust model.
+
+Four products, one compiled stack:
+• <em>Tribunus Desktop</em> — the AI coding agent. Local, project-aware, multi-agent, capability-scoped plugins.
+• <em>Tribunus Compute</em> — the portable inference engine. Compile-time candidate generation, 6-check backend admission, numerical oracle. Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.
+• <em>Tribunus Cell</em> — the local-first durable authority. PGlite for state, Valkey for ephemeral coordination, capability-scoped tool runtime, receipted mutations.
+• <em>Tribunus Federation</em> — federated inference across cells. Capability discovery, peer routing, mutual-aid compute fabric.
+
+We are four things, all the time:
+1. Compile-time, not runtime — decisions are frozen before execution.
+2. Local-first, federated when needed — your hardware, your data, your model.
+3. Authority, not ambient access — every plugin and tool gets explicit capability grants.
+4. Receipts, not logs — every mutation is cryptographically bound.
+
+Tribunus is released under the GNU Affero General Public License v3 (AGPL-3.0) with commercial dual-licensing available for parties who require proprietary use.
+
+Founded by Julian Torres. Sole maintainer. Self-funded. Independent.</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ company — fields ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">company page · fields</div>
+    <h2 class="sec-title">LinkedIn company-page field values</h2>
+    <p class="sec-sub">Use these values in the LinkedIn company-page settings. LinkedIn gives you fixed-form fields — here is the canonical content for each.</p>
+
+    <div class="kv-list">
+      <div class="kv-row"><div class="k">Company name</div><div class="v"><strong>Tribunus</strong></div></div>
+      <div class="kv-row"><div class="k">Public company URL</div><div class="v"><strong>tribunus.dev</strong> (LinkedIn will let you claim this)</div></div>
+      <div class="kv-row"><div class="k">Tagline</div><div class="v">The local-first control plane for agentic engineering.</div></div>
+      <div class="kv-row"><div class="k">Industry</div><div class="v"><strong>Software Development</strong> (or: Computer Software · Open Source)</div></div>
+      <div class="kv-row"><div class="k">Company size</div><div class="v"><strong>2–10 employees</strong> (founder + small contributor network; adjust as you grow)</div></div>
+      <div class="kv-row"><div class="k">Headquarters</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
+      <div class="kv-row"><div class="k">Founded</div><div class="v"><strong>October 2024</strong></div></div>
+      <div class="kv-row"><div class="k">Company type</div><div class="v"><strong>Privately held · Self-funded · Independent</strong></div></div>
+      <div class="kv-row"><div class="k">Specialties <em style="color:var(--dim)">(up to 20)</em></div><div class="v">AI Infrastructure · Inference Engine · Local-First Software · Agent Runtime · Compile-Time Architecture · Capability-Based Security · Open Source · AGPLv3 · PGlite · DuckDB · MLX · Core ML · Multi-Backend · Developer Tools · Edge AI · Federated Computing · Compiler Design · Distributed Systems</div></div>
+      <div class="kv-row"><div class="k">Website</div><div class="v"><strong>https://tribunus.dev</strong></div></div>
+      <div class="kv-row"><div class="k">Location</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ company — first post ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">company page · first post</div>
+    <h2 class="sec-title">First LinkedIn post (3,000 char max)</h2>
+    <p class="sec-sub">The first post on the Tribunus company page should be a positioning statement — not a launch announcement. This one explains the company in two paragraphs and points at the canonical essay.</p>
+
+    <div class="copy-block" data-copy>
+      <div class="copy-head">
+        <div class="label">linkedin · first post · company</div>
+        <div class="charcount" data-count>~1,540 / 3,000</div>
+      </div>
+      <div class="copy-body">Introducing Tribunus.
+
+We build the open-source control plane for running AI agents and inference on your own hardware. Local-first, compile-time-architected, capability-scoped, and receipted. Founded October 2024. AGPLv3.
+
+Most AI infrastructure is improvised at runtime — the model is loaded, kernels are picked, memory is allocated, all under time pressure, with no plan beyond "make it run." When something goes wrong, the system can't tell you what it did. When you want to scale, you discover that every decision was made in a different place for a different reason.
+
+Tribunus is built on the opposite premise: compile the entire stack from one canonical representation. The plan is the receipt. The receipt is the audit trail. The audit trail is the trust model.
+
+We are four products, one compiled stack:
+→ Tribunus Desktop — the AI coding agent (Electron, macOS / Linux / Windows)
+→ Tribunus Compute — the portable inference engine (multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN)
+→ Tribunus Cell — the local-first durable authority (PGlite + Valkey)
+→ Tribunus Federation — the fabric when you need to scale out
+
+We're founder-led (Julian Torres, sole maintainer), self-funded, and independent. No outside capital. AGPLv3 with commercial dual-licensing for parties who need it.
+
+The full architectural essay — the references, the constraints, the design — is on our blog: https://docs.tribunus.dev/blog/tribunus-thesis
+
+If you're working on inference, agent runtimes, or the trust model for AI in production, we'd love to talk.
+
+— Tribunus</div>
+      <div class="copy-actions">
+        <button class="copy-btn" data-copy-btn>Copy</button>
+      </div>
+      <div class="copy-note" data-copy-status></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ footer ═══ -->
+<footer>
+  <div class="left">
+    &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, CA
+  </div>
+  <div class="mid">
+    <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/company">Company</a>
+  </div>
+  <div class="right tagline">Built with compile-time honesty.</div>
+</footer>
+
+<script>
+(function(){
+  // Live char-count for blocks that declare one
+  document.querySelectorAll('.copy-block').forEach(function(block){
+    var body = block.querySelector('.copy-body');
+    var counter = block.querySelector('[data-count]');
+    if (!body || !counter) return;
+    var raw = body.textContent;
+    if (raw.trim().indexOf('~') === 0) return; // already a soft estimate
+  });
+
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(block){
+    var btn = block.querySelector('[data-copy-btn]');
+    var status = block.querySelector('[data-copy-status]');
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      var body = block.querySelector('.copy-body');
+      if (!body) return;
+      var text = body.textContent;
+      var done = function(){
+        btn.classList.add('copied');
+        btn.textContent = 'Copied';
+        if (status) status.textContent = 'Copied to clipboard.';
+        setTimeout(function(){
+          btn.classList.remove('copied');
+          btn.textContent = 'Copy';
+          if (status) status.textContent = '';
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(fallback);
+      } else {
+        fallback();
+      }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); }
+        catch (e) { if (status) status.textContent = 'Copy failed — select and copy manually.'; }
+        finally { document.body.removeChild(ta); }
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

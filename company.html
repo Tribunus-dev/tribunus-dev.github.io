@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribunus · The company</title>
+<meta name="description" content="Tribunus is an independent, founder-led software company building the local-first control plane for agentic engineering. Founded October 2024 by Julian Torres in San Francisco.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="Tribunus · The company">
+<meta property="og:description" content="An independent, founder-led software company building the local-first control plane for agentic engineering.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tribunus.dev/company">
+<link rel="canonical" href="https://tribunus.dev/company">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ── reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#0a0a0a;color:#d0d0d0;
+  font-family:'Inter','system-ui','-apple-system',sans-serif;
+  font-weight:400;line-height:1.65;
+  -webkit-font-smoothing:antialiased
+}
+
+/* ── palette ── */
+:root{
+  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
+  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
+  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;
+  --rule:#1a1a1a;
+}
+
+/* ── typography ── */
+h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
+h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
+h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
+code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
+
+a{color:var(--green);text-decoration:none;transition:color .15s}
+a:hover{color:var(--green-dim)}
+.link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
+.link-arrow::after{content:'\2192';transition:transform .15s}
+.link-arrow:hover::after{transform:translateX(3px)}
+
+/* ── layout ── */
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+section.tight{padding:48px 0}
+
+/* ── nav (shared) ── */
+nav{
+  position:sticky;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(24px,calc(50vw - 600px));height:56px
+}
+.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
+.nav-brand:hover{color:#fff}
+.nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;
+  color:var(--dim);transition:color .15s,background .15s
+}
+.nav-links a:hover{color:var(--green);background:var(--green-bg)}
+.nav-links a.active{color:#fff}
+
+/* ── hero ── */
+.hero{padding:120px 0 64px;text-align:left;border-bottom:1px solid var(--rule)}
+.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+.hero h1{margin-bottom:24px}
+.hero .lede{font-size:1.15rem;color:var(--dim);max-width:60ch;line-height:1.6}
+.hero .meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:18px;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--dim-2)}
+.hero .meta span{display:inline-flex;align-items:center;gap:6px}
+.hero .meta span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
+
+/* ── sections ── */
+.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
+.sec-title{font-size:1.6rem;margin-bottom:24px}
+.sec-body{color:#bbb;font-size:1.02rem;line-height:1.75}
+.sec-body p+p{margin-top:16px}
+
+/* ── pillars (4-up) ── */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:40px;border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+@media(max-width:680px){.pillars{grid-template-columns:1fr}}
+.pillar{padding:28px 28px 32px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card-bg)}
+.pillar:nth-child(2n){border-right:none}
+.pillar:nth-last-child(-n+2){border-bottom:none}
+@media(max-width:680px){.pillar{border-right:none;border-bottom:1px solid var(--rule)}.pillar:last-child{border-bottom:none}}
+.pillar .num{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--green);letter-spacing:.08em;margin-bottom:12px}
+.pillar h3{font-size:1.05rem;margin-bottom:10px}
+.pillar p{color:#a8a8a8;font-size:.9rem;line-height:1.6}
+
+/* ── product table ── */
+.products{margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+.product-row{display:grid;grid-template-columns:160px 1fr 100px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--rule);transition:background .15s}
+.product-row:last-child{border-bottom:none}
+.product-row:hover{background:var(--card-hover)}
+.product-row .name{font-weight:700;color:#fff;font-size:1rem;display:flex;align-items:center;gap:10px}
+.product-row .name .badge{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;background:var(--green-bg);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:2px 8px}
+.product-row .desc{color:#aaa;font-size:.92rem;padding-right:24px}
+.product-row .lvl{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--dim);text-align:right;text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:680px){.product-row{grid-template-columns:1fr;gap:6px}.product-row .lvl{text-align:left}}
+
+/* ── founder card (shared across pages) ── */
+.founder-card{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:24px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);align-items:center;margin-top:40px}
+.founder-card .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--green),#008f24);color:#0a0a0a;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;letter-spacing:-.02em}
+.founder-card .name{font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:2px}
+.founder-card .role{color:var(--dim);font-size:.88rem;margin-bottom:10px}
+.founder-card .links{display:flex;gap:14px;font-size:.85rem}
+
+/* ── license box ── */
+.license-box{margin-top:32px;padding:24px 28px;border:1px solid var(--border);border-radius:10px;background:var(--green-bg)}
+.license-box .head{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;margin-bottom:8px}
+.license-box .head .pill{font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:600;background:rgba(0,255,65,.12);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:2px 8px;letter-spacing:.04em}
+.license-box p{color:#bbb;font-size:.92rem;line-height:1.7}
+.license-box a{font-weight:600}
+
+/* ── contact strip ── */
+.contact-strip{margin-top:48px;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.contact-strip .text{color:#bbb;font-size:.95rem}
+.contact-strip .text strong{color:#fff}
+.contact-strip .emails{display:flex;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:.85rem}
+
+/* ── footer (shared) ── */
+footer{
+  border-top:1px solid var(--rule);
+  padding:48px max(24px,calc(50vw - 600px));
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:16px;font-size:.85rem;color:var(--dim)
+}
+footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
+footer a{color:var(--dim)}
+footer a:hover{color:var(--green)}
+footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ═══ nav ═══ -->
+<nav>
+  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <ul class="nav-links">
+    <li><a href="//tribunus.dev">Home</a></li>
+    <li><a href="//tribunus.dev/company" class="active">Company</a></li>
+    <li><a href="//tribunus.dev/founder">Founder</a></li>
+    <li><a href="//tribunus.dev/linkedin">LinkedIn</a></li>
+    <li><a href="//compute.tribunus.dev">Compute</a></li>
+    <li><a href="//desktop.tribunus.dev">Desktop</a></li>
+    <li><a href="//docs.tribunus.dev">Docs</a></li>
+    <li><a href="//tribunus.dev/blog">Blog</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ hero ═══ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">// the company</div>
+    <h1>The local-first control plane for agentic engineering.</h1>
+    <p class="lede">Tribunus is an independent, founder-led software company. We build the open-source stack that lets engineers run AI agents and inference on their own hardware — with explicit authority, compile-time guarantees, and receipts instead of logs.</p>
+    <div class="meta">
+      <span>Founded October 2024</span>
+      <span>San Francisco, California</span>
+      <span>Open source · AGPLv3</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ mission ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">mission</div>
+    <h2 class="sec-title">Make AI infrastructure <em style="color:var(--green);font-style:normal">deterministic</em> at the seams where it matters most.</h2>
+    <div class="sec-body">
+      <p>Most AI infrastructure is improvised at runtime. The model is loaded, kernels are picked, and memory is allocated — all under time pressure, with no plan beyond "make it run." When something goes wrong, the system cannot tell you what it actually did. When you want to scale, you discover that every decision was made in a different place for a different reason.</p>
+      <p>Tribunus exists to <strong>compile</strong> that layer. We treat inference, agent execution, and durable state as one problem with one canonical representation. The plan is the receipt. The receipt is the audit trail. The audit trail is the trust model.</p>
+      <p>We build for engineers who want to know what their agents did, not what they were told they did.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ pillars ═══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">four pillars</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>Compile-time, not runtime</h3>
+        <p>Decisions are frozen before execution. The plan is the receipt. We do not improvise correctness under load.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>Local-first, federated when needed</h3>
+        <p>Your hardware, your data, your model. Federation is the escape valve — never the default, always available.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>Authority, not ambient access</h3>
+        <p>Every plugin, tool, and agent receives explicit capability grants. Nothing has ambient authority over your state.</p>
+      </div>
+      <div class="pillar">
+        <div class="num">04</div>
+        <h3>Receipts, not logs</h3>
+        <p>Every mutation is cryptographically bound. Logs are what you write when nothing happened; receipts are what happened.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ products ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">product family</div>
+    <h2 class="sec-title">Four products, one compiled stack.</h2>
+    <div class="sec-body" style="margin-bottom:8px">
+      <p>Each product is a layer in the same control plane. They are designed to be deployed together, but each is independently useful.</p>
+    </div>
+    <div class="products">
+      <div class="product-row">
+        <div class="name">Tribunus Desktop <span class="badge">agent</span></div>
+        <div class="desc">The AI coding agent. Runs locally. Project-aware sessions, capability-scoped plugins, multi-agent orchestration. Electron app for macOS, Linux, Windows.</div>
+        <div class="lvl">developer preview</div>
+      </div>
+      <div class="product-row">
+        <div class="name">Tribunus Compute <span class="badge">engine</span></div>
+        <div class="desc">The portable inference engine. Compile-time candidate generation, 6-check backend admission, numerical oracle. Multi-backend: CUDA, Metal, Vulkan, ROCm, oneDNN, Level Zero, TT-NN.</div>
+        <div class="lvl">in CI</div>
+      </div>
+      <div class="product-row">
+        <div class="name">Tribunus Cell <span class="badge">runtime</span></div>
+        <div class="desc">The local-first durable authority. PGlite for durable state, Valkey for ephemeral coordination, capability-scoped tool runtime, receipted mutations.</div>
+        <div class="lvl">in CI</div>
+      </div>
+      <div class="product-row">
+        <div class="name">Tribunus Federation <span class="badge">fabric</span></div>
+        <div class="desc">Federated inference across cells. Capability discovery, peer routing, distributed control plane, mutual-aid compute fabric. Designed to scale out without losing compile-time guarantees.</div>
+        <div class="lvl">designed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ founder callout ═══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">founded by</div>
+    <div class="founder-card">
+      <div class="avatar">JT</div>
+      <div>
+        <div class="name">Julian Torres</div>
+        <div class="role">Founder &amp; sole maintainer · San Francisco, California</div>
+        <div class="links">
+          <a href="//tribunus.dev/founder">Read the founder story</a>
+          <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ license ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">license &amp; governance</div>
+    <h2 class="sec-title">AGPLv3 with commercial dual-licensing.</h2>
+    <div class="sec-body">
+      <p>Tribunus is released under the <strong>GNU Affero General Public License v3</strong>. We want the work to remain open, including the network-server clause. Commercial dual-licensing is available for parties who require proprietary use — reach out to <a href="mailto:enterprise@tribunus.dev">enterprise@tribunus.dev</a>.</p>
+      <p>Governance is intentionally light. Tribunus has a single core maintainer — Julian Torres — who holds final decision authority on architecture, roadmap, contribution acceptance, and licensing. This model will be revisited as the project matures. See <a href="https://github.com/Tribunus-dev/Tribunus/blob/main/GOVERNANCE.md" target="_blank" rel="noopener noreferrer">GOVERNANCE.md</a> for the full document.</p>
+    </div>
+    <div class="license-box">
+      <div class="head">
+        <span class="pill">AGPL-3.0</span>
+        Open source. Network use triggers source disclosure. Commercial licenses available.
+      </div>
+      <p>Tribunus began as a derivative of <a href="https://github.com/sst/opencode" target="_blank" rel="noopener noreferrer">opencode</a> by SST Inc. The original MIT notice is preserved in <a href="https://github.com/Tribunus-dev/Tribunus/blob/main/NOTICE.md" target="_blank" rel="noopener noreferrer">NOTICE.md</a>. All Tribunus-specific work is Copyright &copy; 2024&ndash;2026 Julian Torres.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ contact strip ═══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="contact-strip">
+      <div class="text">
+        <strong>Get in touch.</strong><br>
+        For technical briefings, press, partnerships, or commercial licensing.
+      </div>
+      <div class="emails">
+        <a href="mailto:hello@tribunus.dev">hello@tribunus.dev</a>
+        <a href="mailto:enterprise@tribunus.dev">enterprise@tribunus.dev</a>
+        <a href="mailto:security@tribunus.dev">security@tribunus.dev</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ footer ═══ -->
+<footer>
+  <div class="left">
+    &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, CA
+  </div>
+  <div class="mid">
+    <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/linkedin">Company</a>
+  </div>
+  <div class="right tagline">Built with compile-time honesty.</div>
+</footer>
+
+</body>
+</html>
