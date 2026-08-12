@@ -85,32 +85,32 @@
 <section>
   <div class="wrap">
     <div class="sec-head">What I've shipped</div>
-    <h2 class="sec-title">Code in public, state stated plainly.</h2>
+    <h2 class="sec-title">I build in public.</h2>
     <p class="sec-sub">The work is on GitHub. Each item says what it is and where it stands.</p>
 
     <div class="grid-2">
       <div class="cell">
         <div class="num">01 · the engine</div>
         <h4>Tessera</h4>
-        <p>A C++ fork of llama.cpp that takes calibration seriously: per-tensor evolutionary calibration (T640), native speculative decoding (DFlash / DSpark), and Apple Neural Engine prefill via Core ML on M-series Macs. The runtime's outputs are replayable to the reference.</p>
+        <p>A C++ fork of llama.cpp, tuned so models run fast and use less memory: per-tensor calibration (T640), speculative decoding (DFlash / DSpark), and Apple Neural Engine prefill on M-series Macs. Outputs match the reference model, run for run.</p>
         <p style="margin-top:10px"><a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer" class="link">github.com/Tribunus-dev/tessera</a> · <a href="//tribunus.dev/tessera" class="link">brief</a></p>
       </div>
       <div class="cell">
         <div class="num">02 · the app</div>
         <h4>Tessera Studio</h4>
-        <p>The Swift desktop app that ships Tessera to users: a real agent loop with capability-scoped tools, manifest-based skills (<span class="mono">SKILL.md</span>), and a local-first file system. The macOS design is driven by a full Human Interface Guidelines study.</p>
+        <p>The desktop app that puts Tessera to work: an agent loop, manifest-based skills (<span class="mono">SKILL.md</span>), and files that stay on your computer. macOS first; Linux in progress.</p>
         <p style="margin-top:10px"><a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer" class="link">tessera.tribunus.dev</a> · <a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer" class="link">source</a></p>
       </div>
       <div class="cell">
         <div class="num">03 · the substrate</div>
         <h4>Calibration &amp; telemetry tooling</h4>
-        <p>The Python quantizer and schema-versioned telemetry that feed drafter training: per-tensor genetic search, MAP-Elites regime routing, AWQ and outlier policy, and per-step spec-decoding records (<span class="mono">llama.tessera.spec.v1</span>).</p>
+        <p>The Python tooling behind the calibration: per-tensor search, AWQ and outlier handling, and per-step spec-decoding records (<span class="mono">llama.tessera.spec.v1</span>).</p>
         <p style="margin-top:10px"><a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer" class="link">tessera/tools</a></p>
       </div>
       <div class="cell">
         <div class="num">04 · the research</div>
         <h4>Prism Engine</h4>
-        <p>An inspectable heterogeneous AI deployment system in Rust — constitutional ECS, one canonical reality, immutable evidence, rebuildable projections. Open research surface; not in Tessera's shipping path.</p>
+        <p>An experimental AI systems project in Rust — open research, not part of Tessera's shipping path.</p>
         <p style="margin-top:10px"><a href="https://github.com/Tribunus-dev/prism-engine" target="_blank" rel="noopener noreferrer" class="link">github.com/Tribunus-dev/prism-engine</a> · <a href="https://prism-engine.tribunus.dev" target="_blank" rel="noopener noreferrer" class="link">observatory</a></p>
       </div>
     </div>
@@ -129,33 +129,33 @@
 <section>
   <div class="wrap">
     <div class="sec-head">How I work</div>
-    <h2 class="sec-title">Six rules I actually run on.</h2>
-    <p class="sec-sub">Not aspirations — the operating system. They apply to the codebase, the company, and this website.</p>
+    <h2 class="sec-title">How I work.</h2>
+    <p class="sec-sub">These apply to the code, the company, and this site.</p>
 
     <div class="principles">
       <div class="principle">
-        <h4><span class="arrow">→</span> Research first.</h4>
-        <p>Deep-research passes and long design docs before code. The plan is downstream of the evidence, always — when they disagree, the research wins.</p>
+        <h4><span class="arrow">→</span> Think before you build.</h4>
+        <p>I research and design before writing code. When the plan and the evidence disagree, the evidence wins.</p>
       </div>
       <div class="principle">
         <h4><span class="arrow">→</span> The real build is the gate.</h4>
-        <p>Commits land at a SHA where the actual build is green — not a script that claims to be one. The ratchet only moves forward.</p>
+        <p>Code lands only when the actual build passes — not a script that claims it does. Progress only moves forward.</p>
       </div>
       <div class="principle">
-        <h4><span class="arrow">→</span> Records, not vibes.</h4>
-        <p>Runs keep replayable records — what loaded, what quantized, what executed. If it can't be replayed, it doesn't count.</p>
+        <h4><span class="arrow">→</span> Write things down.</h4>
+        <p>Every run keeps a log — what loaded, what ran, what happened. If we can't check it, it doesn't count.</p>
       </div>
       <div class="principle">
         <h4><span class="arrow">→</span> Replace, don't coexist.</h4>
-        <p>No <span class="mono">v1</span>/<span class="mono">v2</span>/<span class="mono">v3</span> copies in the same tree. Refactor in place; the version is a release tag, not a label on the code.</p>
+        <p>No <span class="mono">v1</span>/<span class="mono">v2</span>/<span class="mono">v3</span> copies of the same code. Refactor in place — a version is a release tag, not a label.</p>
       </div>
       <div class="principle">
-        <h4><span class="arrow">→</span> Local-first, no lock-in.</h4>
-        <p>Self-hosted open source first. External accounts, keys, and APIs are design risks to engineer out — never inherited by default.</p>
+        <h4><span class="arrow">→</span> Open source, self-hosted first.</h4>
+        <p>External accounts, keys, and APIs are risks we design out — not defaults we inherit.</p>
       </div>
       <div class="principle">
-        <h4><span class="arrow">→</span> AI helps, humans own.</h4>
-        <p>I use agents heavily — but every line ships under my name, and I can explain all of it. The agent drafts; the architect owns.</p>
+        <h4><span class="arrow">→</span> You stay in charge.</h4>
+        <p>I use AI tools heavily, but I review everything that ships and can explain all of it. The tool drafts; I own what goes out.</p>
       </div>
     </div>
   </div>
@@ -167,9 +167,9 @@
     <div class="sec-head">Background</div>
     <h2 class="sec-title">How I got here.</h2>
 
-    <p>I founded <strong>Tribunus</strong> in October 2024 in San Francisco, with one conviction: the inference and agent stack should be <em>compiled, not improvised</em> — planned, recorded, and replayable, rather than assembled at runtime. The company is the operational expression of that view, and Tessera Studio is its first product.</p>
+    <p>I founded <strong>Tribunus</strong> in October 2024 in San Francisco with one conviction: AI should run on your own computer — fast, private, and useful — and work with you, not against you. That's what Tribunus is built around, and Tessera Studio is its first product.</p>
 
-    <p>Before Tribunus I worked as a software engineer in the Bay Area, and before that as a freelance photographer and designer. That background shows up in the work — the care taken with typography, documentation, and the shape of every screen in Tessera Studio. It's the same discipline, applied to different surfaces.</p>
+    <p>Before Tribunus I worked as a software engineer in the Bay Area, and before that as a freelance photographer and designer. That background shows up in the product — the care taken with design, documentation, and the feel of every screen in Tessera Studio.</p>
 
     <p>I am currently building one product — <strong>Tessera Studio</strong> — as the sole maintainer of both the Swift app and the C++ engine underneath it. I am the only full-time person, and I intend to keep it that way until the product earns a team.</p>
 
@@ -189,17 +189,17 @@
       <div class="item">
         <div class="when">October 2024</div>
         <h4>Tribunus is founded</h4>
-        <p>Julian Torres founds Tribunus in San Francisco as an independent, founder-led software company. The thesis: the inference and agent stack should be compiled together, not assembled at runtime.</p>
+        <p>Julian Torres founds Tribunus in San Francisco as an independent, founder-led software company. The idea: AI should run locally, privately, and work with you — not against you.</p>
       </div>
       <div class="item">
         <div class="when">2025</div>
         <h4>The Tessera fork of llama.cpp takes over</h4>
-        <p>The C++ side is named Tessera. Per-tensor evolutionary calibration (T640), DFlash / DSpark drafters, and Apple Neural Engine prefill land against the new infrastructure.</p>
+        <p>The C++ side is named Tessera. Per-tensor calibration (T640), DFlash / DSpark drafters, and Apple Neural Engine prefill land.</p>
       </div>
       <div class="item">
         <div class="when">2026 · H1</div>
         <h4>The Tessera Studio pivot</h4>
-        <p>The desktop product is renamed Tessera Studio. The Swift app and the C++ fork ship from a single repo. Earlier branding is folded into the fork; the brand is one company, the product is one product.</p>
+        <p>The desktop product is renamed Tessera Studio. The Swift app and the C++ fork ship from a single repo — one company, one product.</p>
       </div>
       <div class="item">
         <div class="when">2026 · Now</div>

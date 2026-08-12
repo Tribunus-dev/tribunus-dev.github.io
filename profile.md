@@ -105,13 +105,13 @@ The five concrete collaboration shapes are on the looking-for page:
 2. Co-engineers (Swift / SwiftUI / C++ / quantization / UX)
 3. Quantization researchers (T640 / DFlash / DSpark)
 4. Advisors who have shipped a Mac desktop product or a fork of llama.cpp
-5. Investors — raising a pre-seed (evidence-led, self-funded)
+5. Investors — raising a pre-seed (self-funded, shipping)
 
 ---
 
 ## Timeline
 
-- **2024 — October.** Tribunus is founded in San Francisco. The thesis: the inference + agent stack must be compiled together, not assembled at runtime.
+- **2024 — October.** Tribunus is founded in San Francisco. The idea: AI should run locally, privately, and work with you — not against you.
 - **2024 — Q4.** First cut: a desktop agent with local inference. Tribunus begins as a derivative of opencode (SST Inc., MIT) and quickly diverges.
 - **2025.** The Tessera fork of llama.cpp takes over. The C++ side is named Tessera; per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and ANE prefill via Core ML all land against the new infrastructure.
 - **2026 — H1.** The Tessera Studio pivot. The desktop product is renamed Tessera Studio. The Swift app and the C++ fork ship from a single repo.

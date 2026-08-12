@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tessera Studio — Tribunus</title>
-<meta name="description" content="Tessera Studio is the only product Tribunus is shipping in 2026. A desktop app for running LLMs locally with calibrated per-tensor quantization, native speculative decoding, and ANE prefill on M-series Macs. macOS today, Linux in progress.">
+<meta name="description" content="Tessera Studio is a desktop app for running large language models on your own computer — fast, private, and on your terms. macOS today, Linux in progress.">
 <meta name="theme-color" content="#0b0b0d">
 <meta property="og:title" content="Tessera Studio — Tribunus">
-<meta property="og:description" content="A desktop app for running LLMs locally with calibrated per-tensor quantization, native speculative decoding, and ANE prefill. macOS today, Linux in progress.">
+<meta property="og:description" content="A desktop app for running large language models on your own computer — fast, private, and on your terms. macOS today, Linux in progress.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tribunus.dev/tessera">
 <meta name="twitter:card" content="summary_large_image">
@@ -37,7 +37,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span>Tessera Studio &middot; the product</div>
     <h1>Tessera Studio.</h1>
-    <p class="lede">A desktop app for running large language models locally with calibrated, audited quantization. macOS today. Linux in progress. The only product Tribunus is shipping in 2026.</p>
+    <p class="lede">A desktop app for running large language models on your own computer — fast, private, and on your terms. macOS today. Linux in progress.</p>
     <div class="btns">
       <a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open tessera.tribunus.dev</a>
       <a href="https://github.com/Tribunus-dev/tessera" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Source on GitHub</a>
@@ -76,10 +76,10 @@
 <section>
   <div class="wrap">
     <div class="sec-head">What it is</div>
-    <h2 class="sec-title">Calibrated quantization. Local inference. A record you can check.</h2>
+    <h2 class="sec-title">Runs large models on your own computer.</h2>
     <div class="sec-body">
-      <p>Tessera Studio is a Swift desktop app for running large language models on your own machine. It is built on <strong>Tessera</strong> — a fork of llama.cpp that takes calibration seriously. Per-tensor quantization policies are evolved by a small genetic algorithm; the policies are schema-versioned; the runtime agrees with the offline reference down to F16.</p>
-      <p>The app gives that stack a real surface: a Swift app core, a manifest-based skills system, an agent loop that survives a restart, and a local-first file system. The C++ side handles the inference; the Swift side handles the workflow. Both sides keep a record of what ran.</p>
+      <p>Tessera Studio is a Swift desktop app for running large language models on your own machine. It's built on <strong>Tessera</strong> — a fork of llama.cpp with per-tensor calibration: each tensor gets quantization settings tuned to keep output accurate while using less memory.</p>
+      <p>The app handles the workflow: an agent loop, manifest-based skills, and files that stay on your computer. The C++ side handles the inference. Both sides keep a log you can open and check.</p>
     </div>
   </div>
 </section>
@@ -94,11 +94,11 @@
     <div class="features">
       <div class="feature">
         <h4>Per-tensor calibration <span class="badge">T640</span></h4>
-        <p>Small genetic algorithm per tensor over (threshold, outlier fraction, AWQ alpha, AWQ clip). Fitness is round-trip error against the BF16 source, with held-out rows. Schema-versioned policies.</p>
+        <p>Each tensor gets its own quantization settings, tuned to keep output close to the original model while using less memory.</p>
       </div>
       <div class="feature">
         <h4>Speculative decoding <span class="badge">DFlash / DSpark</span></h4>
-        <p>First-class drafters on Apple Silicon. Verifier and drafter share a tokenizer. Per-step telemetry (<span class="mono">llama.tessera.spec.v1</span>) for distillation or rejection sampling.</p>
+        <p>Native speculative decoding on Apple Silicon. The verifier and drafter share a tokenizer, with per-step telemetry for training.</p>
       </div>
       <div class="feature">
         <h4>ANE prefill <span class="badge">Apple Silicon</span></h4>
@@ -106,7 +106,7 @@
       </div>
       <div class="feature">
         <h4>Skills system <span class="badge">Swift</span></h4>
-        <p>Manifest-based skill loading (<span class="mono">SKILL.md</span> YAML). Skills are scanned, parsed, and injected into the agent's prompt on demand. First-class macOS integration: Reminders, Calendar, and more.</p>
+        <p>Manifest-based skills (<span class="mono">SKILL.md</span>). Skills load into the agent's prompt on demand, with native macOS integration — Reminders, Calendar, and more.</p>
       </div>
     </div>
   </div>
