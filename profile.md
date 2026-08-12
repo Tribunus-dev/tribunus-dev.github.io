@@ -55,6 +55,40 @@ AGPLv3 site + LICENSE-TESSERA (PolyForm Noncommercial) for the fork + Apache-2.0
 
 ---
 
+## How I work with research
+
+The Tessera stack did not start with a plan. It started with the research.
+
+I run deep-research passes that produce 50+ reference bibliographies, then write 1,000+ line design docs that map the prior art against the open problem. The research spine is the source of truth for the roadmap; the plan docs carry pointers to it, not the other way around. When the research disagrees with a plan doc, the research wins.
+
+What I look for in a paper is the *open problem* — the thing the prior art does not close. For Tessera, the open problem was that every prior search-based quantizer — HAQ, RAMP, FracBits, Q-Palette, QuantEA, EvoPress — searches over discrete bit-widths, and none of them closes the loop against the actual kernel dequant output. Tessera's novelty is not a new quantizer. It is the **composition**: evolutionary search over continuous reconstruction knobs, scored against the real kernel output, conditioned on regime descriptors. The architecture is what closes the loop.
+
+I bring the same discipline to building systems. The first version of any new system is the architecture. The Tile640 kernel exposes a debug mode that emits its actual dequantized weights so calibration is measured against the runtime, not a reference. The kernel-fidelity loop is the differentiating capability *and* the ground-truth evaluator. One pipeline, two levels: the quantizer grounded in kernel output, the capability grounded in world output (tests, builds, commits). The receipts are the only thing I will not overrule.
+
+> *"Where it disagrees with a plan doc, it wins until updated."*
+> — the standing rule for the Tessera research spine. The plan is downstream of the evidence, always.
+
+### What this looks like in practice
+
+- **A new system starts as a 1,000+ line design doc.** Six locked design docs on Tessera, each with a *prior art* section, a *locked decisions* section, and a *research source-of-truth* pointer. The architect ratifies the calls. There is no committee.
+- **A new system commits at a SHA where the build is green and the receipts are bit-identical.** The architecture gate is monotonic. The ratchet only moves forward. A green test that doesn't match the real build is a broken gate — `test_all.sh` is not a gate; `cmake --build` is.
+- **A new system does not improvise correctness under load.** Decisions are frozen before execution. The plan is the receipt. If the kernel dequant changes, the calibration thresholds re-search, and the receipt carries the new SHA.
+- **A new system does not import a new abstraction it does not need.** Match the host project's style. *Match llama.cpp production code style. No new abstraction layers, no virtual dispatch.* The codebase reads like it grew there, not like it was grafted on.
+- **A new system does not tolerate parallel implementations.** No `v1` / `v2` / `v3` as labels for coexisting code in the same tree. Refactor in place. The version is a release tag on the artifact, not a label on the code.
+- **A new system is allowed to use AI, but not to ship code I cannot explain.** *"AI-generated code is allowed. What is not allowed is shipping code you do not understand. The human owns every line, however it was produced."* The agent drafts; the architect owns.
+
+### Personality, in one box
+
+I am direct, terse, and slow to take a position — but fast to ratify one once the evidence is in. I will not ship a v1 just to ship it. I will not pitch a market-size slide to win a meeting. I am willing to overrule my own advisors, including my agents, when the research demands it. I have reversed my own recommendation more than once when the receipts disagreed.
+
+I value the **work over the framing**, the **receipt over the slide**, and the **bit-exact run over the hand-waved claim**. I am a slow reader and a fast closer. I would rather build one system that survives a careful read than three that do not. I would rather be honest about what is *in dev* than oversell what is *planned*.
+
+I keep my standards visible. Comments are concise, they carry the invariant, not the lesson. ASCII, not unicode. Don't split lines mid-sentence. Refactor in place. The repository is the documentation; the documentation is the repository.
+
+> The standing rule, in one line: receipts over claims. Receipts over framing. Receipts over pitch. The work is the only thing I will not overrule.
+
+---
+
 ## How I work — eight operating principles
 
 These are not aspirations. They are the rule set I run on.

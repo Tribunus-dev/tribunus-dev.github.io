@@ -101,6 +101,33 @@ nav{
 .profile-cell .meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim-2);letter-spacing:.04em}
 .profile-cell .meta a{color:var(--green);font-weight:500}
 
+/* ── how I work with research — narrative + practice ── */
+.research-body{color:#bbb;font-size:1.05rem;line-height:1.75;max-width:62ch}
+.research-body p{margin-bottom:18px}
+.research-body p strong{color:#fff}
+.research-body p em{color:#fff;font-style:italic}
+.research-pull{font-size:1.15rem;line-height:1.65;color:#e6e6e6;border-left:3px solid var(--green);background:var(--card-bg);padding:22px 26px;border-radius:0 10px 10px 0;margin:24px 0 28px;max-width:62ch}
+.research-pull p{margin:0}
+
+.practice-list{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
+@media(max-width:680px){.practice-list{grid-template-columns:1fr}}
+.practice{padding:24px 26px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.practice:nth-child(2n){border-right:none}
+.practice:nth-last-child(-n+2){border-bottom:none}
+@media(max-width:680px){.practice{border-right:none;border-bottom:1px solid var(--rule)}.practice:last-child{border-bottom:none}}
+.practice h4{font-size:1rem;margin-bottom:8px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;color:#fff}
+.practice h4 .arrow{color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.9rem}
+.practice p{color:#a8a8a8;font-size:.88rem;line-height:1.6}
+
+.personality{margin-top:40px;padding:24px 28px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg)}
+.personality .label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.personality .label::after{content:'';flex:1;height:1px;background:var(--rule)}
+.personality p{color:#cfcfcf;font-size:1.02rem;line-height:1.7;margin-bottom:14px}
+.personality p:last-child{margin-bottom:0}
+.personality p strong{color:#fff}
+.personality p em{color:#fff;font-style:italic}
+.personality .signature{margin-top:18px;padding-top:18px;border-top:1px dashed var(--rule);font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--green);letter-spacing:.02em}
+
 /* ── how I work — operating principles ── */
 .principles{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
 @media(max-width:680px){.principles{grid-template-columns:1fr}}
@@ -288,6 +315,66 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
         A copy-paste-ready version lives at <code class="mono">/profile.md</code>. Same content, plain text.
       </div>
       <a href="//tribunus.dev/profile.md" class="btn-mono" download="Julian-Torres-founder-profile.md">↓ profile.md</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ how I work with research ═══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">// how I work with research</div>
+    <h2 class="sec-title">The research comes first. The plan follows.</h2>
+    <p class="sec-sub">I study frontier SOTA research before I plan a system. I let the research refactor the plan, the plan refactor the code, and the code refactor the receipts. The architecture is the strategy.</p>
+
+    <div class="research-body">
+      <p>The Tessera stack did not start with a plan. It started with the research. I run deep-research passes that produce 50+ reference bibliographies, then write 1,000+ line design docs that map the prior art against the open problem. The research spine is the source of truth for the roadmap; the plan docs carry pointers to it, not the other way around. When the research disagrees with a plan doc, the research wins.</p>
+
+      <p>What I look for in a paper is the <em>open problem</em> — the thing the prior art does not close. For Tessera, the open problem was that every prior search-based quantizer — HAQ, RAMP, FracBits, Q-Palette, QuantEA, EvoPress — searches over discrete bit-widths, and none of them closes the loop against the actual kernel dequant output. Tessera's novelty is not a new quantizer. It is the <strong>composition</strong>: evolutionary search over continuous reconstruction knobs, scored against the real kernel output, conditioned on regime descriptors. The architecture is what closes the loop.</p>
+
+      <p>I bring the same discipline to building systems. The first version of any new system is the architecture. The Tile640 kernel exposes a debug mode that emits its actual dequantized weights so calibration is measured against the runtime, not a reference. The kernel-fidelity loop is the differentiating capability <em>and</em> the ground-truth evaluator. One pipeline, two levels: the quantizer grounded in kernel output, the capability grounded in world output (tests, builds, commits). The receipts are the only thing I will not overrule.</p>
+    </div>
+
+    <div class="research-pull">
+      <p><strong style="color:#fff">"Where it disagrees with a plan doc, it wins until updated."</strong> — the standing rule for the Tessera research spine. The plan is downstream of the evidence, always.</p>
+    </div>
+
+    <h3 class="sec-title" style="font-size:1.25rem;margin-top:48px;margin-bottom:20px">What this looks like in practice.</h3>
+
+    <div class="practice-list">
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system starts as a 1,000+ line design doc.</h4>
+        <p>Six locked design docs on Tessera, each with a <em>prior art</em> section, a <em>locked decisions</em> section, and a <em>research source-of-truth</em> pointer. The architect ratifies the calls. There is no committee.</p>
+      </div>
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system commits at a SHA where the build is green and the receipts are bit-identical.</h4>
+        <p>The architecture gate is monotonic. The ratchet only moves forward. A green test that doesn't match the real build is a broken gate — <code class="mono">test_all.sh</code> is not a gate; <code class="mono">cmake --build</code> is.</p>
+      </div>
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system does not improvise correctness under load.</h4>
+        <p>Decisions are frozen before execution. The plan is the receipt. If the kernel dequant changes, the calibration thresholds re-search, and the receipt carries the new SHA.</p>
+      </div>
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system does not import a new abstraction it does not need.</h4>
+        <p>Match the host project's style. <em>Match llama.cpp production code style. No new abstraction layers, no virtual dispatch.</em> The codebase reads like it grew there, not like it was grafted on.</p>
+      </div>
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system does not tolerate parallel implementations.</h4>
+        <p>No <code class="mono">v1</code> / <code class="mono">v2</code> / <code class="mono">v3</code> as labels for coexisting code in the same tree. Refactor in place. The version is a release tag on the artifact, not a label on the code.</p>
+      </div>
+      <div class="practice">
+        <h4><span class="arrow">→</span> A new system is allowed to use AI, but not to ship code I cannot explain.</h4>
+        <p><em>"AI-generated code is allowed. What is not allowed is shipping code you do not understand. The human owns every line, however it was produced."</em> The agent drafts; the architect owns.</p>
+      </div>
+    </div>
+
+    <!-- personality snapshot -->
+    <div class="personality">
+      <div class="label">// personality, in one box</div>
+      <p>I am direct, terse, and slow to take a position — but fast to ratify one once the evidence is in. I will not ship a v1 just to ship it. I will not pitch a market-size slide to win a meeting. I am willing to overrule my own advisors, including my agents, when the research demands it. I have reversed my own recommendation more than once when the receipts disagreed.</p>
+      <p>I value the <strong>work over the framing</strong>, the <strong>receipt over the slide</strong>, and the <strong>bit-exact run over the hand-waved claim</strong>. I am a slow reader and a fast closer. I would rather build one system that survives a careful read than three that do not. I would rather be honest about what is <em>in dev</em> than oversell what is <em>planned</em>.</p>
+      <p>I keep my standards visible. Comments are concise, they carry the invariant, not the lesson. ASCII, not unicode. Don't split lines mid-sentence. Refactor in place. The repository is the documentation; the documentation is the repository.</p>
+      <div class="signature">// the standing rule, in one line</div>
+      <p class="signature">Receipts over claims. Receipts over framing. Receipts over pitch. The work is the only thing I will not overrule.</p>
     </div>
   </div>
 </section>
