@@ -3,96 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>404 · Tribunus</title>
+<title>404 — Tribunus</title>
 <meta name="description" content="Page not found.">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#0b0b0d">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://tribunus.dev/404">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0d'/%3E%3Cpath d='M9 8h14v4h-5v12h-4V12H9z' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
-:root{
-  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
-  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
-  --border:rgba(0,255,65,.18);--rule:#1a1a1a;
-}
-code,.mono{font-family:'JetBrains Mono','Fira Code',monospace}
-a{color:var(--green);text-decoration:none;transition:color .15s}
-a:hover{color:var(--green-dim)}
-.wrap{max-width:680px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc(50vw - 600px));height:56px}
-.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
-.nav-brand:hover{color:#fff}
-.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim)}
-.nav-links a:hover{color:var(--green);background:var(--green-bg)}
-
-main{padding:140px 0 80px;text-align:left}
-.prompt-line{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--green);margin-bottom:32px;opacity:.8}
-.prompt-line::before{content:'$ ';color:var(--dim)}
-h1{font-size:clamp(2.5rem,8vw,5rem);color:#fff;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:24px}
-h1 .accent{color:var(--green)}
-.lede{font-size:1.1rem;color:var(--dim);max-width:50ch;margin-bottom:40px;line-height:1.6}
-.links{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
-.links a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:1px solid var(--border);border-radius:6px;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.85rem;transition:background .15s}
-.links a:hover{background:var(--green-bg)}
-.search{margin-top:32px;padding:20px 24px;border:1px solid var(--rule);border-radius:10px;background:rgba(255,255,255,.02)}
-.search p{color:#bbb;font-size:.92rem;margin-bottom:12px}
-.search code{display:inline-block;background:rgba(0,255,65,.06);color:var(--green);padding:4px 10px;border-radius:4px;font-size:.85rem;margin-right:6px}
-
-footer{border-top:1px solid var(--rule);padding:32px max(24px,calc(50vw - 600px));display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;font-size:.85rem;color:var(--dim)}
-footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
-footer a{color:var(--dim)}
-footer a:hover{color:var(--green)}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <nav>
-  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <a href="//tribunus.dev" class="nav-brand"><span class="mark">T</span>Tribunus</a>
   <ul class="nav-links">
     <li><a href="//tribunus.dev/company">Company</a></li>
     <li><a href="//tribunus.dev/founder">Founder</a></li>
-    <li><a href="//tribunus.dev/looking-for">Looking for</a></li>
     <li><a href="//tribunus.dev/tessera">Tessera</a></li>
+    <li><a href="//tribunus.dev/looking-for">Work with us</a></li>
     <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
 </nav>
 
-<main>
-  <div class="wrap">
-    <div class="prompt-line">tribunus.dev/&lt;path&gt; &mdash; 404</div>
-    <h1>Nothing <span class="accent">compiled</span> at that path.</h1>
-    <p class="lede">The page you asked for either moved, was never built, or is hosted on a different subdomain. The plan said no, so we did not improvise.</p>
-
+<main class="notfound">
+  <div class="wrap-narrow">
+    <h1>Page not found.</h1>
+    <p class="lede">The page you are looking for moved, was never published, or lives on a different subdomain.</p>
     <div class="links">
       <a href="//tribunus.dev">/home</a>
       <a href="//tribunus.dev/company">/company</a>
       <a href="//tribunus.dev/founder">/founder</a>
-      <a href="//tribunus.dev/looking-for">/looking-for</a>
       <a href="//tribunus.dev/tessera">/tessera</a>
+      <a href="//tribunus.dev/looking-for">/work-with-us</a>
       <a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer">tessera.tribunus.dev</a>
-    </div>
-
-    <div class="search">
-      <p>Looking for something specific? The most common destinations:</p>
-      <code><a href="//tribunus.dev/company">/company</a></code>
-      <code><a href="//tribunus.dev/founder">/founder</a></code>
-      <code><a href="//tribunus.dev/looking-for">/looking-for</a></code>
-      <code><a href="//tribunus.dev/tessera">/tessera</a></code>
-      <code><a href="https://tessera.tribunus.dev" target="_blank" rel="noopener noreferrer">tessera.tribunus.dev</a></code>
-      <code><a href="https://github.com/Tribunus-dev">github.com/Tribunus-dev</a></code>
     </div>
   </div>
 </main>
 
 <footer>
-  <div>&copy; 2024&ndash;2026 Tribunus &middot; San Francisco, CA</div>
-  <div class="tagline">Built with compile-time honesty.</div>
+  <div class="left">
+    &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, California
+  </div>
+  <div class="mid">
+    <a href="//tribunus.dev/company">Company</a>
+    <a href="//tribunus.dev/founder">Founder</a>
+    <a href="//tribunus.dev/tessera">Tessera</a>
+    <a href="//tribunus.dev/looking-for">Work with us</a>
+    <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <div class="right">
+    <span class="license">AGPL-3.0</span>
+    <span class="privacy">No trackers · No cookies</span>
+  </div>
 </footer>
 
 </body>

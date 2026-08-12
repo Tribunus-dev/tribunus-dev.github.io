@@ -10,7 +10,7 @@ Built on the work of the opencode contributors (SST Inc., MIT) and the broader o
 The Tessera product page (https://tessera.tribunus.dev) and the Prism Engine observatory (https://prism-engine.tribunus.dev) are sister projects under the Tribunus identity.
 
 /* SITE */
-Last update: 2026/08/11
+Last update: 2026/08/12
 Standards: HTML5, CSS3
 Components: handwritten, no frameworks, no trackers, no cookies
 License: AGPL-3.0 (code) / CC-BY-4.0 (copy on this site unless otherwise noted)

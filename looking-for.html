@@ -3,140 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tribunus · What I'm looking for</title>
-<meta name="description" content="The five concrete shapes of collaboration Julian Torres (founder of Tribunus) is looking for in 2026: beta users, co-engineers, quantization researchers, advisors, and investors.">
-<meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="Tribunus · What I'm looking for">
-<meta property="og:description" content="Five concrete shapes of collaboration for 2026 — beta users, co-engineers, researchers, advisors, investors. By Julian Torres, founder of Tribunus.">
-<meta property="og:type" content="article">
+<title>Work with Tribunus — how to collaborate</title>
+<meta name="description" content="Five concrete ways to work with Tribunus: beta users, co-engineers, quantization researchers, advisors, and investors. By Julian Torres, founder of Tribunus.">
+<meta name="theme-color" content="#0b0b0d">
+<meta property="og:title" content="Work with Tribunus — how to collaborate">
+<meta property="og:description" content="Five concrete ways to work with Tribunus in 2026 — beta users, co-engineers, researchers, advisors, investors. By Julian Torres, founder of Tribunus.">
+<meta property="og:type" content="website">
 <meta property="og:url" content="https://tribunus.dev/looking-for">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://tribunus.dev/looking-for">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0d'/%3E%3Cpath d='M9 8h14v4h-5v12h-4V12H9z' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ── shell (matches index.html) ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
-:root{
-  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
-  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
-  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;
-  --rule:#1a1a1a;--warn:#ffb000;
-}
-h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
-h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
-h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
-h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
-h4{font-size:1.02rem;color:#fff;letter-spacing:-.01em}
-code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
-a{color:var(--green);text-decoration:none;transition:color .15s}
-a:hover{color:var(--green-dim)}
-.link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
-.link-arrow::after{content:'\2192';transition:transform .15s}
-.link-arrow:hover::after{transform:translateX(3px)}
-
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-section{padding:80px 0}
-section.tight{padding:48px 0}
-
-nav{
-  position:sticky;top:0;left:0;right:0;z-index:100;
-  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 max(24px,calc(50vw - 600px));height:56px
-}
-.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
-.nav-brand:hover{color:#fff}
-.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
-.nav-links a:hover{color:var(--green);background:var(--green-bg)}
-.nav-links a.active{color:#fff}
-
-.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
-.sec-title{font-size:1.6rem;margin-bottom:18px}
-.sec-sub{color:var(--dim);font-size:.98rem;max-width:60ch;line-height:1.65;margin-bottom:32px}
-
-/* ── hero ── */
-.hero{padding:120px 0 64px;border-bottom:1px solid var(--rule);text-align:left}
-.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.hero h1{margin-bottom:24px;max-width:22ch}
-.hero h1 .accent{color:var(--green)}
-.hero .lede{font-size:1.1rem;color:var(--dim);max-width:60ch;line-height:1.65;margin-bottom:24px}
-.hero .meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:18px;font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--dim-2)}
-.hero .meta span{display:inline-flex;align-items:center;gap:6px}
-.hero .meta span::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green)}
-.hero .meta a{color:var(--dim);font-weight:500}
-.hero .meta a:hover{color:var(--green)}
-
-/* ── five shape cards (vertical, more detailed) ── */
-.shapes-vert{margin-top:32px;display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
-.shape-card{padding:32px 32px 30px;border-bottom:1px solid var(--rule)}
-.shape-card:last-child{border-bottom:none}
-.shape-card:hover{background:var(--card-hover)}
-.shape-card .top{display:grid;grid-template-columns:60px 1fr 140px;gap:24px;align-items:start;margin-bottom:16px}
-@media(max-width:680px){.shape-card .top{grid-template-columns:1fr;gap:8px}}
-.shape-card .num{font-family:'JetBrains Mono',monospace;font-size:1.4rem;color:var(--green);letter-spacing:.04em;font-weight:700}
-.shape-card .title{color:#fff}
-.shape-card .title h3{font-size:1.25rem;margin-bottom:4px;letter-spacing:-.01em}
-.shape-card .title .sub{color:var(--dim);font-size:.9rem}
-.shape-card .where{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--dim);text-align:right;letter-spacing:.04em;text-transform:uppercase;padding-top:6px}
-@media(max-width:680px){.shape-card .where{text-align:left}}
-.shape-card .body{color:#bbb;font-size:.95rem;line-height:1.7;max-width:65ch;margin-bottom:18px}
-.shape-card .body strong{color:#fff}
-.shape-card .ask{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:14px;border-top:1px dashed var(--rule);font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--dim)}
-.shape-card .ask strong{color:var(--green)}
-.shape-card .ask a{color:var(--green)}
-.shape-card .ask .arrow{color:var(--green)}
-
-/* ── not-looking-for ── */
-.not{margin-top:40px;padding:24px 28px;border:1px solid var(--rule);border-radius:10px;background:rgba(255,255,255,.02)}
-.not h3{font-size:1rem;margin-bottom:10px;color:var(--dim)}
-.not p{color:#888;font-size:.9rem;line-height:1.7}
-.not p+p{margin-top:10px}
-.not strong{color:#bbb}
-
-/* ── contact strip ── */
-.contact-strip{margin-top:48px;padding:28px 32px;border:1px solid var(--border);border-radius:10px;background:var(--card-bg);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
-.contact-strip .text{color:#bbb;font-size:.95rem;line-height:1.6}
-.contact-strip .text strong{color:#fff}
-.contact-strip .emails{display:flex;flex-wrap:wrap;gap:16px;font-family:'JetBrains Mono',monospace;font-size:.85rem}
-.contact-strip .emails a{color:var(--green)}
-
-/* ── intro intent ── */
-.intent{margin-top:24px;padding:18px 22px;border-left:3px solid var(--green);background:var(--card-bg);border-radius:0 8px 8px 0;color:#bbb;font-size:.92rem;line-height:1.65}
-.intent strong{color:#fff}
-
-/* ── footer ── */
-footer{
-  border-top:1px solid var(--rule);
-  padding:48px max(24px,calc(50vw - 600px));
-  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
-  gap:20px;font-size:.85rem;color:var(--dim)
-}
-footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
-footer a{color:var(--dim)}
-footer a:hover{color:var(--green)}
-footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-footer .left{font-size:.82rem;color:var(--dim-2)}
-footer .left a{color:var(--dim);font-weight:500}
-footer .mid a{font-size:.85rem}
-footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim-2);letter-spacing:.05em}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
-<!-- ═══ nav ═══ -->
 <nav>
-  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <a href="//tribunus.dev" class="nav-brand"><span class="mark">T</span>Tribunus</a>
   <ul class="nav-links">
     <li><a href="//tribunus.dev/company">Company</a></li>
     <li><a href="//tribunus.dev/founder">Founder</a></li>
-    <li><a href="//tribunus.dev/looking-for" class="active">Looking for</a></li>
     <li><a href="//tribunus.dev/tessera">Tessera</a></li>
+    <li><a href="//tribunus.dev/looking-for" class="active">Work with us</a></li>
     <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
@@ -145,148 +35,134 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
 <!-- ═══ hero ═══ -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">// what I am looking for, in 2026</div>
-    <h1>The collaboration surface is <span class="accent">named</span>.</h1>
-    <p class="lede">I am a founder. I am looking for the people, advisors, and capital that will let me ship one product well. There are five concrete shapes. If one of these is you, the contact is at the bottom of the page.</p>
-    <div class="meta">
-      <span>Julian Torres, founder of Tribunus</span>
-      <span><a href="//tribunus.dev/founder">founder story</a></span>
-      <span>San Francisco, California</span>
+    <div class="eyebrow"><span class="dot"></span>Work with Tribunus</div>
+    <h1>Five concrete ways to work together.</h1>
+    <p class="lede">Tribunus is shipping one product in 2026 — <strong>Tessera Studio</strong>, a desktop app for running large language models locally. If you want to help build it, use it, or back it, here are the five shapes of collaboration.</p>
+    <div class="meta-line">
+      <span>Julian Torres, founder</span><span class="sep">·</span>
+      <span>San Francisco, California</span><span class="sep">·</span>
       <span>2026</span>
-    </div>
-    <div class="intent">
-      <strong>How this page is structured.</strong> Each shape is a section. Each section names: what I want, what it looks like in practice, and what the right first email is. There is no boilerplate. If we work together, the work itself is the receipt.
     </div>
   </div>
 </header>
 
-<!-- ═══ the five shapes (vertical, detailed) ═══ -->
+<!-- ═══ the five shapes ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">the five shapes</div>
-    <h2 class="sec-title">What I am looking for, in five concrete asks.</h2>
-    <p class="sec-sub">No one needs to fit all five. Most of you reading this will be a fit for exactly one. Pick the one that is yours, and start there.</p>
+    <div class="sec-head">How to collaborate</div>
+    <h2 class="sec-title">Five shapes, one right fit for you.</h2>
+    <p class="sec-sub">No one needs to fit all five. Most people reading this page are a fit for exactly one. Each shape names what we are looking for and the right way to make first contact.</p>
 
-    <div class="shapes-vert">
+    <div class="shapes">
 
       <!-- 01 Beta users -->
-      <div class="shape-card">
+      <div class="shape">
         <div class="top">
           <div class="num">01</div>
           <div class="title">
             <h3>Beta users on macOS and Linux</h3>
             <div class="sub">Run Tessera Studio on a real model, on a real machine, with a real workload.</div>
           </div>
-          <div class="where">// shape 01</div>
         </div>
         <div class="body">
-          <p>The fastest way to help is to <strong>use the product and tell me what broke</strong>. I ship to early users first, not to marketing. macOS is the live target; Linux is in active development.</p>
-          <p>If you are willing to install a developer-preview app, run a real model (Llama, Qwen, Gemma — the calibrated-quantized ones ship first), and file <strong>honest</strong> issues on the GitHub repo, you are shape 01.</p>
+          <p>The fastest way to help is to <strong>use the product and report what breaks</strong>. We ship to early users first. macOS is the live target; Linux is in active development.</p>
+          <p>If you are willing to install a developer-preview app, run a real model — Llama, Qwen, Gemma — and file issues on the GitHub repo, you are shape 01.</p>
         </div>
         <div class="ask">
-          <span class="arrow">→</span>
           <span><strong>first email:</strong> <a href="mailto:hello@tribunus.dev?subject=Shape 01 — beta user">hello@tribunus.dev</a> with subject "Shape 01 — beta user"</span>
           <span>·</span>
-          <span><strong>what to include:</strong> your machine (Mac model / Linux distro), the model you want to run, the workload (chat, batch, eval, agent)</span>
+          <span><strong>include:</strong> your machine (Mac model / Linux distro), the model you want to run, the workload (chat, batch, eval, agent)</span>
         </div>
       </div>
 
       <!-- 02 Co-engineers -->
-      <div class="shape-card">
+      <div class="shape">
         <div class="top">
           <div class="num">02</div>
           <div class="title">
             <h3>Co-engineers</h3>
             <div class="sub">Swift / SwiftUI on the app side. C++ / quantization on the inference side. UX where it matters.</div>
           </div>
-          <div class="where">// shape 02</div>
         </div>
         <div class="body">
-          <p>Small, focused PRs. I review personally. I do not have a large team — I have a small list of people I trust to land a clean diff, and I am always looking to add one or two more.</p>
-          <p>The areas where I can use help right now: <strong>SwiftUI</strong> on the macOS app (Tessera Studio is a Swift package), <strong>C++/CMake</strong> on the Linux build of the inference side, <strong>Core ML / ANE</strong> if you have shipped a real model to Apple's Neural Engine, and <strong>UX / macOS HIG</strong> where the surface needs polish.</p>
+          <p>Small, focused PRs, reviewed personally. We do not have a large team — a small list of people trusted to land a clean diff, and we are always looking to add one or two more.</p>
+          <p>The areas where help is needed right now: <strong>SwiftUI</strong> on the macOS app, <strong>C++/CMake</strong> on the Linux build of the inference side, <strong>Core ML / ANE</strong> if you have shipped a real model to Apple's Neural Engine, and <strong>UX / macOS HIG</strong> where the surface needs polish.</p>
         </div>
         <div class="ask">
-          <span class="arrow">→</span>
           <span><strong>first email:</strong> <a href="mailto:hello@tribunus.dev?subject=Shape 02 — co-engineer">hello@tribunus.dev</a> with subject "Shape 02 — co-engineer"</span>
           <span>·</span>
-          <span><strong>what to include:</strong> a link to a PR you are proud of (anywhere), the area you want to work in, and ~5 lines on why</span>
+          <span><strong>include:</strong> a link to a PR you are proud of (anywhere), the area you want to work in, and a few lines on why</span>
         </div>
       </div>
 
       <!-- 03 Quantization researchers -->
-      <div class="shape-card">
+      <div class="shape">
         <div class="top">
           <div class="num">03</div>
           <div class="title">
             <h3>Quantization researchers</h3>
-            <div class="sub">People who have read the T640 / DFlash / DSpark papers and want to push them.</div>
+            <div class="sub">People who have read the T640 / DFlash / DSpark work and want to push it.</div>
           </div>
-          <div class="where">// shape 03</div>
         </div>
         <div class="body">
-          <p>Tessera is a fork of llama.cpp that takes <strong>calibration</strong> seriously. Per-tensor policy is evolved by a small genetic algorithm; the receipts are schema-versioned; the runtime agrees with the offline reference down to F16.</p>
-          <p>If you have a hypothesis about per-tensor quantization, mixed-precision attention, or a new drafter model — the contribution surface is the receipt. Show me a result that survives replay, and we have something to ship together.</p>
+          <p>Tessera is a fork of llama.cpp that takes <strong>calibration</strong> seriously. Per-tensor policy is evolved by a small genetic algorithm; the policies are schema-versioned; the runtime agrees with the offline reference down to F16.</p>
+          <p>If you have a hypothesis about per-tensor quantization, mixed-precision attention, or a new drafter model, the contribution surface is the record. Show a result that reproduces, and there is something to ship together.</p>
         </div>
         <div class="ask">
-          <span class="arrow">→</span>
           <span><strong>first email:</strong> <a href="mailto:hello@tribunus.dev?subject=Shape 03 — quantization research">hello@tribunus.dev</a> with subject "Shape 03 — quantization research"</span>
           <span>·</span>
-          <span><strong>what to include:</strong> a link to a paper or a writeup, and one sentence on what you would push next</span>
+          <span><strong>include:</strong> a link to a paper or a writeup, and one sentence on what you would push next</span>
         </div>
       </div>
 
       <!-- 04 Advisors -->
-      <div class="shape-card">
+      <div class="shape">
         <div class="top">
           <div class="num">04</div>
           <div class="title">
             <h3>Advisors</h3>
-            <div class="sub">People who have shipped a Mac desktop product or a fork of llama.cpp.</div>
+            <div class="sub">People who have shipped a Mac desktop product or a serious fork of llama.cpp.</div>
           </div>
-          <div class="where">// shape 04</div>
         </div>
         <div class="body">
           <p>Specifically people who have done one of three things: <strong>(a)</strong> shipped a Mac desktop product to a paying audience, <strong>(b)</strong> maintained a serious fork of llama.cpp, or <strong>(c)</strong> been a technical co-founder of a small, focused, profitable company.</p>
-          <p>I pay in equity, attention, and prompt replies. I do not need a board seat; I need an hour a week and someone who will tell me when I am wrong. The bar is <em>real shipping</em>, not credentials.</p>
+          <p>We offer equity, attention, and prompt replies. No board seat required — an hour a week, and someone who will say when something is wrong. The bar is <em>real shipping</em>, not credentials.</p>
         </div>
         <div class="ask">
-          <span class="arrow">→</span>
           <span><strong>first email:</strong> <a href="mailto:hello@tribunus.dev?subject=Shape 04 — advisor">hello@tribunus.dev</a> with subject "Shape 04 — advisor"</span>
           <span>·</span>
-          <span><strong>what to include:</strong> one product you shipped, one hard call you made, one thing you would push me on</span>
+          <span><strong>include:</strong> one product you shipped, one hard call you made, one thing you would push us on</span>
         </div>
       </div>
 
-      <!-- 05 Investors & Founders Inc. -->
-      <div class="shape-card">
+      <!-- 05 Investors -->
+      <div class="shape">
         <div class="top">
           <div class="num">05</div>
           <div class="title">
-            <h3>Investors &amp; accelerators</h3>
-            <div class="sub">Pre-seed, evidence-led. I do not raise on hype.</div>
+            <h3>Investors</h3>
+            <div class="sub">Pre-seed, self-funded, evidence-led.</div>
           </div>
-          <div class="where">// shape 05</div>
         </div>
         <div class="body">
-          <p>I am <strong>applying to startup accelerators in 2026</strong> with Tribunus. I am pre-seed and self-funded. The company has shipped artifacts (the Tessera fork and the Studio app) and has receipts (calibration, spec-decoding telemetry, an evidence trail from imatrix to GGUF).</p>
-          <p>If you back technical founders with shipped artifacts and you do not require a market-size slide to engage, the right email is below. I do not raise on hype. I raise on evidence and a plan that survives replay.</p>
+          <p>Tribunus is <strong>raising a pre-seed</strong>. The company is self-funded and shipping: Tessera Studio is a live macOS developer preview, and the engine behind it — Tessera, our C++ fork of llama.cpp — is open source, with calibrated per-tensor quantization and native speculative decoding.</p>
+          <p>If you back technical founders with shipped code, let's talk.</p>
         </div>
         <div class="ask">
-          <span class="arrow">→</span>
-          <span><strong>first email:</strong> <a href="mailto:julian@tribunus.dev?subject=Shape 05 — investor">julian@tribunus.dev</a> with subject "Shape 05 — investor"</span>
+          <span><strong>first email:</strong> <a href="mailto:julian@tribunus.dev?subject=Investor — Tribunus">julian@tribunus.dev</a> with subject "Investor — Tribunus"</span>
           <span>·</span>
-          <span><strong>what to include:</strong> your fund / program, your check size, and one technical founder you have backed</span>
+          <span><strong>include:</strong> your fund, your check size, and one technical founder you have backed</span>
         </div>
       </div>
 
     </div>
 
-    <!-- not looking for -->
-    <div class="not">
-      <h3>What I am <em style="font-style:normal;color:var(--warn)">not</em> looking for.</h3>
-      <p><strong>Pitch-deck-only conversations.</strong> If you want a deck, the receipts and the GitHub are the deck. I do not have a 12-slide narrative; I have a C++ fork, a Swift app, and a research surface.</p>
-      <p><strong>"AI wrapper" advice.</strong> Tessera Studio is a desktop app for running models locally with calibrated quantization. It is not a chat wrapper over a remote API. If that distinction does not land, we are not the right fit.</p>
-      <p><strong>Full-time hires in 2026.</strong> I am one founder. The first full-time hire will be after a pre-seed close, and the role will be on the Tessera side. I will post it publicly when the time comes — please do not cold-pitch your way in before then.</p>
+    <!-- not currently looking for -->
+    <div class="not-list">
+      <h3>Not currently looking for.</h3>
+      <p><strong>Deck-only conversations.</strong> The code and the GitHub are the source of truth; there is no 12-slide narrative.</p>
+      <p><strong>"AI wrapper" pitches.</strong> Tessera Studio runs models locally with calibrated quantization. It is not a chat wrapper over a remote API.</p>
+      <p><strong>Cold-pitch full-time hires.</strong> The first full-time hire comes after a pre-seed close and will be posted publicly.</p>
     </div>
   </div>
 </section>
@@ -296,8 +172,8 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
   <div class="wrap">
     <div class="contact-strip">
       <div class="text">
-        <strong>If one of the five shapes is you, start with the email.</strong><br>
-        I read every message. Mention which shape. The reply will be from Julian, not a form.
+        <strong>If one of the five shapes is you, start with the email.</strong>
+        <p>Every message is read. Mention the shape — the reply will be from Julian, not a form.</p>
       </div>
       <div class="emails">
         <a href="mailto:hello@tribunus.dev">hello@tribunus.dev</a>
@@ -314,18 +190,15 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
   </div>
   <div class="mid">
     <a href="//tribunus.dev/company">Company</a>
-    &nbsp;&middot;&nbsp;
     <a href="//tribunus.dev/founder">Founder</a>
-    &nbsp;&middot;&nbsp;
     <a href="//tribunus.dev/tessera">Tessera</a>
-    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/looking-for">Work with us</a>
     <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-    &nbsp;&middot;&nbsp;
     <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
   <div class="right">
     <span class="license">AGPL-3.0</span>
-    <span class="tagline">Built with compile-time honesty.</span>
+    <span class="privacy">No trackers · No cookies</span>
   </div>
 </footer>
 

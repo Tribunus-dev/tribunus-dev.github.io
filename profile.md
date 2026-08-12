@@ -11,15 +11,15 @@ Site: https://tribunus.dev/founder
 
 ## TL;DR
 
-Software engineer based in San Francisco, California. Author of Tessera (a fork of llama.cpp for calibrated per-tensor quantization) and Tessera Studio (a Swift desktop app for running LLMs locally). Founder and sole maintainer of Tribunus. Founder applying to startup accelerators in 2026. Pre-seed. Self-funded.
+Software engineer based in San Francisco, California. Author of Tessera (a fork of llama.cpp for calibrated per-tensor quantization) and Tessera Studio (a Swift desktop app for running LLMs locally). Founder and sole maintainer of Tribunus. Raising a pre-seed. Self-funded.
 
-## What I have actually shipped (the receipts)
+## What I've shipped
 
-Not pitch-deck plans. Code on GitHub. Receipts in the artifacts.
+All of it is on GitHub. The short version:
 
 ### 01 — Tessera (the engine)
 
-A fork of llama.cpp that takes calibration seriously. Per-tensor evolutionary calibration (T640) with a small genetic algorithm, AWQ pre-scaling, schema-versioned receipts, runtime agreement with the offline reference to F16 precision. Native speculative decoding (DFlash / DSpark). ANE prefill via Core ML on Apple Silicon. ~25 C++ modules, ~10.6k LoC, multi-licensed under LICENSE-TESSERA (PolyForm Noncommercial 1.0.0) with commercial licensing available.
+A fork of llama.cpp that takes calibration seriously. Per-tensor evolutionary calibration (T640) with a small genetic algorithm, AWQ pre-scaling, schema-versioned policies, runtime agreement with the offline reference to F16 precision. Native speculative decoding (DFlash / DSpark). ANE prefill via Core ML on Apple Silicon. ~25 C++ modules, ~10.6k LoC, multi-licensed under LICENSE-TESSERA (PolyForm Noncommercial 1.0.0) with commercial licensing available.
 
 - github.com/Tribunus-dev/tessera
 - License: PolyForm Noncommercial 1.0.0 + commercial available
@@ -34,7 +34,7 @@ The Swift desktop app that ships Tessera to users. Native macOS (Apple Silicon),
 
 ### 03 — Tessera calibration stack (the substrate)
 
-Python quantizer and the schema-versioned telemetry substrate that powers drafter training. Per-tensor GA, regime-routed MAP-Elites archive, AWQ + ternary + outlier policy. Per-step spec-decoding telemetry (`llama.tessera.spec.v1`) with verifier + drafter top-k. Native LK training driver (Path A, autoregressive drafters) and D-PACE block dataset (Path B, DFlash/DSpark). The receipts the engine and the studio share.
+Python quantizer and the schema-versioned telemetry substrate that powers drafter training. Per-tensor GA, regime-routed MAP-Elites archive, AWQ + ternary + outlier policy. Per-step spec-decoding telemetry (`llama.tessera.spec.v1`) with verifier + drafter top-k. Native LK training driver (Path A, autoregressive drafters) and D-PACE block dataset (Path B, DFlash/DSpark).
 
 - tessera/tools/{tessera,ane-mtp,tile640,imatrix}/
 
@@ -51,7 +51,7 @@ A 13-section macOS Human Interface Guidelines study feeding the Tessera Studio a
 
 ### 06 — Build, license, governance, evidence
 
-AGPLv3 site + LICENSE-TESSERA (PolyForm Noncommercial) for the fork + Apache-2.0 for upstream-inherited pieces. Receipts substrate across the stack (calibration policy, spec-decoding telemetry, per-tensor sidecars, audit reports). Wave-based "evolve" loop with strict gate discipline.
+AGPLv3 site + LICENSE-TESSERA (PolyForm Noncommercial) for the fork + Apache-2.0 for upstream-inherited pieces. Records substrate across the stack (calibration policy, spec-decoding telemetry, per-tensor sidecars, audit reports). Wave-based "evolve" loop with strict gate discipline.
 
 ---
 
@@ -63,29 +63,16 @@ I run deep-research passes that produce 50+ reference bibliographies, then write
 
 What I look for in a paper is the *open problem* — the thing the prior art does not close. For Tessera, the open problem was that every prior search-based quantizer — HAQ, RAMP, FracBits, Q-Palette, QuantEA, EvoPress — searches over discrete bit-widths, and none of them closes the loop against the actual kernel dequant output. Tessera's novelty is not a new quantizer. It is the **composition**: evolutionary search over continuous reconstruction knobs, scored against the real kernel output, conditioned on regime descriptors. The architecture is what closes the loop.
 
-I bring the same discipline to building systems. The first version of any new system is the architecture. The Tile640 kernel exposes a debug mode that emits its actual dequantized weights so calibration is measured against the runtime, not a reference. The kernel-fidelity loop is the differentiating capability *and* the ground-truth evaluator. One pipeline, two levels: the quantizer grounded in kernel output, the capability grounded in world output (tests, builds, commits). The receipts are the only thing I will not overrule.
-
-> *"Where it disagrees with a plan doc, it wins until updated."*
-> — the standing rule for the Tessera research spine. The plan is downstream of the evidence, always.
+I bring the same discipline to building systems. The first version of any new system is the architecture. The Tile640 kernel exposes a debug mode that emits its actual dequantized weights so calibration is measured against the runtime, not a reference. The kernel-fidelity loop is the differentiating capability *and* the ground-truth evaluator. One pipeline, two levels: the quantizer grounded in kernel output, the capability grounded in world output (tests, builds, commits).
 
 ### What this looks like in practice
 
 - **A new system starts as a 1,000+ line design doc.** Six locked design docs on Tessera, each with a *prior art* section, a *locked decisions* section, and a *research source-of-truth* pointer. The architect ratifies the calls. There is no committee.
-- **A new system commits at a SHA where the build is green and the receipts are bit-identical.** The architecture gate is monotonic. The ratchet only moves forward. A green test that doesn't match the real build is a broken gate — `test_all.sh` is not a gate; `cmake --build` is.
-- **A new system does not improvise correctness under load.** Decisions are frozen before execution. The plan is the receipt. If the kernel dequant changes, the calibration thresholds re-search, and the receipt carries the new SHA.
+- **A new system commits at a SHA where the build is green and the outputs are bit-identical.** The architecture gate is monotonic. The ratchet only moves forward. A green test that doesn't match the real build is a broken gate — `test_all.sh` is not a gate; `cmake --build` is.
+- **A new system does not improvise correctness under load.** Decisions are frozen before execution. If the kernel dequant changes, the calibration thresholds re-search, and the record carries the new SHA.
 - **A new system does not import a new abstraction it does not need.** Match the host project's style. *Match llama.cpp production code style. No new abstraction layers, no virtual dispatch.* The codebase reads like it grew there, not like it was grafted on.
 - **A new system does not tolerate parallel implementations.** No `v1` / `v2` / `v3` as labels for coexisting code in the same tree. Refactor in place. The version is a release tag on the artifact, not a label on the code.
 - **A new system is allowed to use AI, but not to ship code I cannot explain.** *"AI-generated code is allowed. What is not allowed is shipping code you do not understand. The human owns every line, however it was produced."* The agent drafts; the architect owns.
-
-### Personality, in one box
-
-I am direct, terse, and slow to take a position — but fast to ratify one once the evidence is in. I will not ship a v1 just to ship it. I will not pitch a market-size slide to win a meeting. I am willing to overrule my own advisors, including my agents, when the research demands it. I have reversed my own recommendation more than once when the receipts disagreed.
-
-I value the **work over the framing**, the **receipt over the slide**, and the **bit-exact run over the hand-waved claim**. I am a slow reader and a fast closer. I would rather build one system that survives a careful read than three that do not. I would rather be honest about what is *in dev* than oversell what is *planned*.
-
-I keep my standards visible. Comments are concise, they carry the invariant, not the lesson. ASCII, not unicode. Don't split lines mid-sentence. Refactor in place. The repository is the documentation; the documentation is the repository.
-
-> The standing rule, in one line: receipts over claims. Receipts over framing. Receipts over pitch. The work is the only thing I will not overrule.
 
 ---
 
@@ -93,8 +80,8 @@ I keep my standards visible. Comments are concise, they carry the invariant, not
 
 These are not aspirations. They are the rule set I run on.
 
-1. **Constitutional, not ambient.** Every decision is compile-time, not runtime. Every mutation produces a schema-versioned receipt. Tessera is a fork, not a wrapper: changes ship in the same files as the upstream code, on the upstream's terms.
-2. **Receipts, not logs.** Logs are what you write when nothing happened. Receipts are what happened. The audit trail is a first-class artifact, not a side effect.
+1. **Constitutional, not ambient.** Every decision is compile-time, not runtime. Every mutation produces a schema-versioned record. Tessera is a fork, not a wrapper: changes ship in the same files as the upstream code, on the upstream's terms.
+2. **Records, not logs.** Logs are what you write when nothing happened. Records are what happened. The audit trail is a first-class artifact, not a side effect.
 3. **Replace, don't coexist.** No `v1` / `v2` / `v3` as labels for coexisting implementations in the same tree. Refactor in place. The version is a release tag on the artifact, not a label on the code.
 4. **One canonical authority.** One source of truth, one mutation path, one render. Re-derive on conflict. The state machine is explicit; the engine-coupled terminal state is forbidden.
 5. **Local-first, federated when needed.** Your hardware, your data, your model. The escape valve is federation; the default is local. No required cloud dependency for core operations.
@@ -104,21 +91,9 @@ These are not aspirations. They are the rule set I run on.
 
 ---
 
-## What I am not
-
-Five things I am not, in case it saves us both a meeting.
-
-- **Not a pitch-deck founder.** I do not have a 12-slide narrative. I have a C++ fork, a Swift app, a research surface, and a status table. The receipts are the pitch.
-- **Not a chat-wrapper over a remote API.** Tessera Studio runs models locally with calibrated quantization. If that distinction does not land, we are not the right fit.
-- **Not a "ship a v1 to validate" founder.** The architecture is the strategy. I would rather ship one thing well than three things badly.
-- **Not ready for a public launch narrative.** The macOS developer preview is for the beta users on the looking-for page. Press, podcasts, conference talks are welcome; press releases are not.
-- **Not a hire-first founder.** The first full-time hire will be on the Tessera side and will be posted publicly when the time comes. Please don't cold-pitch your way in before then.
-
----
-
 ## Background
 
-Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. The creative background shows up in the design language — minimal, monochrome, terminal-honest — and in the care taken with documentation, schema versioning, and the look of every receipt the system produces. The Tessera Studio HIG study is the most visible expression of that background.
+Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. The creative background shows up in the design language — minimal, restrained, monochrome — and in the care taken with documentation, schema versioning, and the look of every record the system produces. The Tessera Studio HIG study is the most visible expression of that background.
 
 Full name: Julian Alejandro Torres Nieto (Tribunus.dev).
 
@@ -130,25 +105,25 @@ The five concrete collaboration shapes are on the looking-for page:
 2. Co-engineers (Swift / SwiftUI / C++ / quantization / UX)
 3. Quantization researchers (T640 / DFlash / DSpark)
 4. Advisors who have shipped a Mac desktop product or a fork of llama.cpp
-5. Investors & startup accelerators (applying 2026)
+5. Investors — raising a pre-seed (evidence-led, self-funded)
 
 ---
 
 ## Timeline
 
 - **2024 — October.** Tribunus is founded in San Francisco. The thesis: the inference + agent stack must be compiled together, not assembled at runtime.
-- **2024 — Q4.** First cut: a desktop agent with local inference. Tribunalus begins as a derivative of opencode (SST Inc., MIT) and quickly diverges.
+- **2024 — Q4.** First cut: a desktop agent with local inference. Tribunus begins as a derivative of opencode (SST Inc., MIT) and quickly diverges.
 - **2025.** The Tessera fork of llama.cpp takes over. The C++ side is named Tessera; per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and ANE prefill via Core ML all land against the new infrastructure.
 - **2026 — H1.** The Tessera Studio pivot. The desktop product is renamed Tessera Studio. The Swift app and the C++ fork ship from a single repo.
 - **2026 — Mid.** Self-improving loop, calibration stack, design system. Prism Engine (Rust constitutional ECS) absorbs its FFI substrate. Tessera Studio's macOS HIG study is published.
-- **2026 — August.** Accelerator applications filed. Pre-seed and self-funded.
-- **2026 — Now.** One product in flight: Tessera Studio on macOS (developer preview). Linux in CI. Sole maintainer, one founder, no team hires planned before a pre-seed close.
+- **2026 — August.** Raising a pre-seed. Self-funded.
+- **2026 — Now.** One product in flight: Tessera Studio on macOS (developer preview). Linux in development. Sole maintainer, one founder, no team hires planned before a pre-seed close.
 
 ---
 
 ## Intellectual lineage
 
-The architecture is not invented from scratch. The team has published a long-form essay — *The Tribunus Thesis* — that traces the intellectual lineage paper by paper. A few anchors:
+The architecture is not invented from scratch. The research is documented paper by paper. A few anchors:
 
 - **Kwon et al., *PagedAttention* (SOSP 2023).** The reframing of inference as memory orchestration. Tessera's KV-cache handling and per-token plan live here.
 - **Mark Miller, *Robust Composition*.** Capability-based security. The plugin runtime, the surface separation between desktop / web / mobile, and the "no ambient authority" rule all derive from this lineage.

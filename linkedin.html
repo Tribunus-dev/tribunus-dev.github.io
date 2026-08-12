@@ -3,155 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tribunus · LinkedIn presence</title>
-<meta name="description" content="Canonical copy for the Tribunus LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — ready to paste into LinkedIn. Updated for the 2026 Tessera Studio direction.">
-<meta name="theme-color" content="#0a0a0a">
-<meta property="og:title" content="Tribunus · LinkedIn presence">
+<title>Tribunus — LinkedIn presence</title>
+<meta name="description" content="Canonical copy for the Tribunus LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — ready to paste into LinkedIn.">
+<meta name="theme-color" content="#0b0b0d">
+<meta property="og:title" content="Tribunus — LinkedIn presence">
 <meta property="og:description" content="Canonical copy for the Tribunus LinkedIn presence — personal profile and company page.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tribunus.dev/linkedin">
 <link rel="canonical" href="https://tribunus.dev/linkedin">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0d'/%3E%3Cpath d='M9 8h14v4h-5v12h-4V12H9z' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ── shared shell ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#0a0a0a;color:#d0d0d0;font-family:'Inter','system-ui','-apple-system',sans-serif;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
-:root{
-  --bg:#0a0a0a;--fg:#d0d0d0;--dim:#8a8a8a;--dim-2:#5a5a5a;
-  --green:#00ff41;--green-dim:#00cc33;--green-bg:rgba(0,255,65,.06);
-  --border:rgba(0,255,65,.18);--card-bg:#0f0f0f;--card-hover:#141414;--rule:#1a1a1a;
-  --copy-bg:#0a0a0a;--copy-fg:#e6e6e6;
-}
-h1,h2,h3{font-weight:700;line-height:1.2;color:#fff;letter-spacing:-.02em}
-h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.03em}
-h2{font-size:clamp(1.5rem,2.5vw,2rem);letter-spacing:-.02em}
-h3{font-size:1.15rem;color:#fff;letter-spacing:-.01em}
-code,.mono{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace}
-a{color:var(--green);text-decoration:none;transition:color .15s}
-a:hover{color:var(--green-dim)}
-.link-arrow{display:inline-flex;align-items:center;gap:4px;font-weight:600}
-.link-arrow::after{content:'\2192';transition:transform .15s}
-.link-arrow:hover::after{transform:translateX(3px)}
-
-.wrap{max-width:820px;margin:0 auto;padding:0 24px}
-section{padding:80px 0}
-section.tight{padding:48px 0}
-
-nav{
-  position:sticky;top:0;left:0;right:0;z-index:100;
-  background:rgba(10,10,10,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 max(24px,calc(50vw - 600px));height:56px
-}
-.nav-brand{font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-.03em}
-.nav-brand:hover{color:#fff}
-.nav-links{display:flex;gap:2px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{padding:6px 10px;border-radius:4px;font-size:.85rem;font-weight:500;color:var(--dim);transition:color .15s,background .15s}
-.nav-links a:hover{color:var(--green);background:var(--green-bg)}
-.nav-links a.active{color:#fff}
-
-.sec-head{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.sec-head::after{content:'';flex:1;height:1px;background:var(--rule)}
-.sec-title{font-size:1.6rem;margin-bottom:12px}
-.sec-sub{color:var(--dim);font-size:.98rem;max-width:60ch;margin-bottom:32px;line-height:1.65}
-
-/* ── copy blocks ── */
-.copy-block{margin-top:32px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
-.copy-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--rule);background:#0a0a0a}
-.copy-head .label{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
-.copy-head .label .tag{background:var(--green-bg);color:var(--green);border:1px solid var(--border);border-radius:4px;padding:1px 8px;font-size:.7rem}
-.copy-head .charcount{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2)}
-.copy-body{padding:24px 28px;color:var(--copy-fg);font-size:.96rem;line-height:1.7;white-space:pre-wrap;word-wrap:break-word}
-.copy-body em{color:#fff;font-style:normal;font-weight:600}
-.copy-body code{background:rgba(0,255,65,.06);color:var(--green);padding:2px 6px;border-radius:3px;font-size:.88em}
-.copy-actions{display:flex;justify-content:flex-end;gap:10px;padding:12px 20px;border-top:1px solid var(--rule);background:#0a0a0a}
-.copy-btn{font-family:'JetBrains Mono',monospace;font-size:.78rem;background:transparent;color:var(--green);border:1px solid var(--border);border-radius:4px;padding:6px 12px;cursor:pointer;transition:all .15s}
-.copy-btn:hover{background:var(--green-bg)}
-.copy-btn.copied{background:rgba(0,255,65,.12);color:#fff;border-color:var(--green)}
-.copy-note{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--dim-2)}
-
-/* ── fields list ── */
-.kv-list{margin-top:24px;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--card-bg)}
-.kv-row{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:14px 20px;border-bottom:1px solid var(--rule);align-items:start}
-.kv-row:last-child{border-bottom:none}
-.kv-row .k{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
-.kv-row .v{color:#bbb;font-size:.92rem;line-height:1.55}
-.kv-row .v strong{color:#fff}
-@media(max-width:560px){.kv-row{grid-template-columns:1fr;gap:4px}}
-
-/* ── profile sections ── */
-.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
-@media(max-width:760px){.profile-grid{grid-template-columns:1fr}}
-.profile-card{border:1px solid var(--rule);border-radius:10px;background:var(--card-bg);padding:24px 28px}
-.profile-card .who{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--green);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
-.profile-card .name{color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:4px}
-.profile-card .role{color:var(--dim);font-size:.92rem;margin-bottom:18px}
-.profile-card .handle{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--green)}
-
-/* ── intent ── */
-.intent{margin-top:32px;padding:20px 24px;border-left:3px solid var(--green);background:var(--card-bg);border-radius:0 8px 8px 0;color:#bbb;font-size:.92rem;line-height:1.65}
-.intent strong{color:#fff}
-
-footer{
-  border-top:1px solid var(--rule);
-  padding:48px max(24px,calc(50vw - 600px));
-  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
-  gap:20px;font-size:.85rem;color:var(--dim)
-}
-footer .tagline{font-style:italic;color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem}
-footer a{color:var(--dim)}
-footer a:hover{color:var(--green)}
-footer .left,footer .mid,footer .right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-footer .left{font-size:.82rem;color:var(--dim-2)}
-footer .left a{color:var(--dim);font-weight:500}
-footer .mid a{font-size:.85rem}
-footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--dim-2);letter-spacing:.05em}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <nav>
-  <a href="//tribunus.dev" class="nav-brand">Tribunus</a>
+  <a href="//tribunus.dev" class="nav-brand"><span class="mark">T</span>Tribunus</a>
   <ul class="nav-links">
     <li><a href="//tribunus.dev/company">Company</a></li>
     <li><a href="//tribunus.dev/founder">Founder</a></li>
-    <li><a href="//tribunus.dev/looking-for">Looking for</a></li>
     <li><a href="//tribunus.dev/tessera">Tessera</a></li>
+    <li><a href="//tribunus.dev/looking-for">Work with us</a></li>
     <li><a href="https://github.com/Tribunus-dev">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/juliantorr-es">LinkedIn</a></li>
   </ul>
 </nav>
 
 <!-- ═══ hero ═══ -->
-<header class="wrap" style="padding-top:96px;padding-bottom:32px">
-  <div class="sec-head">linkedin presence</div>
-  <h1>Copy-paste canonical copy for LinkedIn.</h1>
-  <p class="sec-sub" style="margin-top:18px;font-size:1.1rem;max-width:60ch">The source of truth for Tribunus's LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — written to fit LinkedIn's format and character limits, ready to paste.</p>
-  <div class="intent">
-    <strong>How to use this page.</strong> Each block is annotated with the LinkedIn field it targets. Click <em>Copy</em> on any block to copy its content. Update the canonical copy here whenever the company story changes; mirror it to LinkedIn on the same change.
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>LinkedIn presence</div>
+    <h1>Copy-paste canonical copy for LinkedIn.</h1>
+    <p class="lede">The source of truth for Tribunus's LinkedIn presence. Personal profile (Julian Torres, founder) and company page (Tribunus) — written to fit LinkedIn's format and character limits, ready to paste.</p>
   </div>
 </header>
 
-<!-- ═══ profile targets ═══ -->
+<!-- ═══ how to use ═══ -->
 <section class="tight">
   <div class="wrap">
-    <div class="sec-head">linkedin targets</div>
-    <div class="profile-grid">
-      <div class="profile-card">
-        <div class="who">// personal</div>
-        <div class="name">Julian Torres</div>
-        <div class="role">Founder, Tribunus</div>
-        <div class="handle">linkedin.com/in/juliantorr-es</div>
+    <div class="thesis">
+      <p><strong>How to use this page.</strong> Each block is annotated with the LinkedIn field it targets. Click <em>Copy</em> on any block to copy its content. When the company story changes, update the canonical copy here first, then mirror it to LinkedIn.</p>
+    </div>
+
+    <div class="grid-2" style="margin-top:36px">
+      <div class="cell">
+        <div class="num">Personal</div>
+        <h3 style="margin-bottom:4px">Julian Torres</h3>
+        <p style="color:var(--fg-2);font-size:.92rem;margin-bottom:12px">Founder, Tribunus</p>
+        <p class="mono" style="font-size:.85rem;color:var(--fg-3)">linkedin.com/in/juliantorr-es</p>
       </div>
-      <div class="profile-card">
-        <div class="who">// company</div>
-        <div class="name">Tribunus</div>
-        <div class="role">Independent software company · shipping Tessera Studio</div>
-        <div class="handle">linkedin.com/company/tribunus-dev <em style="color:var(--dim);font-style:normal">(to be created)</em></div>
+      <div class="cell">
+        <div class="num">Company</div>
+        <h3 style="margin-bottom:4px">Tribunus</h3>
+        <p style="color:var(--fg-2);font-size:.92rem;margin-bottom:12px">Independent software company · shipping Tessera Studio</p>
+        <p class="mono" style="font-size:.85rem;color:var(--fg-3)">linkedin.com/company/tribunus-dev <span style="color:var(--fg-3)">(to be created)</span></p>
       </div>
     </div>
   </div>
@@ -160,16 +67,16 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
 <!-- ═══ personal — headline ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">personal profile · headline</div>
+    <div class="sec-head">Personal profile · headline</div>
     <h2 class="sec-title">LinkedIn headline (220 char max)</h2>
     <p class="sec-sub">The 220-character line under your name. Most-searched, most-shown. Front-load the role, the product, and the company.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · headline · personal</div>
-        <div class="charcount" data-count>192 / 220</div>
+        <div class="label">LinkedIn · headline · personal</div>
+        <div class="charcount" data-count>185 / 220</div>
       </div>
-      <div class="copy-body">Founder of <em>Tribunus</em> · building <em>Tessera Studio</em> (desktop app for running LLMs locally with calibrated quantization) · C++ fork of llama.cpp · applying to accelerators, 2026 · San Francisco</div>
+      <div class="copy-body">Founder of <em>Tribunus</em> · building <em>Tessera Studio</em> (desktop app for running LLMs locally with calibrated quantization) · C++ fork of llama.cpp · raising a pre-seed · San Francisco</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -181,22 +88,22 @@ footer .license{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:va
 <!-- ═══ personal — about ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">personal profile · about</div>
+    <div class="sec-head">Personal profile · about</div>
     <h2 class="sec-title">LinkedIn About section (2,600 char max)</h2>
     <p class="sec-sub">First three lines are visible before the "see more" cut. Lead with the most important sentence.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · about · personal</div>
-        <div class="charcount" data-count>~1,540 / 2,600</div>
+        <div class="label">LinkedIn · about · personal</div>
+        <div class="charcount" data-count>~1,470 / 2,600</div>
       </div>
-      <div class="copy-body">I founded <em>Tribunus</em> in October 2024 in San Francisco to build the local-first control plane for AI inference — the open-source stack that lets engineers run large language models on their own hardware, with explicit authority, compile-time guarantees, and receipts instead of logs.
+      <div class="copy-body">I founded <em>Tribunus</em> in October 2024 in San Francisco to build the local-first stack for AI inference — the open-source layer that lets engineers run large language models on their own hardware, with explicit authority, compile-time guarantees, and a replayable record instead of opaque logs.
 
-The product I am shipping in 2026 is <em>Tessera Studio</em> — a desktop app for running LLMs locally with calibrated, audited per-tensor quantization. It is built on Tessera, my C++ fork of llama.cpp that takes calibration seriously. macOS today, Linux in progress. AGPLv3 with commercial dual-licensing.
+The product I am shipping in 2026 is <em>Tessera Studio</em> — a desktop app for running LLMs locally with calibrated, audited per-tensor quantization. It is built on Tessera, my C++ fork of llama.cpp that takes calibration seriously. macOS today, Linux in progress.
 
-Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. That background shows up in our design language — minimal, monochrome, terminal-honest — and in the care we take with documentation, schema versioning, and the look of every receipt the system produces.
+Before Tribunus I worked as a software engineer in the San Francisco Bay Area, and as a freelance photographer and designer. That background shows up in our design language — minimal and restrained — and in the care we take with documentation, schema versioning, and the look of every record the system produces.
 
-I am applying to startup accelerators in 2026. The company is pre-seed and self-funded. I am currently the only full-time person on the project, and the first full-time hire will come after a pre-seed close.
+Tribunus is pre-seed, self-funded, and raising. I am currently the only full-time person on the project, and the first full-time hire will come after a pre-seed close.
 
 If you are working on inference, agent runtimes, or the trust model for AI in production — happy to talk.</div>
       <div class="copy-actions">
@@ -210,13 +117,13 @@ If you are working on inference, agent runtimes, or the trust model for AI in pr
 <!-- ═══ personal — featured ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">personal profile · featured links</div>
+    <div class="sec-head">Personal profile · featured links</div>
     <h2 class="sec-title">Featured link titles (use as-is)</h2>
     <p class="sec-sub">LinkedIn lets you pin 5 featured items. Use these titles when pinning the canonical Tribunus links.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · featured · personal</div>
+        <div class="label">LinkedIn · featured · personal</div>
         <div class="charcount" data-count>1 block</div>
       </div>
       <div class="copy-body">Tessera Studio — the desktop app for local LLMs
@@ -225,14 +132,14 @@ https://tribunus.dev/tessera
 Tribunus — the company
 https://tribunus.dev/company
 
-What I am looking for, in five shapes
+Work with Tribunus — how to collaborate
 https://tribunus.dev/looking-for
 
 The founder story
 https://tribunus.dev/founder
 
-The Tribunus Thesis — the long-form essay on the architecture
-https://docs.tribunus.dev/blog/tribunus-thesis</div>
+Prism Engine — open research
+https://github.com/Tribunus-dev/prism-engine</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -244,13 +151,13 @@ https://docs.tribunus.dev/blog/tribunus-thesis</div>
 <!-- ═══ personal — experience entry ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">personal profile · experience</div>
+    <div class="sec-head">Personal profile · experience</div>
     <h2 class="sec-title">Experience entry: Tribunus (Oct 2024 — Present)</h2>
     <p class="sec-sub">Use as the experience card body. Keep the bullets tight; LinkedIn renders them as a tappable list.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · experience · tribunus</div>
+        <div class="label">LinkedIn · experience · tribunus</div>
         <div class="charcount" data-count>1 block</div>
       </div>
       <div class="copy-body">Title: Founder
@@ -258,12 +165,12 @@ Company: Tribunus
 Location: San Francisco, California, United States
 Start: October 2024 · End: Present
 
-• Founded Tribunus as an independent, founder-led software company building the local-first control plane for AI agents and inference.
-• Currently shipping Tessera Studio — a desktop app for running LLMs locally with calibrated per-tensor quantization. macOS developer preview, Linux in CI.
-• Built Tessera, a C++ fork of llama.cpp, with calibrated per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and Apple Neural Engine prefill on M-series Macs.
-• Designed and led the local-first TesseraCell architecture (PGlite + Valkey) and the federated control plane.
-• Released under AGPLv3 with commercial dual-licensing. Sole maintainer, sole full-time person, final decision authority on architecture, roadmap, and licensing.
-• Applying to startup accelerators in 2026. Pre-seed. Self-funded.</div>
+• Founded Tribunus as an independent, founder-led software company building the local-first stack for AI inference and agents.
+• Currently shipping Tessera Studio — a desktop app for running LLMs locally with calibrated per-tensor quantization. macOS developer preview, Linux in development.
+• Built Tessera, a C++ fork of llama.cpp, with per-tensor evolutionary calibration (T640), DFlash/DSpark drafters, and Apple Neural Engine prefill on M-series Macs.
+• Designed the local-first architecture and the federated control plane behind the stack.
+• Open source: AGPL-3.0 site code, LICENSE-TESSERA (PolyForm Noncommercial) for the fork, commercial licenses available. Sole maintainer, sole full-time person.
+• Raising a pre-seed. Self-funded.</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -275,16 +182,16 @@ Start: October 2024 · End: Present
 <!-- ═══ company — tagline ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">company page · tagline</div>
+    <div class="sec-head">Company page · tagline</div>
     <h2 class="sec-title">Company tagline (120 char max)</h2>
     <p class="sec-sub">LinkedIn renders the tagline as the company's "headline" on the company page. Front-load the verb.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · tagline · company</div>
-        <div class="charcount" data-count>89 / 120</div>
+        <div class="label">LinkedIn · tagline · company</div>
+        <div class="charcount" data-count>117 / 120</div>
       </div>
-      <div class="copy-body"><em>Independent software company shipping Tessera Studio — desktop app for running LLMs locally with calibrated quantization. Open source. AGPLv3.</em></div>
+      <div class="copy-body"><em>Independent software company shipping Tessera Studio — desktop app for running LLMs locally with calibrated quantization. Open source.</em></div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -296,28 +203,28 @@ Start: October 2024 · End: Present
 <!-- ═══ company — about ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">company page · about</div>
+    <div class="sec-head">Company page · about</div>
     <h2 class="sec-title">LinkedIn About section (2,000 char max)</h2>
     <p class="sec-sub">The company-page About. Lead with the one-line pitch, then a paragraph of substance.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · about · company</div>
-        <div class="charcount" data-count>~1,720 / 2,000</div>
+        <div class="label">LinkedIn · about · company</div>
+        <div class="charcount" data-count>~1,660 / 2,000</div>
       </div>
-      <div class="copy-body"><em>Tribunus</em> is an independent, founder-led software company. We build the open-source control plane for running AI agents and inference on your own hardware. Founded in October 2024 by Julian Torres in San Francisco, California.
+      <div class="copy-body"><em>Tribunus</em> is an independent, founder-led software company. We build the open-source stack for running AI inference and agents on your own hardware. Founded in October 2024 by Julian Torres in San Francisco, California.
 
-The product we ship in 2026 is <em>Tessera Studio</em> — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side (Tessera) is a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned receipts, runtime agreement with the offline reference down to F16. Native speculative decoding (DFlash / DSpark). Apple Neural Engine prefill on M-series Macs.
+The product we ship in 2026 is <em>Tessera Studio</em> — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side (Tessera) is a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned policies, runtime agreement with the offline reference down to F16. Native speculative decoding (DFlash / DSpark). Apple Neural Engine prefill on M-series Macs.
 
-We are four things, all the time:
+Four rules, all the time:
 1. Compile-time, not runtime — decisions are frozen before execution.
 2. Local-first, federated when needed — your hardware, your data, your model.
 3. Authority, not ambient access — every plugin and tool gets explicit capability grants.
-4. Receipts, not logs — every mutation is cryptographically bound.
+4. Verifiable by construction — every run keeps a replayable record.
 
-Tribunus is released under the GNU Affero General Public License v3 (AGPL-3.0) with commercial dual-licensing available for parties who require proprietary use. The earlier "Tribunus Desktop / Compute / Cell / Federation" branding is folded into the Tessera fork; the brand is one company, the product is one product.
+Tribunus is open source. The site code is AGPL-3.0; the Tessera fork ships under LICENSE-TESSERA (PolyForm Noncommercial) with commercial licenses available.
 
-Founded by Julian Torres. Sole maintainer. Self-funded. Applying to startup accelerators in 2026.</div>
+Founded by Julian Torres. Sole maintainer. Self-funded. Raising a pre-seed.</div>
       <div class="copy-actions">
         <button class="copy-btn" data-copy-btn>Copy</button>
       </div>
@@ -329,7 +236,7 @@ Founded by Julian Torres. Sole maintainer. Self-funded. Applying to startup acce
 <!-- ═══ company — fields ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">company page · fields</div>
+    <div class="sec-head">Company page · fields</div>
     <h2 class="sec-title">LinkedIn company-page field values</h2>
     <p class="sec-sub">Use these values in the LinkedIn company-page settings. LinkedIn gives you fixed-form fields — here is the canonical content for each.</p>
 
@@ -342,7 +249,7 @@ Founded by Julian Torres. Sole maintainer. Self-funded. Applying to startup acce
       <div class="kv-row"><div class="k">Headquarters</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
       <div class="kv-row"><div class="k">Founded</div><div class="v"><strong>October 2024</strong></div></div>
       <div class="kv-row"><div class="k">Company type</div><div class="v"><strong>Privately held · Self-funded · Independent</strong></div></div>
-      <div class="kv-row"><div class="k">Specialties <em style="color:var(--dim)">(up to 20)</em></div><div class="v">AI Infrastructure · Local-First Software · LLM Inference · Quantization · Tessera · Tessera Studio · llama.cpp Fork · Apple Silicon · Core ML · ANE Prefill · Spec Decoding · DFlash · DSpark · AGPLv3 · Open Source · Compile-Time Architecture · Capability-Based Security · Receipts · Developer Tools · Edge AI</div></div>
+      <div class="kv-row"><div class="k">Specialties <span style="color:var(--fg-3)">(up to 20)</span></div><div class="v">AI Infrastructure · Local-First Software · LLM Inference · Quantization · Tessera · Tessera Studio · llama.cpp Fork · Apple Silicon · Core ML · ANE Prefill · Spec Decoding · DFlash · DSpark · AGPLv3 · Open Source · Compile-Time Architecture · Capability-Based Security · Developer Tools · Edge AI</div></div>
       <div class="kv-row"><div class="k">Website</div><div class="v"><strong>https://tribunus.dev</strong></div></div>
       <div class="kv-row"><div class="k">Location</div><div class="v"><strong>San Francisco, California, United States</strong></div></div>
     </div>
@@ -352,27 +259,27 @@ Founded by Julian Torres. Sole maintainer. Self-funded. Applying to startup acce
 <!-- ═══ company — first post ═══ -->
 <section>
   <div class="wrap">
-    <div class="sec-head">company page · first post</div>
+    <div class="sec-head">Company page · first post</div>
     <h2 class="sec-title">First LinkedIn post (3,000 char max)</h2>
     <p class="sec-sub">The first post on the Tribunus company page should be a positioning statement — not a launch announcement. This one names the product, names the ask, and points at the canonical pages.</p>
 
     <div class="copy-block" data-copy>
       <div class="copy-head">
-        <div class="label">linkedin · first post · company</div>
-        <div class="charcount" data-count>~1,500 / 3,000</div>
+        <div class="label">LinkedIn · first post · company</div>
+        <div class="charcount" data-count>~1,420 / 3,000</div>
       </div>
       <div class="copy-body">Tribunus is one founder, one product, one bet.
 
-The product is Tessera Studio — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side is Tessera, a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned receipts, runtime agreement with the offline reference down to F16.
+The product is Tessera Studio — a desktop app for running large language models locally with calibrated, audited per-tensor quantization. macOS today, Linux in progress. The C++ side is Tessera, a fork of llama.cpp that takes calibration seriously: per-tensor policy evolved by a small genetic algorithm, schema-versioned policies, runtime agreement with the offline reference down to F16.
 
-I am looking for five things in 2026, named on the site:
+There are five concrete ways to work with us, named on the site:
 → Mac & Linux beta users
 → Co-engineers (Swift / SwiftUI / C++ / quantization / UX)
 → Quantization researchers (T640 / DFlash / DSpark)
 → Advisors who have shipped a Mac desktop product or a fork of llama.cpp
-→ Investors & accelerators (applying in 2026 with Tribunus)
+→ Investors — pre-seed, self-funded, evidence-led
 
-The company is pre-seed and self-funded. I am the only full-time person. The first full-time hire will come after a pre-seed close. I do not raise on hype; I raise on evidence. The receipts are the pitch.
+The company is pre-seed, self-funded, and raising. I am the only full-time person. The first full-time hire comes after a pre-seed close.
 
 If one of the five shapes is you, the email is on the site.
 
@@ -388,20 +295,19 @@ If one of the five shapes is you, the email is on the site.
 <!-- ═══ footer ═══ -->
 <footer>
   <div class="left">
-    &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, CA
+    &copy; 2024&ndash;2026 Tribunus &middot; Founded by <a href="//tribunus.dev/founder">Julian Torres</a> &middot; San Francisco, California
   </div>
   <div class="mid">
     <a href="//tribunus.dev/company">Company</a>
-    &nbsp;&middot;&nbsp;
-    <a href="//tribunus.dev/looking-for">Looking for</a>
-    &nbsp;&middot;&nbsp;
+    <a href="//tribunus.dev/founder">Founder</a>
+    <a href="//tribunus.dev/tessera">Tessera</a>
+    <a href="//tribunus.dev/looking-for">Work with us</a>
     <a href="https://github.com/Tribunus-dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-    &nbsp;&middot;&nbsp;
     <a href="https://www.linkedin.com/in/juliantorr-es" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
   <div class="right">
     <span class="license">AGPL-3.0</span>
-    <span class="tagline">Built with compile-time honesty.</span>
+    <span class="privacy">No trackers · No cookies</span>
   </div>
 </footer>
 
